@@ -1,0 +1,111 @@
+# dein.toml
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+
+# colorscheme
+[[plugins]]
+repo = 'tomasr/molokai'
+
+### Utils
+
+[[plugins]]
+repo = 'w0rp/ale'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+
+# [[plugins]]
+# repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'mkanenobu/emmet-vim'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
+
+[[plugins]]
+repo = 'junegunn/vim-easy-align'
+
+[[plugins]]
+repo = 'mhinz/vim-signify'
+
+[[plugins]]
+repo = 'wakatime/vim-wakatime'
+
+[[plugins]]
+repo = 'tpope/vim-endwise'
+
+[[plugins]]
+repo = 'junegunn/fzf'
+build = './install --all'
+merged = 0
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = 'fzf'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+# [[plugins]]
+# repo = 'mkanenobu/foolproof.vim'
+
+### Language support
+[[plugins]]
+repo = 'mkanenobu/forth.vim'
+
+[[plugins]]
+repo = 'mkanenobu/nvim-nim'
+on_ft = 'nim'
+
+[[plugins]]
+repo = 'boeckmann/vim-freepascal'
+
+[[plugins]]
+repo = 'zchee/deoplete-jedi'
+
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+
+[[plugins]]
+repo = 'hail2u/vim-css3-syntax'
+
+# [[plugins]]
+# repo = 'rust-lang/rust.vim'
+
+# Deoplete sources
+[[plugins]]
+repo = 'Shougo/neco-vim'
+
+[[plugins]]
+repo = 'Shougo/neco-syntax'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
