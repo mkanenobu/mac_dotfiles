@@ -40,25 +40,32 @@ HISTFILESIZE=10000
 # without username
 # PS1='\[\033[01;34m\]\W\[\033[00m\]'
 
-if [ -z $TMUX ] || [ ! -x "__git_ps1" ]; then
+if [ -z $TMUX ]; then
     PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]$ '
 else
     # Display branch name (not display if master master)
-    BRANCH_NAME_RETURN_CODE='\[$(
-    return_code=$?
-    if [ -n "$(__git_ps1)" ] && [ "$(__git_ps1)" != " (master)" ]; then
-        branch_name="$(__git_ps1)"
-        echo -en \e[m\]"${branch_name// /}"
-    fi
-     return code
-    if [ $return_code -eq 0 ]; then
+    # BRANCH_NAME_RETURN_CODE='\[$(
+    # return_code=$?
+    # if [ -n "$(__git_ps1)" ] && [ "$(__git_ps1)" != " (master)" ]; then
+    #     branch_name="$(__git_ps1)"
+    #     echo -en \e[m\]"${branch_name// /}"
+    # fi
+    #  return code
+    #  if [ "$return_code" == "0" ]; then
+    #     echo -en \e[m\]
+    # else
+    #     echo -en \e[31m\]
+    # fi; echo -en $\e[m\]
+    # )\]'
+    RETURN_CODE='\[$(
+    if [ $? -eq 0 ]; then
         echo -en \e[m\]
     else
         echo -en \e[31m\]
     fi; echo -en $\e[m\]
-    )\]'
+    )'
     PS1='\e[01;32m\]\u\e[00m\]:\e[01;34m\]\W'
-    PS1="${PS1}${BRANCH_NAME_RETURN_CODE} "
+    PS1="${PS1}${RETURN_CODE} "
 fi
 
 PS2='>'
@@ -180,9 +187,8 @@ alias gst='git stash'
 alias gsp='git stash pop'
 
 # typo
-alias al='sl -e'
+alias al=':'
 alias a=':'
-alias sl='sl -e'
 alias .s='ls'
 alias claer="clear"
 alias im='vim'

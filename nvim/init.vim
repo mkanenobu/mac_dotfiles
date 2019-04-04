@@ -114,6 +114,9 @@ nnoremap <kMinus> <C-x>
 nnoremap + <C-a>
 nnoremap - <C-x>
 
+nnoremap m %
+nnoremap % m
+
 " C-CR in middle of line
 inoremap <C-j> <Esc>o
 inoremap <C-CR> <Esc>o
@@ -343,14 +346,18 @@ let g:quickrun_config.rust = {
   \ 'cmdopt': '-A dead_code',
 \}
 
+let g:quickrun_config.racket = {
+  \ 'command': 'racket -r',
+\}
+
 set splitbelow
 
-if expand("%:e") == "md"
-  map <Space>r :!open -a typora "%:p" <CR><CR>
+if "%:e" == "rkt"
+  set filetype=racket
 endif
-if expand("%:e") == "html"
-  map <Space>r :!open -a "Google Chrome" "%:p" <CR><CR>
-endif
+
+autocmd FileType markdown map <Space>r :!open -a typora "%:p" <CR><CR>
+autocmd FileType html map <Space>r :!open -a "Google Chrome" "%:p" <CR><CR>
 
 " NerdTree
 map <Space>n :NERDTreeToggle<CR>
