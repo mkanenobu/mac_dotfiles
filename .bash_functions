@@ -37,22 +37,6 @@ dkill(){
   fi
 }
 
-# multipurpose open
-open(){
-  if [ "$#" == 0 ]; then
-    thunar . >/dev/null 2>&1
-  elif [ "$#" -gt 1 ];then
-    echo "This command can take only 1 args"
-    return 1
-  elif [[ "$1" == *.html ]];then
-    google-chrome "$1" >/dev/null 2>&1
-  elif [[ "$1" == *.md ]];then
-    (typora "$1" >/dev/null 2>&1 &)
-  else
-    xdg-open "$1" >/dev/null 2>&1
-  fi
-}
-
 # unar extract multiple files
 mnar(){
   for i in "$@"; do

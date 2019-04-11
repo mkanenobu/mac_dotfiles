@@ -79,6 +79,8 @@ if [ "$(which ls)" == "/usr/local/opt/coreutils/libexec/gnubin/ls" ]; then
     # alias grep='grep --color=auto'
     # alias fgrep='fgrep --color=auto'
     # alias egrep='egrep --color=auto'
+else
+    alias ls='ls -G'
 fi
 
 # colored GCC warnings and errors
@@ -141,6 +143,7 @@ alias cp='cp -i'
 alias fzf='fzf --reverse'
 alias cd..='cd ../'
 alias log='tail -f'
+alias z='source ~/.local/tools/mv2file.bash'
 
 # languages
 alias py='python3'
@@ -153,6 +156,7 @@ alias lua='lua5.3'
 alias luac='luac5.3'
 alias rb='ruby'
 alias buninstall='bundle install'
+alias ocaml='rlwrap ocaml'
 
 # Docker
 alias docker='docker'
@@ -171,8 +175,7 @@ alias dclog='docker-compose logs'
 # Git
 alias g='git'
 alias ga='git add'
-alias gcm='git commit -m'
-alias gcd='git commit -m "$(date "+%D %R")"'
+alias gcm='git commit'
 alias gs='git status'
 alias gp='git pull'
 alias gd='git diff'
@@ -212,4 +215,5 @@ fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 [ -f ~/.local/bin/git-prompt.sh ] && source ~/.local/bin/git-prompt.sh
+eval $(opam env)
 

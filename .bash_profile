@@ -19,7 +19,7 @@ export PATH="$PATH:$HOME/.nodenv/shims"
 export PATH="$PATH:$HOME/.rbenv/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/tools"
-export PATH="$PATH:$HOME/.local/forRails"
+export PATH="$PATH:$HOME/.local/forDevelop"
 export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 
 eval "$(nodenv init -)"
@@ -61,5 +61,3 @@ export LESS_TERMCAP_us=$'\e[1;4;31m'
 # ignore .DS_STORE from completion
 export FIGNORE="$FIGNORE:DS_Store"
 
-
-export PATH="$HOME/.cargo/bin:$PATH"

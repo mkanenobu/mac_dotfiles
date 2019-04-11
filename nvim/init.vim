@@ -358,6 +358,7 @@ endif
 
 autocmd FileType markdown map <Space>r :!open -a typora "%:p" <CR><CR>
 autocmd FileType html map <Space>r :!open -a "Google Chrome" "%:p" <CR><CR>
+" autocmd FileType scheme map <Space>r :normal ggcpG<cr>`s
 
 " NerdTree
 map <Space>n :NERDTreeToggle<CR>
@@ -366,9 +367,9 @@ map <Space>n :NERDTreeToggle<CR>
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " vim-Autopair
-autocmd filetype forth let g:AutoPairs = {'(':')',  '{':'}', '`':'`', 'T{':'}T'}
-autocmd filetype ruby let g:AutoPairs = {'`': '`', '"': '"', '{': '}', '''': '''', '(': ')', '[': ']', '|':'|'}
-autocmd filetype rust let g:AutoPairs = {'`': '`', '"': '"', '{': '}', '(': ')', '[': ']', '|':'|'}
+autocmd FileType forth let g:AutoPairs = {'(':')',  '{':'}', '`':'`', 'T{':'}T'}
+autocmd FileType ruby let g:AutoPairs = {'`': '`', '"': '"', '{': '}', '''': '''', '(': ')', '[': ']', '|':'|'}
+autocmd FileType rust let g:AutoPairs = {'`': '`', '"': '"', '{': '}', '(': ')', '[': ']', '|':'|'}
 
 " nvim-nim
 " disable key config
@@ -379,9 +380,12 @@ let g:nvim_nim_enable_custom_textobjects = 1
 let g:nvim_nim_highlighter_enable = 0
 let g:nvim_nim_highlighter_semantics = []
 
-" CtrlP
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+" fzf
+nnoremap <C-p> :FZFFileList<CR>
+command! FZFFileList call fzf#run( {
+  \ 'source': 'find . -type d -name .git -prune -o ! -name .DS_Store',
+  \ 'sink': 'e'
+\} )
 
 " jedi-vim
 " no preview
@@ -418,6 +422,11 @@ let g:ale_fixers = {
 nmap <C-j> <Plug>(ale_next_wrap)
 nmap <C-k> <Plug>(ale_previous_wrap)
 nnoremap <C-e><C-r> :lopen<CR>
+
+" ocaml
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
+execute 'set rtp^=' . g:opamshare . '/ocp-indent/vim'
 
 " Autopair
 let g:AutoPairsFlyMode = 0
