@@ -1,8 +1,6 @@
 " ctnfig file for Neovim
 filetype indent plugin off
-if &compatible
-  set nocompatible
-endif
+set nocompatible
 
 let configDir='~/.config/nvim'
 
@@ -465,6 +463,20 @@ let g:wakatime_PythonBinary = '/usr/bin/python'
 " Or map each action separately
 " nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 " nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+
+let g:copy_format = 0
+function! CopyToggle()
+  if g:copy_format == 0
+    IndentLinesToggle
+    set nonumber
+    let g:copy_format = 1
+  else
+    IndentLinesToggle
+    set number
+    let g:copy_format = 0
+  endif
+endfunction
+command! CopyToggle call CopyToggle()
 
 syntax enable
 filetype indent plugin on

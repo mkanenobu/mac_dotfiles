@@ -96,6 +96,9 @@ repo = 'hail2u/vim-css3-syntax'
 [[plugins]]
 repo = 'Olical/vim-scheme'
 
+[[plugins]]
+repo = 'elzr/vim-json'
+
 # [[plugins]]
 # repo = 'rust-lang/rust.vim'
 

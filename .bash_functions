@@ -9,13 +9,12 @@ bunexec() {
   rerun "bundle exec ${1}"
 }
 
-# Git
-gl(){
-  if type "tig" >/dev/null 2>&1 ;then
-    tig
-  else
-    git log
+dash() {
+  query="${1}"
+  if [ "$#" -gt 1 ]; then
+    query="${1}:${2}"
   fi
+  open "dash://${query}"
 }
 
 # Docker
