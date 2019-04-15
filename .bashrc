@@ -175,7 +175,6 @@ alias dclog='docker-compose logs'
 # Git
 alias g='git'
 alias ga='git add'
-alias gc='git commit'
 alias gcm='git commit -m'
 alias gl='git lg'
 alias gs='git status'

@@ -257,9 +257,8 @@ let g:deoplete#enable_refresh_always = 0
 let g:deoplete#file#enable_buffer_path = 1
 let g:deoplete#max_list = 30
 
-" call deoplete#custom#source('LanguageClient',
-"   \ 'min_pattern_length',
-"   \ 2)
+let g:deoplete#ignore_sources = {}
+let g:deoplete#ignore_sources.ocaml = ['buffer', 'around', 'member', 'tag']
 
 "set completeopt+=noinsert
 let g:tern_request_timeout = 1
@@ -365,9 +364,15 @@ map <Space>n :NERDTreeToggle<CR>
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " vim-Autopair
+let g:AutoPairsMapBS = 1
+let g:AutoPairs = {'(':')', '[':']', '{':'}', '"""':'"""', '`': '`'}
 autocmd FileType forth let g:AutoPairs = {'(':')',  '{':'}', '`':'`', 'T{':'}T'}
-autocmd FileType ruby let g:AutoPairs = {'`': '`', '"': '"', '{': '}', '''': '''', '(': ')', '[': ']', '|':'|'}
-autocmd FileType rust let g:AutoPairs = {'`': '`', '"': '"', '{': '}', '(': ')', '[': ']', '|':'|'}
+autocmd FileType ruby let b:AutoPairs = AutoPairsDefine({"|": "|"})
+autocmd FileType rust let b:AutoPairs = AutoPairsDefine({"|": "|"})
+autocmd FileType nim let b:AutoPairs = AutoPairsDefine({'{.': '.}'})
+autocmd FileType ocaml let b:AutoPairs = AutoPairsDefine({
+  \ '(*': '*)', '(**':'**)', 'begin':'end',
+\})
 
 " nvim-nim
 " disable key config
@@ -414,6 +419,7 @@ let g:ale_fixers = {
   \ 'javascript': ['prettier'],
   \ 'typescript': ['prettier'],
   \ 'rust': ['rustfmt'],
+  \ 'ocaml': ['ocp-indent'],
 \ }
   " \ 'python': ['autopep8', 'isort'],
 
@@ -421,10 +427,13 @@ nmap <C-j> <Plug>(ale_next_wrap)
 nmap <C-k> <Plug>(ale_previous_wrap)
 nnoremap <C-e><C-r> :lopen<CR>
 
-" ocaml
-let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-execute "set rtp+=" . g:opamshare . "/merlin/vim"
-execute 'set rtp^=' . g:opamshare . '/ocp-indent/vim'
+" OCaml
+if executable('opam')
+  let g:opam_share = substitute(system('opam config var share'),'\n$','','''')
+  execute "set rtp+=" . g:opam_share . "/merlin/vim"
+  execute 'set rtp^=' . g:opam_share . '/ocp-indent/vim'
+  execute 'set rtp+=' . g:opam_share . '/ocp-index/vim'
+endif
 
 " Autopair
 let g:AutoPairsFlyMode = 0
@@ -464,8 +473,11 @@ let g:wakatime_PythonBinary = '/usr/bin/python'
 " nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 " nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 
+" Dash
+nnoremap <silent> <Space>s :Dash <CR>
+
 let g:copy_format = 0
-function! CopyToggle()
+function! CopyFormatToggle()
   if g:copy_format == 0
     IndentLinesToggle
     set nonumber
@@ -476,7 +488,7 @@ function! CopyToggle()
     let g:copy_format = 0
   endif
 endfunction
-command! CopyToggle call CopyToggle()
+command! CopyToggle call CopyFormatToggle()
 
 syntax enable
 filetype indent plugin on

@@ -1,8 +1,8 @@
 # dein.toml
 
-[[plugins]]
-repo = 'Shougo/vimproc.vim'
-build = 'make'
+# [[plugins]]
+# repo = 'Shougo/vimproc.vim'
+# build = 'make'
 
 # colorscheme
 [[plugins]]
@@ -10,20 +10,24 @@ repo = 'tomasr/molokai'
 
 ### Utils
 
+# [[plugins]]
+# repo = 'w0rp/ale'
 [[plugins]]
-repo = 'w0rp/ale'
+repo = 'mkanenobu/ale'
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
+merged = 0
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 
-# [[plugins]]
-# repo = 'scrooloose/nerdtree'
+[[plugins]]
+repo = 'scrooloose/nerdtree'
 
 [[plugins]]
 repo = 'mkanenobu/emmet-vim'
+on_ft = ['html', 'css', 'scss']
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
@@ -33,6 +37,9 @@ repo = 'tomtom/tcomment_vim'
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
+
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
 
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'
@@ -68,7 +75,7 @@ repo = 'junegunn/fzf.vim'
 depends = 'fzf'
 
 [[plugins]]
-repo = 'tpope/vim-surround'
+repo = 'rizzatti/dash.vim'
 
 # [[plugins]]
 # repo = 'mkanenobu/foolproof.vim'
@@ -76,6 +83,7 @@ repo = 'tpope/vim-surround'
 ### Language support
 [[plugins]]
 repo = 'mkanenobu/forth.vim'
+on_ft = 'forth'
 
 [[plugins]]
 repo = 'mkanenobu/nvim-nim'
@@ -83,32 +91,36 @@ on_ft = 'nim'
 
 [[plugins]]
 repo = 'boeckmann/vim-freepascal'
+on_ft = ['freepascal', 'pascal']
 
 [[plugins]]
 repo = 'zchee/deoplete-jedi'
-
-[[plugins]]
-repo = 'pangloss/vim-javascript'
-
-[[plugins]]
-repo = 'hail2u/vim-css3-syntax'
-
-[[plugins]]
-repo = 'Olical/vim-scheme'
+on_ft = 'python'
 
 [[plugins]]
 repo = 'elzr/vim-json'
+on_ft = 'json'
 
 # [[plugins]]
 # repo = 'rust-lang/rust.vim'
+# on_ft = 'rust'
 
 # Deoplete sources
 [[plugins]]
 repo = 'Shougo/neco-vim'
+on_ft = 'vim'
 
 [[plugins]]
 repo = 'Shougo/neco-syntax'
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'sebastianmarkow/deoplete-rust'
+on_ft = 'rust'
+
+[[plugins]]
+repo = 'copy/deoplete-ocaml'
+on_ft = 'ocaml'
 
