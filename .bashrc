@@ -106,7 +106,7 @@ _exists() {
 }
 
 ## User aliases
-if _exists "nvim" ; then
+if _exists "nvim"; then
     alias vi='nvim'
     alias vim='nvim'
     alias n='nvim'
@@ -118,32 +118,28 @@ alias mkdir='mkdir -p'
 alias nvr='vim ~/.config/nvim/init.vim'
 alias dein='vim ~/.config/nvim/dein/.dein.toml'
 alias deinlazy='vim ~/.config/nvim/dein/.dein_lazy.toml'
-alias sbr='source ~/.bash_profile'
+alias sbp='source ~/.bash_profile'
+alias sbr='source ~/.bashrc'
 alias sbf='source ~/.bash_functions'
 alias rename='rename -v'
-if _exists "icdiff" ; then
+if _exists "icdiff"; then
     alias diff='icdiff -U 1 --line-number'
 fi
-if _exists "bat" ; then
+if _exists "bat"; then
     alias cat='bat'
 fi
-alias opn='open'
 alias ssh-pubkeygen='ssh-keygen -yf'
-alias op='open'
 alias fd='fd -H'
 alias psfind='ps aux | fzf'
 alias lame='lame -b 192'
 alias vimdiff='nvim -d'
 
 # Shell utils
-alias duc='du -d 1 -h | sort -h'
+alias duc='du -d 1 -ah | sort -h'
 alias wcj='wc -m'
 alias mv='mv -i'
 alias cp='cp -i'
 alias fzf='fzf --reverse'
-alias cd..='cd ../'
-alias log='tail -f'
-alias z='source ~/.local/tools/mv2file.bash'
 
 # languages
 alias py='python3'
