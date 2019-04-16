@@ -178,6 +178,15 @@ let g:user_emmet_settings = {
   \ },
 \ }
 
+" OCaml
+let g:opam_share = substitute(system('opam config var share'),'\n$','','''')
+let g:merlin_completion_arg_type = "always"
+
+" ocaml
+augroup OCaml_ide
+  autocmd FileType ocaml nnoremap <Space>t :MerlinTypeOf <CR>
+  autocmd FileType ocaml nnoremap <C-]> :MerlinLocate <CR>
+augroup END
 
 " :W = save with root permission
 command -nargs=0 -complete=augroup -bang W w !sudo tee % > /dev/null
@@ -208,6 +217,7 @@ if dein#load_state(s:dein_dir)
   " TOML を読み込み、キャッシュしておく
   call dein#load_toml(s:toml,    {'lazy': 0})
   call dein#load_toml(s:lazy_toml, {'lazy': 1})
+  call dein#add(g:opam_share . '/merlin/vim', {'lazy': 1, 'on_ft': 'ocaml', 'on_event': 'InsertEnter'})
 
   " 設定終了
   call dein#end()
@@ -343,8 +353,8 @@ let g:quickrun_config.rust = {
   \ 'cmdopt': '-A dead_code',
 \}
 
-let g:quickrun_config.racket = {
-  \ 'command': 'racket -r',
+let g:quickrun_config.ocaml = {
+  \ 'command': 'ocaml',
 \}
 
 set splitbelow
