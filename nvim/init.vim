@@ -191,6 +191,16 @@ augroup END
 " :W = save with root permission
 command -nargs=0 -complete=augroup -bang W w !sudo tee % > /dev/null
 
+" OCaml
+let g:opam_share = substitute(system('opam config var share'),'\n$','','''')
+let g:merlin_completion_arg_type = "always"
+
+" ocaml
+augroup OCaml_ide
+  autocmd FileType ocaml nnoremap <Space>t :MerlinTypeOf <CR>
+  autocmd FileType ocaml nnoremap <C-]> :MerlinLocate <CR>
+augroup END
+
 " dein
 let s:dein_dir = expand('~/.cache/dein')
 " dein.vim 本体
@@ -354,7 +364,10 @@ let g:quickrun_config.rust = {
 \}
 
 let g:quickrun_config.ocaml = {
-  \ 'command': 'ocaml',
+  \ 'command': 'obrun',
+  \ 'exec': ['%c %o %s'],
+  \ 'cmdopt': '-quiet',
+  \ 'tempfile': '%{tempname()}.ml',
 \}
 
 set splitbelow
@@ -381,7 +394,7 @@ autocmd FileType ruby let b:AutoPairs = AutoPairsDefine({"|": "|"})
 autocmd FileType rust let b:AutoPairs = AutoPairsDefine({"|": "|"})
 autocmd FileType nim let b:AutoPairs = AutoPairsDefine({'{.': '.}'})
 autocmd FileType ocaml let b:AutoPairs = AutoPairsDefine({
-  \ '(*': '*)', '(**':'**)', 'begin':'end',
+  \ '(*': '*)', '(**':'**)', '[|': '|]',
 \})
 
 " nvim-nim
@@ -436,14 +449,6 @@ let g:ale_fixers = {
 nmap <C-j> <Plug>(ale_next_wrap)
 nmap <C-k> <Plug>(ale_previous_wrap)
 nnoremap <C-e><C-r> :lopen<CR>
-
-" OCaml
-if executable('opam')
-  let g:opam_share = substitute(system('opam config var share'),'\n$','','''')
-  execute "set rtp+=" . g:opam_share . "/merlin/vim"
-  execute 'set rtp^=' . g:opam_share . '/ocp-indent/vim'
-  execute 'set rtp+=' . g:opam_share . '/ocp-index/vim'
-endif
 
 " Autopair
 let g:AutoPairsFlyMode = 0

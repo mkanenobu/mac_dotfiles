@@ -22,8 +22,8 @@ merged = 0
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 
-[[plugins]]
-repo = 'scrooloose/nerdtree'
+# [[plugins]]
+# repo = 'scrooloose/nerdtree'
 
 [[plugins]]
 repo = 'mkanenobu/emmet-vim'
