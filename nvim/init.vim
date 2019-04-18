@@ -154,6 +154,8 @@ nnoremap <S-M-l> :vsplit<CR>
 vnoremap { (
 vnoremap } )
 
+command! Z qa!
+
 autocmd filetype qf nmap <buffer> <silent> q :q<CR>
 
 if has('mac')
