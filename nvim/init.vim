@@ -154,9 +154,13 @@ nnoremap <S-M-l> :vsplit<CR>
 vnoremap { (
 vnoremap } )
 
-command! Z qa!
+nnoremap <C-j> }
+nnoremap <C-k> {
 
-autocmd filetype qf nmap <buffer> <silent> q :q<CR>
+command! Z :qa!
+
+" close on q
+autocmd FileType qf,help nmap <buffer> <silent> q :q<CR>
 
 if has('mac')
   nnoremap <silent> <Space>l :silent !chrome-tab-reload-mac<CR><CR>
@@ -182,26 +186,19 @@ let g:user_emmet_settings = {
 
 " OCaml
 let g:opam_share = substitute(system('opam config var share'),'\n$','','''')
-let g:merlin_completion_arg_type = "always"
+let g:merlin_completion_arg_type = "never"
+let g:merlin_completion_dwim = 0
+
 
 " ocaml
 augroup OCaml_ide
   autocmd FileType ocaml nnoremap <Space>t :MerlinTypeOf <CR>
+  autocmd FileType ocaml vnoremap <Space>t :MerlinTypeOfSel <CR>
   autocmd FileType ocaml nnoremap <C-]> :MerlinLocate <CR>
 augroup END
 
 " :W = save with root permission
 command -nargs=0 -complete=augroup -bang W w !sudo tee % > /dev/null
-
-" OCaml
-let g:opam_share = substitute(system('opam config var share'),'\n$','','''')
-let g:merlin_completion_arg_type = "always"
-
-" ocaml
-augroup OCaml_ide
-  autocmd FileType ocaml nnoremap <Space>t :MerlinTypeOf <CR>
-  autocmd FileType ocaml nnoremap <C-]> :MerlinLocate <CR>
-augroup END
 
 " dein
 let s:dein_dir = expand('~/.cache/dein')
@@ -448,8 +445,8 @@ let g:ale_fixers = {
 \ }
   " \ 'python': ['autopep8', 'isort'],
 
-nmap <C-j> <Plug>(ale_next_wrap)
-nmap <C-k> <Plug>(ale_previous_wrap)
+" nmap <C-j> <Plug>(ale_next_wrap)
+" nmap <C-k> <Plug>(ale_previous_wrap)
 nnoremap <C-e><C-r> :lopen<CR>
 
 " Autopair

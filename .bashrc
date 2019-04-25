@@ -114,6 +114,7 @@ if _exists "nvim"; then
     alias vim='nvim'
     alias n='nvim'
 fi
+alias e='emacs-26.2'
 alias br='vim ~/.bashrc'
 alias bp='vim ~/.bash_profile'
 alias bf='vim ~/.bash_functions'
