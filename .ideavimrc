@@ -1,0 +1,40 @@
+""" IdeaVimrc
+
+set incsearch
+set ignorecase
+set smartcase
+
+set hlsearch
+set cmdheight=2
+
+set startofline=2
+set showcmd
+
+set display=lastline
+
+
+nnoremap <S-h> ^
+nnoremap <S-l> $
+vnoremap <S-h> ^
+vnoremap <S-l> $
+
+nnoremap gj j
+nnoremap gk k
+nnoremap j gj
+nnoremap k gk
+vnoremap gj j
+vnoremap gk k
+vnoremap j gj
+vnoremap k gk
+
+nnoremap m %
+nnoremap % m
+
+nnoremap J }
+nnoremap K {
+
+nnoremap + <C-a>
+nnoremap - <C-x>
+
+nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
+

@@ -125,3 +125,6 @@ on_ft = 'rust'
 repo = 'copy/deoplete-ocaml'
 on_ft = 'ocaml'
 
+[[plugins]]
+repo = 'tbodt/deoplete-tabnine'
+build = './install.sh'
