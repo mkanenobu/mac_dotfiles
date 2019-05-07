@@ -22,6 +22,9 @@ merged = 0
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
 # [[plugins]]
 # repo = 'scrooloose/nerdtree'
 

@@ -36,5 +36,6 @@ nnoremap K {
 nnoremap + <C-a>
 nnoremap - <C-x>
 
-nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
+nnoremap / :<C-u>action Find<CR>
+nnoremap <C-r> :redo
 
