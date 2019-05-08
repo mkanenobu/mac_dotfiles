@@ -4,13 +4,20 @@ set incsearch
 set ignorecase
 set smartcase
 
+set incsearch
 set hlsearch
-set cmdheight=2
+nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
 
-set startofline=2
+set laststatus=2
+set cmdheight=2
 set showcmd
 
-set display=lastline
+set cinoptions+=:0
+
+set display=lasttline
+
+" use global clipboard
+set clipboard+=unnamed
 
 
 nnoremap <S-h> ^
@@ -18,24 +25,22 @@ nnoremap <S-l> $
 vnoremap <S-h> ^
 vnoremap <S-l> $
 
-nnoremap gj j
-nnoremap gk k
-nnoremap j gj
-nnoremap k gk
-vnoremap gj j
-vnoremap gk k
-vnoremap j gj
-vnoremap k gk
-
 nnoremap m %
 nnoremap % m
 
-nnoremap J }
-nnoremap K {
+nnoremap <C-w>h :action PreviousTab<CR>
+nnoremap <C-w>l :action NextTab<CR>
 
-nnoremap + <C-a>
-nnoremap - <C-x>
+nnoremap <C-r> :redo<CR>
 
-nnoremap / :<C-u>action Find<CR>
-nnoremap <C-r> :redo
+"
+nnoremap x "_x
+vnoremap x "_x
 
+"
+nnoremap yy "+yy
+vnoremap y "+y
+nnoremap p "+p
+vnoremap p "+p
+nnoremap P "+P
+vnoremap P "+P
