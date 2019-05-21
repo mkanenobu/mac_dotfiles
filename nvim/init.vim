@@ -401,9 +401,9 @@ autocmd FileType ocaml let b:AutoPairs = AutoPairsDefine({
 let g:nvim_nim_enable_default_binds = 0
 " FIXME: 以下3つの変数は、明示的に設定されていない場合、プラグイン内で既定値が設定されるようになっているはずだが効いていない
 " plugin/nim.vim: 98, 103
-let g:nvim_nim_enable_custom_textobjects = 1
-let g:nvim_nim_highlighter_enable = 0
-let g:nvim_nim_highlighter_semantics = []
+" let g:nvim_nim_enable_custom_textobjects = 1
+" let g:nvim_nim_highlighter_enable = 0
+" let g:nvim_nim_highlighter_semantics = []
 
 " fzf
 nnoremap <C-p> :FZFFileList<CR>
@@ -431,19 +431,21 @@ let g:ale_lint_on_enter = 0
 let g:ale_completion_delay = 150
 let g:ale_linters = {
   \ 'css': ['csslint'],
+  \ 'ruby': ['rubocop'],
   \ 'javascript': [],
   \ 'rust': ['rustc'],
+  \ 'python': ['flake8'],
 \}
-  " \ 'python': ['flake8'],
 
 let g:ale_fixers = {
-  \ 'python': ['isort'],
+  \ 'python': ['autopep8', 'isort'],
+  \ 'ruby': ['rubocop'],
   \ 'javascript': ['prettier'],
   \ 'typescript': ['prettier'],
   \ 'rust': ['rustfmt'],
+  \ 'nim': ['isort'],
   \ 'ocaml': ['ocp-indent'],
 \ }
-  " \ 'python': ['autopep8', 'isort'],
 
 " nmap <C-j> <Plug>(ale_next_wrap)
 " nmap <C-k> <Plug>(ale_previous_wrap)

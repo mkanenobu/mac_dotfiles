@@ -12,7 +12,6 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 export XDG_CONFIG_HOME="$HOME/.config"
-#export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$HOME/.nimble/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.nodenv/shims"
