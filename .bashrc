@@ -126,6 +126,7 @@ alias sbp='source ~/.bash_profile'
 alias sbr='source ~/.bashrc'
 alias sbf='source ~/.bash_functions'
 alias rename='rename -v'
+alias x='xonsh'
 if _exists "icdiff"; then
     alias diff='icdiff -U 1 --line-number'
 fi
@@ -145,6 +146,8 @@ alias wcj='wc -m'
 alias mv='mv -i'
 alias cp='cp -i'
 alias fzf='fzf --reverse'
+alias cl='clear'
+alias pv='pv -r >/dev/null'
 
 # languages
 alias py='python3'

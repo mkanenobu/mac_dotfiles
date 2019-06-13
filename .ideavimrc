@@ -25,11 +25,20 @@ nnoremap <S-l> $
 vnoremap <S-h> ^
 vnoremap <S-l> $
 
+nnoremap gj j
+nnoremap gk k
+nnoremap j gj
+nnoremap k gk
+vnoremap gj j
+vnoremap gk k
+vnoremap j gj
+vnoremap k gk
+
 nnoremap m %
 nnoremap % m
 
-nnoremap <C-w>h :action PreviousTab<CR>
-nnoremap <C-w>l :action NextTab<CR>
+nnoremap <C-s>n :action PreviousTab<CR>
+nnoremap <C-s>p :action NextTab<CR>
 
 nnoremap <C-r> :redo<CR>
 

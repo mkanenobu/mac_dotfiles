@@ -399,11 +399,6 @@ autocmd FileType ocaml let b:AutoPairs = AutoPairsDefine({
 " nvim-nim
 " disable key config
 let g:nvim_nim_enable_default_binds = 0
-" FIXME: 以下3つの変数は、明示的に設定されていない場合、プラグイン内で既定値が設定されるようになっているはずだが効いていない
-" plugin/nim.vim: 98, 103
-" let g:nvim_nim_enable_custom_textobjects = 1
-" let g:nvim_nim_highlighter_enable = 0
-" let g:nvim_nim_highlighter_semantics = []
 
 " fzf
 nnoremap <C-p> :FZFFileList<CR>
@@ -430,22 +425,22 @@ let g:ale_completion_enabled = 1
 let g:ale_lint_on_enter = 0
 let g:ale_completion_delay = 150
 let g:ale_linters = {
+  \ 'python': ['flake8'],
   \ 'css': ['csslint'],
   \ 'ruby': ['rubocop'],
   \ 'javascript': [],
   \ 'rust': ['rustc'],
-  \ 'python': ['flake8'],
 \}
 
 let g:ale_fixers = {
   \ 'python': ['autopep8', 'isort'],
-  \ 'ruby': ['rubocop'],
   \ 'javascript': ['prettier'],
   \ 'typescript': ['prettier'],
   \ 'rust': ['rustfmt'],
   \ 'nim': ['isort'],
   \ 'ocaml': ['ocp-indent'],
 \ }
+  " \ 'python': ['isort'],
 
 " nmap <C-j> <Plug>(ale_next_wrap)
 " nmap <C-k> <Plug>(ale_previous_wrap)
@@ -468,27 +463,6 @@ vmap <C-l> <Plug>(EasyAlign)
 " wakatime
 let g:wakatime_PythonBinary = '/usr/bin/python'
 
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-"xmap ga <Plug>(EasyAlign)
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-"nmap ga <Plug>(EasyAlign)
-
-" lsp
-" let g:lsp_signs_enabled = 1
-" let g:lsp_diagnostics_echo_cursor = 1
-" let g:LanguageClient_devel = 1
-" let g:LanguageClient_loggingLevel = 'DEBUG'
-" let g:LanguageClient_serverCommands = {
-"   \ 'pascal': [],
-"   \ 'python': ['pyls'],
-"   \ 'php': ['php', '-l'],
-" \}
-
-" nnoremap <F8> :call LanguageClient_contextMenu()<CR>
-" Or map each action separately
-" nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-" nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-
 " Dash
 nnoremap <silent> <Space>s :Dash <CR>
 
@@ -505,6 +479,12 @@ function! CopyFormatToggle()
   endif
 endfunction
 command! CopyToggle call CopyFormatToggle()
+
+" word count
+function! Wc()
+  :exec "!wc -m %"
+endfunction
+command! Wc call Wc()
 
 syntax enable
 filetype indent plugin on

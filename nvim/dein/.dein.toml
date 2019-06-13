@@ -23,6 +23,9 @@ repo = 'Shougo/denite.nvim'
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
+[[plugins]]
+repo = 'wincent/ferret'
+
 # [[plugins]]
 # repo = 'scrooloose/nerdtree'
 
@@ -101,7 +104,6 @@ on_ft = 'python'
 [[plugins]]
 repo = 'elzr/vim-json'
 on_ft = 'json'
-
 
 # [[plugins]]
 # repo = 'rust-lang/rust.vim'
