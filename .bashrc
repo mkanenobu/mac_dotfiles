@@ -126,7 +126,7 @@ alias sbp='source ~/.bash_profile'
 alias sbr='source ~/.bashrc'
 alias sbf='source ~/.bash_functions'
 alias rename='rename -v'
-alias x='xonsh'
+alias xon='xonsh'
 if _exists "icdiff"; then
     alias diff='icdiff -U 1 --line-number'
 fi
@@ -147,7 +147,7 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias fzf='fzf --reverse'
 alias cl='clear'
-alias pv='pv -r >/dev/null'
+alias mpv='mpv --volume=70'
 
 # languages
 alias py='python3'
@@ -202,7 +202,7 @@ alias .s='ls'
 alias claer="clear"
 alias im='vim'
 
-#shopt -s autocd
+# shopt -s autocd
 set -o emacs
 # リダイレクトによる上書き禁止
 # >|を用いればリダイレクトできる
@@ -221,5 +221,3 @@ fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 [ -f ~/.local/bin/git-prompt.sh ] && source ~/.local/bin/git-prompt.sh
-eval $(opam env)
-

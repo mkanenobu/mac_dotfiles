@@ -1,17 +1,35 @@
 # Xonsh setting file
 
-$EDITOR = '/usr/local/bin/nvim'
-$VI_MODE = False
-$CASE_SENSITIVE_COMPLETIONS = False
-$HISTCONTROL = "ignoredups"
-$AUTO_CD = True
-
-# prompt
+# Prompt
 $PROMPT = '{INTENSE_GREEN}{user}:{INTENSE_BLUE}{cwd_base}{NO_COLOR}$ '
 # if _.rtn:
 #   $PROMPT = '{INTENSE_GREEN}{user}:{INTENSE_BLUE}{cwd_base}{INTENSE_RED}$ {NO_COLOR}'
 
-# aliases
+# History
+$HISTCONTROL = "ignoredups, ignoreerr"
+
+# Completions
+# $UPDATE_COMPLETIONS_ON_KEYPRESS = True
+$COMPLETION_CONFIRM = False
+$CASE_SENSITIVE_COMPLETIONS = False
+$COMPLETION_QUERY_LIMIT = 20
+$COMPLETIONS_MENU_ROWS = 5
+$SUBSEQUENCE_PATH_COMPLETION = True
+$FUZZY_PATH_COMPLETION = False
+$AUTO_SUGGEST = True
+# BASHの補完機能をそのまま利用するための
+# defaultでは以下、tupleを指定する
+$BASH_COMPLETIONS = ('/usr/share/bash-completion/bash_completion', )
+
+$SUGGEST_COMMANDS = True
+$SUGGEST_MAX_NUM = 5
+$SUGGEST_THRESHOLD = 3
+
+$XONSH_CACHE_EVERYTHING = False
+
+
+
+# Aliases
 aliases["ls"] = 'exa'
 aliases["la"] = 'ls -a'
 aliases["ll"] = 'ls -lha'
@@ -45,8 +63,8 @@ aliases["mv"] = 'mv -i'
 aliases["cp"] = 'cp -i'
 aliases["fzf"] = 'fzf --reverse'
 aliases["cl"] = 'clear'
-aliases["pv"] = 'pv -r >/dev/null'
 aliases["py"] = 'python3'
+aliases["bpy"] = 'bpython'
 aliases["nimc"] = 'nim c'
 aliases["nimcd"] = 'nim c -d:release'
 aliases["nimcr"] = 'nim c -r --verbosity:0'
@@ -77,7 +95,7 @@ aliases["gd"] = 'git diff'
 aliases["gdt"] = 'git difftool'
 aliases["gcl"] = 'git clone'
 aliases["gg"] = 'git log --graph --pretty=oneline'
-aliases["gc"] = 'git checkout'
+aliases["gch"] = 'git checkout'
 aliases["gb"] = 'git branch'
 aliases["gbrm"] = 'git brand --delete'
 aliases["gf"] = 'git fetch'
@@ -90,3 +108,34 @@ aliases["a"] = ':'
 aliases[".s"] = 'ls'
 aliases["claer"] = "clear"
 aliases["im"] = 'vim'
+
+# 履歴をpecoに流す
+# https://qiita.com/riktor/items/4a90b4e125cd091a9d07
+# pecoのinstall : https://qiita.com/ngyuki/items/94a7e638655d9910971b
+import json
+from collections import OrderedDict
+from operator import itemgetter
+def get_history(session_history=None, return_list=False):
+    hist_dir = __xonsh_env__['XONSH_DATA_DIR']
+    files = [ os.path.join(hist_dir,f) for f in os.listdir(hist_dir)
+              if f.startswith('xonsh-') and f.endswith('.json') ]
+    file_hist = [ json.load(open(f))['data']['cmds'] for f in files ]
+    cmds = [ ( c['inp'].replace('\n', ''), c['ts'][0] )
+                 for cmds in file_hist for c in cmds if c]
+    cmds.sort(key=itemgetter(1))
+    cmds = [ c[0] for c in cmds[::-1] ]
+    if session_history:
+        cmds.extend(session_history)
+    # dedupe
+    zip_with_dummy = list(zip(cmds, [0] * len(cmds)))[::-1]
+    cmds = list(OrderedDict(zip_with_dummy).keys())[::-1]
+    if return_list:
+        return cmds
+    else:
+        return '\n'.join(cmds)
+
+# gc
+import gc
+def _gc(args, stdin=None):
+    gc.collect()
+aliases['gc'] = _gc

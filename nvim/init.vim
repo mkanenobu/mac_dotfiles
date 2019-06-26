@@ -1,6 +1,5 @@
 " ctnfig file for Neovim
 filetype indent plugin off
-set nocompatible
 
 let configDir='~/.config/nvim'
 
@@ -14,7 +13,6 @@ set shiftwidth=2
 set softtabstop=2
 set smarttab
 set autoindent
-set smartindent
 set showbreak=>>>\ 
 autocmd filetype quickrun setlocal showbreak=""
 set list
@@ -23,6 +21,15 @@ set nofixendofline
 set listchars=tab:>-,trail:-,extends:>
 
 set helplang=ja,en
+
+" set filetype by extension
+augroup Set_filetype
+  autocmd!
+  autocmd BufNewFile,BufReadPost,FileReadPost *.vader set filetype=vim
+  autocmd BufNewFile,BufReadPost,FileReadPost *.fsx set filetype=fsharp
+  autocmd BufNewFile,BufReadPost,FileReadPost *.rkt set filetype=racket
+  autocmd BufNewFile,BufReadPost,FileReadPost *.jl set filetype=julia
+augroup ENDndif
 
 " indent widh
 augroup Indent
@@ -40,6 +47,7 @@ augroup Indent
   autocmd filetype bash setlocal softtabstop=2 shiftwidth=2
   autocmd filetype c setlocal softtabstop=3 shiftwidth=3 noexpandtab
   autocmd filetype rust setlocal softtabstop=4 shiftwidth=4
+  autocmd filetype groovy setlocal softtabstop=4 shiftwidth=4
 augroup END
 
 " shebang auto insert
@@ -371,10 +379,6 @@ let g:quickrun_config.ocaml = {
 
 set splitbelow
 
-if "%:e" == "rkt"
-  set filetype=racket
-endif
-
 autocmd FileType markdown map <Space>r :!open -a typora "%:p" <CR><CR>
 autocmd FileType html map <Space>r :!open -a "Google Chrome" "%:p" <CR><CR>
 " autocmd FileType scheme map <Space>r :normal ggcpG<cr>`s
@@ -431,6 +435,7 @@ let g:ale_linters = {
   \ 'javascript': [],
   \ 'rust': ['rustc'],
 \}
+  " \ 'python': [],
 
 let g:ale_fixers = {
   \ 'python': ['autopep8', 'isort'],

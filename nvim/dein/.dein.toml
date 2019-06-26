@@ -94,6 +94,10 @@ repo = 'mkanenobu/nvim-nim'
 on_ft = 'nim'
 
 [[plugins]]
+repo = 'JuliaEditorSupport/julia-vim'
+on_ft = 'julia'
+
+[[plugins]]
 repo = 'boeckmann/vim-freepascal'
 on_ft = ['freepascal', 'pascal']
 

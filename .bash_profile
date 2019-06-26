@@ -12,6 +12,7 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 export XDG_CONFIG_HOME="$HOME/.config"
+export PATH="$PATH:$HOME/.choosenim/toolchains/nim-0.20.0/bin"
 export PATH="$PATH:$HOME/.nimble/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.nodenv/shims"
@@ -24,6 +25,7 @@ export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 eval "$(nodenv init -)"
 eval "$(rbenv init -)"
 eval "$(pyenv init -)"
+eval "$(opam env)"
 
 export EDITOR=nvim
 # nvim in tmux
