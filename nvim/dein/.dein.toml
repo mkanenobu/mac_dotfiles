@@ -31,7 +31,7 @@ repo = 'wincent/ferret'
 
 [[plugins]]
 repo = 'mkanenobu/emmet-vim'
-on_ft = ['html', 'css', 'scss']
+on_ft = ['html', 'css', 'scss', 'jsx']
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
@@ -108,6 +108,9 @@ on_ft = 'python'
 [[plugins]]
 repo = 'elzr/vim-json'
 on_ft = 'json'
+
+[[plugins]]
+repo = 'mxw/vim-jsx'
 
 # [[plugins]]
 # repo = 'rust-lang/rust.vim'

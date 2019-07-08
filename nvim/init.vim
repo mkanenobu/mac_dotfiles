@@ -29,6 +29,7 @@ augroup Set_filetype
   autocmd BufNewFile,BufReadPost,FileReadPost *.fsx set filetype=fsharp
   autocmd BufNewFile,BufReadPost,FileReadPost *.rkt set filetype=racket
   autocmd BufNewFile,BufReadPost,FileReadPost *.jl set filetype=julia
+  autocmd BufNewFile,BufReadPost,FileReadPost *.nims set filetype=nim
 augroup ENDndif
 
 " indent widh
@@ -442,7 +443,6 @@ let g:ale_fixers = {
   \ 'javascript': ['prettier'],
   \ 'typescript': ['prettier'],
   \ 'rust': ['rustfmt'],
-  \ 'nim': ['isort'],
   \ 'ocaml': ['ocp-indent'],
 \ }
   " \ 'python': ['isort'],

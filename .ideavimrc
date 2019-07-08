@@ -17,7 +17,7 @@ set cinoptions+=:0
 set display=lasttline
 
 " use global clipboard
-set clipboard+=unnamed
+set clipboard=unnamed
 
 
 nnoremap <S-h> ^
