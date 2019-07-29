@@ -61,6 +61,7 @@ augroup Shebang
   autocmd BufNewFile *.bash 0put =\"#!/usr/bin/env bash\" | 2
   autocmd BufNewFile *.pas 0put =\"program \" .  expand(\"%:r\") . \";\" | 2
   autocmd BufNewFile *.\(cc\|hh\) 0put =\"//\<nl>// \".expand(\"<afile>:t\").\" -- \<nl>//\<nl>\"|2|start!
+  autocmd BufNewFile *.uml 0put =\"@startuml\<nl>\<nl>\<nl>@enduml\"| 2
 augroup END
 
 set nobackup
@@ -93,8 +94,8 @@ nnoremap <silent> <Esc><Esc> :<C-u>set nohlsearch!<CR>
 set mouse=""
 set ruler
 set number
+set wildmode=longest,list
 set wildmenu
-set wildmode=list:full
 " set wildoptions+=pum
 " set pumblend=20
 " set cursorline
@@ -382,6 +383,7 @@ set splitbelow
 
 autocmd FileType markdown map <Space>r :!open -a typora "%:p" <CR><CR>
 autocmd FileType html map <Space>r :!open -a "Google Chrome" "%:p" <CR><CR>
+autocmd FileType plantuml map <Space>r :!open -a "Google Chrome" "%:p" <CR><CR>
 " autocmd FileType scheme map <Space>r :normal ggcpG<cr>`s
 
 " NerdTree
@@ -400,6 +402,7 @@ autocmd FileType nim let b:AutoPairs = AutoPairsDefine({'{.': '.}'})
 autocmd FileType ocaml let b:AutoPairs = AutoPairsDefine({
   \ '(*': '*)', '(**':'**)', '[|': '|]',
 \})
+autocmd FileType plantuml let b:AutoPairs = {}
 
 " nvim-nim
 " disable key config
@@ -430,22 +433,23 @@ let g:ale_completion_enabled = 1
 let g:ale_lint_on_enter = 0
 let g:ale_completion_delay = 150
 let g:ale_linters = {
-  \ 'python': ['flake8'],
+  \ 'python': ['mypy'],
   \ 'css': ['csslint'],
   \ 'ruby': ['rubocop'],
   \ 'javascript': [],
   \ 'rust': ['rustc'],
 \}
-  " \ 'python': [],
+  " \ 'python': ['flake8'],
 
 let g:ale_fixers = {
-  \ 'python': ['autopep8', 'isort'],
+  \ 'python': ['isort'],
+  \ 'ruby': ['rubocop'],
   \ 'javascript': ['prettier'],
   \ 'typescript': ['prettier'],
   \ 'rust': ['rustfmt'],
   \ 'ocaml': ['ocp-indent'],
 \ }
-  " \ 'python': ['isort'],
+  " \ 'python': ['autopep8', 'isort'],
 
 " nmap <C-j> <Plug>(ale_next_wrap)
 " nmap <C-k> <Plug>(ale_previous_wrap)

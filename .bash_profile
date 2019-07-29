@@ -20,6 +20,7 @@ export PATH="$PATH:$HOME/.rbenv/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/tools"
 export PATH="$PATH:$HOME/.local/forDevelop"
+export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 
 eval "$(nodenv init -)"
