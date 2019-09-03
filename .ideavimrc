@@ -37,19 +37,21 @@ vnoremap k gk
 nnoremap m %
 nnoremap % m
 
-nnoremap <C-s>n :action PreviousTab<CR>
-nnoremap <C-s>p :action NextTab<CR>
+nnoremap <C-S-h> :action PreviousTab<CR>
+nnoremap <C-S-l> :action NextTab<CR>
+
+nnoremap <C-/><C-/> :action CommentByLineComment<CR>
 
 nnoremap <C-r> :redo<CR>
 
 "
-nnoremap x "_x
-vnoremap x "_x
-
-"
-nnoremap yy "+yy
-vnoremap y "+y
-nnoremap p "+p
-vnoremap p "+p
-nnoremap P "+P
-vnoremap P "+P
+" nnoremap x "_x
+" vnoremap x "_x
+" 
+" "
+" nnoremap yy "+yy
+" vnoremap y "+y
+" nnoremap p "+p
+" vnoremap p "+p
+" nnoremap P "+P
+" vnoremap P "+P

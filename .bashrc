@@ -15,6 +15,8 @@ MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 HISTSIZE=10000
 HISTFILESIZE=10000
 
+HISTCONTROL=ignoredups
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 #shopt -u checkwinsize
@@ -26,37 +28,9 @@ HISTFILESIZE=10000
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# if return error, change prompt color
-# RETURN_CODE='\[$(
-# if [ $? == "0" ]; then
-#     echo -en \e[m\]
-# else
-#     echo -en \e[31m\]
-# fi; echo -en $\e[m\]; )\]'
-
-# simple
-#PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]'
-
-# without username
-# PS1='\[\033[01;34m\]\W\[\033[00m\]'
-
 if [ -z $TMUX ]; then
     PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]$ '
 else
-    # Display branch name (not display if master master)
-    # BRANCH_NAME_RETURN_CODE='\[$(
-    # return_code=$?
-    # if [ -n "$(__git_ps1)" ] && [ "$(__git_ps1)" != " (master)" ]; then
-    #     branch_name="$(__git_ps1)"
-    #     echo -en \e[m\]"${branch_name// /}"
-    # fi
-    #  return code
-    #  if [ "$return_code" == "0" ]; then
-    #     echo -en \e[m\]
-    # else
-    #     echo -en \e[31m\]
-    # fi; echo -en $\e[m\]
-    # )\]'
     RETURN_CODE='\[$(
     if [ $? -eq 0 ]; then
         echo -en \e[m\]
@@ -74,6 +48,7 @@ PS2='>'
 alias ls='exa'
 alias la='ls -a'
 alias ll='ls -lha'
+alias l='ls -lha'
 # if [ "$(which ls)" == "/usr/local/opt/coreutils/libexec/gnubin/ls" ]; then
 #     alias ls='ls --color=auto'
 #     #alias dir='dir --color=auto'
@@ -93,6 +68,18 @@ alias ll='ls -lha'
 # alias ll='ls -alFh'
 # alias la='ls -A'
 # alias l='ls -CF'
+
+# tmux share history
+function share_history {
+  history -a
+  tac ~/.bash_history | awk '!a[$0]++' | tac >| ~/.bash_history.tmp
+  [ -f ~/.bash_history.tmp ] &&
+    mv -f ~/.bash_history{.tmp,} &&
+    history -c &&
+    history -r
+}
+PROMPT_COMMAND='share_history'
+shopt -u histappend
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -148,13 +135,17 @@ alias cp='cp -i'
 alias fzf='fzf --reverse'
 alias cl='clear'
 alias mpv='mpv --volume=70'
+alias ggr='ggr.py'
+if _exists "fuck"; then
+    alias f='fuck'
+fi
 
 # languages
 alias py='python3'
 alias nimc='nim c'
 alias nimcd='nim c -d:release'
 alias nimcr='nim c -r --verbosity:0'
-alias nimi='nim secret'
+alias nimi='rlwrap nim secret'
 alias rc='rustc'
 alias lua='lua5.3'
 alias luac='luac5.3'
@@ -177,14 +168,14 @@ alias dcps='docker-compose ps'
 alias dclog='docker-compose logs'
 
 # Git
-alias g='git'
 alias ga='git add'
 alias gcm='git commit -m'
+alias gcd='git commit -m "$(date)"'
 alias gca='git commit --amend'
 alias gl='git log'
 alias gs='git status'
 alias gd='git diff'
-alias gdt='git difftool'
+alias gdt='git difftool --extcmd="icdiff --line-numbers --unified=3" --no-prompt | less'
 alias gcl='git clone'
 alias gg='git log --graph --pretty=oneline'
 alias gc='git checkout'
@@ -211,6 +202,10 @@ set -C noclobber
 
 if [ -f ~/.bash_functions ];then
     . ~/.bash_functions
+fi
+
+if [ -f ~/.env ]; then
+    . ~/.env
 fi
 
 # stop ctrl-s panic

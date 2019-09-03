@@ -13,11 +13,16 @@ repo = 'morhetz/gruvbox'
 ### Utils
 
 [[plugins]]
-repo = 'w0rp/ale'
+repo = 'dense-analysis/ale'
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 merged = 0
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete.vim'
+merged = 0
+on_ft = 'nim'
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
@@ -32,8 +37,11 @@ repo = 'wincent/ferret'
 # repo = 'scrooloose/nerdtree'
 
 [[plugins]]
-repo = 'mkanenobu/emmet-vim'
-on_ft = ['html', 'css', 'scss', 'jsx']
+repo = 'easymotion/vim-easymotion'
+
+# [[plugins]]
+# repo = 'mkanenobu/emmet-vim'
+# on_ft = ['html', 'css', 'scss', 'jsx']
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
@@ -92,7 +100,8 @@ repo = 'mkanenobu/forth.vim'
 on_ft = 'forth'
 
 [[plugins]]
-repo = 'mkanenobu/nvim-nim'
+# repo = 'mkanenobu/nvim-nim'
+repo = 'alaviss/nim.nvim'
 on_ft = 'nim'
 
 [[plugins]]
@@ -115,10 +124,17 @@ on_ft = 'json'
 repo = 'aklt/plantuml-syntax'
 on_ft = 'plantuml'
 
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = 'typescript'
+
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+on_ft = 'rust'
 
 # [[plugins]]
-# repo = 'rust-lang/rust.vim'
-# on_ft = 'rust'
+repo = 'fatih/vim-go'
+on_ft = 'go'
 
 # Deoplete sources
 [[plugins]]
@@ -138,6 +154,11 @@ on_ft = 'rust'
 [[plugins]]
 repo = 'copy/deoplete-ocaml'
 on_ft = 'ocaml'
+
+# [[plugins]]
+# repo = 'deoplete-plugins/deoplete-go'
+# build = 'make'
+# on_ft = 'go'
 
 [[plugins]]
 repo = 'tbodt/deoplete-tabnine'
