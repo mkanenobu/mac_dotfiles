@@ -49,6 +49,7 @@ augroup Indent
   autocmd filetype c setlocal softtabstop=3 shiftwidth=3 noexpandtab
   autocmd filetype rust setlocal softtabstop=4 shiftwidth=4
   autocmd filetype groovy setlocal softtabstop=4 shiftwidth=4
+  autocmd filetype xml setlocal softtabstop=2 shiftwidth=2 noexpandtab
 augroup END
 
 " shebang auto insert
@@ -448,7 +449,7 @@ let g:ale_completion_delay = 150
 let g:ale_linters = {
   \ 'python': ['mypy'],
   \ 'css': ['csslint'],
-  \ 'javascript': [],
+  \ 'javascript': ['flow'],
   \ 'ruby': ['rubocop'],
   \ 'typescript': ['tslint', 'tsserver'],
   \ 'rust': ['rustc'],
@@ -463,6 +464,7 @@ let g:ale_fixers = {
   \ 'rust': ['rustfmt'],
   \ 'ruby': ['rubocop'],
   \ 'ocaml': ['ocp-indent'],
+  \ 'nim': ['trim_whitespace'],
 \}
   " \ 'python': ['autopep8', 'isort'],
 

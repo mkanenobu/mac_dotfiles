@@ -12,8 +12,8 @@ PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=10000
-HISTFILESIZE=10000
+HISTSIZE=20000
+HISTFILESIZE=20000
 
 HISTCONTROL=ignoredups
 
@@ -100,6 +100,7 @@ if _exists "nvim"; then
     alias vi='nvim'
     alias vim='nvim'
     alias n='nvim'
+    alias ivm='nvim'
 fi
 alias e='emacs-26.2'
 alias br='vim ~/.bashrc'
@@ -193,6 +194,9 @@ alias a=':'
 alias .s='ls'
 alias claer="clear"
 alias im='vim'
+
+# aws
+alias aws-vault-prod='aws-vault exec ih-prod'
 
 # shopt -s autocd
 set -o emacs
