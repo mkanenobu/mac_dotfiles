@@ -30,6 +30,7 @@ augroup Set_filetype
   autocmd BufNewFile,BufReadPost,FileReadPost *.rkt set filetype=racket
   autocmd BufNewFile,BufReadPost,FileReadPost *.jl set filetype=julia
   autocmd BufNewFile,BufReadPost,FileReadPost *.nims set filetype=nim
+  autocmd BufNewFile,BufReadPost,FileReadPost *.k set filetype=k
 augroup ENDndif
 
 " indent widh
@@ -42,7 +43,7 @@ augroup Indent
   autocmd filetype markdown setlocal softtabstop=2 shiftwidth=2
   autocmd filetype vim setlocal softtabstop=2 shiftwidth=2
   autocmd filetype javascript setlocal softtabstop=2 shiftwidth=2
-  autocmd filetype json setlocal softtabstop=2 shiftwidth=2
+  autocmd filetype json setlocal softtabstop=2 shiftwidth=2 conceallevel=0
   autocmd filetype typescript setlocal softtabstop=2 shiftwidth=2
   autocmd filetype sh setlocal softtabstop=2 shiftwidth=2
   autocmd filetype bash setlocal softtabstop=2 shiftwidth=2
@@ -367,6 +368,10 @@ let g:quickrun_config.forth = {
   \ 'exec': 'gforth %s -e bye'
 \}
 
+let g:quickrun_config.javascript = {
+  \ 'exec': 'node %s'
+\}
+
 let g:quickrun_config.typescript = {
   \ 'exec': 'deno %s'
 \}
@@ -388,6 +393,11 @@ let g:quickrun_config.ocaml = {
   \ 'exec': ['%c %o %s'],
   \ 'cmdopt': '-quiet',
   \ 'tempfile': '%{tempname()}.ml',
+\}
+
+let g:quickrun_config.k = {
+  \ 'command': 'k',
+  \ 'exec': '%c %s'
 \}
 
 set splitbelow
@@ -449,7 +459,7 @@ let g:ale_completion_delay = 150
 let g:ale_linters = {
   \ 'python': ['mypy'],
   \ 'css': ['csslint'],
-  \ 'javascript': ['flow'],
+  \ 'javascript': ['flow', 'eslint'],
   \ 'ruby': ['rubocop'],
   \ 'typescript': ['tslint', 'tsserver'],
   \ 'rust': ['rustc'],

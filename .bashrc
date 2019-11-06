@@ -102,7 +102,6 @@ if _exists "nvim"; then
     alias n='nvim'
     alias ivm='nvim'
 fi
-alias e='emacs-26.2'
 alias br='vim ~/.bashrc'
 alias bp='vim ~/.bash_profile'
 alias bf='vim ~/.bash_functions'
@@ -153,6 +152,7 @@ alias luac='luac5.3'
 alias rb='ruby'
 alias buninstall='bundle install'
 alias ocaml='rlwrap ocaml'
+alias k='rlwrap k'
 
 # Docker
 alias docker='docker'
@@ -221,3 +221,4 @@ fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 [ -f ~/.local/bin/git-prompt.sh ] && source ~/.local/bin/git-prompt.sh
+[ -f ~/.env ] && source ~/.env

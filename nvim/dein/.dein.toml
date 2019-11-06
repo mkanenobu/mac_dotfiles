@@ -43,7 +43,7 @@ repo = 'kristijanhusak/vim-carbon-now-sh'
 repo = 'easymotion/vim-easymotion'
 
 # [[plugins]]
-# repo = 'mkanenobu/emmet-vim'
+# repo = 'mattn/emmet-vim'
 # on_ft = ['html', 'css', 'scss', 'jsx']
 
 [[plugins]]
@@ -121,7 +121,6 @@ on_ft = 'python'
 
 [[plugins]]
 repo = 'elzr/vim-json'
-on_ft = 'json'
 
 [[plugins]]
 repo = 'aklt/plantuml-syntax'
