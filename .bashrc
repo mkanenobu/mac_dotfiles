@@ -150,9 +150,10 @@ alias rc='rustc'
 alias lua='lua5.3'
 alias luac='luac5.3'
 alias rb='ruby'
-alias buninstall='bundle install'
+alias be='bundle exec'
 alias ocaml='rlwrap ocaml'
 alias k='rlwrap k'
+alias factor='rlwrap factor'
 
 # Docker
 alias docker='docker'
@@ -194,6 +195,12 @@ alias a=':'
 alias .s='ls'
 alias claer="clear"
 alias im='vim'
+
+# RN
+alias run-ios='react-native run-ios'
+
+# swagger
+alias gen_openapi_yaml='multi-file-swagger index.yml -o yaml >| openapi.yml'
 
 # aws
 alias aws-vault-prod='aws-vault exec ih-prod'

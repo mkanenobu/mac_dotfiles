@@ -31,6 +31,7 @@ augroup Set_filetype
   autocmd BufNewFile,BufReadPost,FileReadPost *.jl set filetype=julia
   autocmd BufNewFile,BufReadPost,FileReadPost *.nims set filetype=nim
   autocmd BufNewFile,BufReadPost,FileReadPost *.k set filetype=k
+  autocmd BufNewFile,BufReadPost,FileReadPost *.factor set filetype=factor
 augroup ENDndif
 
 " indent widh
@@ -400,6 +401,11 @@ let g:quickrun_config.k = {
   \ 'exec': '%c %s'
 \}
 
+let g:quickrun_config.factor = {
+  \ 'command': 'factor',
+  \ 'exec': '%c %s'
+\}
+
 set splitbelow
 
 autocmd FileType markdown map <Space>r :!open -a typora "%:p" <CR><CR>
@@ -469,7 +475,7 @@ let g:ale_linters = {
 
 let g:ale_fixers = {
   \ 'python': ['isort', 'autopep8'],
-  \ 'javascript': ['prettier'],
+  \ 'javascript': [],
   \ 'typescript': ['prettier'],
   \ 'rust': ['rustfmt'],
   \ 'ruby': ['rubocop'],

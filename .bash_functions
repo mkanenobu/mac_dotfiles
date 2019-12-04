@@ -67,3 +67,7 @@ git_remove_from_remote(){
   git rm --cached -r "$@"
 }
 
+gen_flowtype(){
+  exec_path="$(nodenv which swagger-to-flowtype)"
+  ${exec_path} -l --check-required openapi/frontend/openapi.yml -d server/frontend/app/flowtype/flowtype.js
+}

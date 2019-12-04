@@ -104,8 +104,8 @@ on_ft = 'forth'
 
 [[plugins]]
 # repo = 'mkanenobu/nvim-nim'
-# repo = 'alaviss/nim.nvim'
-# on_ft = 'nim'
+repo = 'alaviss/nim.nvim'
+on_ft = 'nim'
 
 [[plugins]]
 repo = 'JuliaEditorSupport/julia-vim'
