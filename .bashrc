@@ -1,6 +1,9 @@
 # .bashrc: executed by bash(1) for non-login shells.
 # vi: set tabstop=4 softtabstop=4 shiftwidth=4 :
 
+# run .bash_profile if exists
+[ -r "$HOME/.bash_profile" ] && . "$HOME/.bash_profile"
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -212,20 +215,23 @@ set -o emacs
 set -C noclobber
 
 if [ -f ~/.bash_functions ];then
-    . ~/.bash_functions
+  . ~/.bash_functions
 fi
 
 if [ -f ~/.env ]; then
-    . ~/.env
+  . ~/.env
 fi
 
 # stop ctrl-s panic
 stty stop undef
 
-if [ -f "$HOME/.config/bash-wakatime.sh" ]; then
-    source "$HOME/.config/bash-wakatime.sh"
-fi
+# if [ -f "$HOME/.config/bash-wakatime.sh" ]; then
+#     source "$HOME/.config/bash-wakatime.sh"
+# fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 [ -f ~/.local/bin/git-prompt.sh ] && source ~/.local/bin/git-prompt.sh
-[ -f ~/.env ] && source ~/.env
+true
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

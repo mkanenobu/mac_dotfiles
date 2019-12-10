@@ -1,33 +1,32 @@
-# if running bash
-if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-    . "$HOME/.bashrc"
-    fi
-fi
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
+# # if running bash
+# if [ -n "$BASH_VERSION" ]; then
+#   # include .bashrc if it exists
+#   if [ -f "$HOME/.bashrc" ]; then
+#   . "$HOME/.bashrc"
+#   fi
+# fi
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="$PATH:$HOME/.nimble/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.nodenv/shims"
 export PATH="$PATH:$HOME/.rbenv/bin"
+export PATH="$PATH:$HOME/.pyenv/bin"
 export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$HOME/.local/tools"
-export PATH="$PATH:$HOME/.local/forDevelop"
+export PATH="$PATH:$HOME/.local/myToolBox"
+export PATH="$PATH:$HOME/.local/for_dev"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
-export PATH="/Applications/factor:$PATH"
 
 eval "$(nodenv init -)"
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)" # now using rvm
 eval "$(pyenv init -)"
 eval "$(opam env)"
-eval "$(thefuck --alias)"
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+  PATH="$HOME/bin:$PATH"
+fi
 
 export EDITOR=nvim
 # nvim in tmux
@@ -74,8 +73,6 @@ export CPPFLAGS="-I/usr/local/opt/openssl/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 
 
-export LUA_PATH='/Users/mitsuru/.luarocks/share/lua/5.3/?.lua;/Users/mitsuru/.luarocks/share/lua/5.3/?/init.lua;/usr/local/share/lua/5.3/?.lua;/usr/local/share/lua/5.3/?/init.lua;/usr/local/Cellar/luarocks/3.1.3/share/lua/5.3/?.lua;/usr/local/lib/lua/5.3/?.lua;/usr/local/lib/lua/5.3/?/init.lua;./?.lua;./?/init.lua'
-export LUA_CPATH='/Users/mitsuru/.luarocks/lib/lua/5.3/?.so;/usr/local/lib/lua/5.3/?.so;/usr/local/lib/lua/5.3/loadall.so;./?.so'
+export PATH="$HOME/.cargo/bin:$PATH"
 
-export PATH="$PATH:$HOME/.local/bin"
-# export PATH='/Users/mitsuru/.luarocks/bin:/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:/Users/mitsuru/.opam/4.08.0/bin:/Users/mitsuru/.pyenv/shims:/Users/mitsuru/.rbenv/shims:/Users/mitsuru/.nodenv/shims:/Users/mitsuru/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/opt/X11/bin:/Applications/Wireshark.app/Contents/MacOS:/Users/mitsuru/.cache/dein/repos/github.com/junegunn/fzf/bin:/Users/mitsuru/.choosenim/toolchains/nim-0.20.0/bin:/Users/mitsuru/.nimble/bin:/Users/mitsuru/.cargo/bin:/Users/mitsuru/.rbenv/bin:/Users/mitsuru/.local/bin:/Users/mitsuru/.local/tools:/Users/mitsuru/.local/forDevelop:/Users/mitsuru/go/bin
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
