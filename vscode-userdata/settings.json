@@ -1,0 +1,122 @@
+{
+  "editor.fontFamily": "\"Cascadia Code\", Monaco, 'Courier New', monospace",
+  "editor.tabSize": 2,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.fontSize": 15,
+  "editor.fontLigatures": true,
+  "editor.suggestSelection": "first",
+  "editor.scrollBeyondLastLine": false,
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "workbench.statusBar.visible": true,
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["H"],
+      "after": ["^"]
+    },
+    {
+      "before": ["L"],
+      "after": ["$"]
+    },
+    {
+      "before": ["j"],
+      "after": ["g", "j"]
+    },
+    {
+      "before": ["k"],
+      "after": ["g", "k"]
+    },
+    {
+      "before": ["<C-p>"],
+      "commands": ["code-runner.run"]
+    },
+    {
+      "before": ["q"],
+      "commands": ["workbench.action.togglePanel"]
+    },
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["code-runner.run"]
+    }
+  ],
+  "vim.insertModeKeyBindings": [],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["H"],
+      "after": ["^"]
+    },
+    {
+      "before": ["L"],
+      "after": ["$"]
+    },
+    {
+      "before": ["j"],
+      "after": ["g", "j"]
+    },
+    {
+      "before": ["k"],
+      "after": ["g", "k"]
+    },
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["code-runner.run"]
+    }
+  ],
+  "vim.hlsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.leader": "<space>",
+  "workbench.colorCustomizations": {
+    "[Some Theme Name]": {
+      "statusBar.background": "#486357",
+      "statusBar.foreground": "#c8e9c5"
+    },
+    "[Some Other Theme Name]": {
+      "statusBar.background": "#385357",
+      "statusBar.foreground": "#d7e9c4"
+    },
+    "statusBar.background": "#414141",
+    "statusBar.debuggingBackground": "#414141",
+    "statusBar.noFolderBackground": "#414141"
+  },
+  "editor.wordWrapColumn": 120,
+  "workbench.colorTheme": "Monokai ST3",
+  "ocaml.lintOnSave": true,
+  "ocaml.useOpamToResolve": true,
+  "ocaml-formatter.profile": "janestreet",
+  "editor.lineHeight": 15,
+  "files.exclude": {
+    "**/_build": true,
+    "**/.idea": true,
+    "**/.metals": true,
+    "**/.vscode": true
+  },
+  "tabnine.disable_line_regex": ["import", "open"],
+  "code-runner.executorMap": {
+    "ocaml": "obrun"
+  },
+  "code-runner.clearPreviousOutput": true,
+  "editor.formatOnSave": true,
+  "[ocaml]": {
+    "editor.defaultFormatter": "badochov.ocaml-formatter"
+  },
+  "[scala]": {
+    "editor.defaultFormatter": "scalameta.metals"
+  },
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.editor.enablePreview": false,
+  "editor.rename.enablePreview": false,
+  "markdown.preview.linkify": false,
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "editor.gotoLocation.multipleTypeDefinitions": "goto",
+  "editor.gotoLocation.multipleDeclarations": "goto",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "java.semanticHighlighting.enabled": true,
+  "java.configuration.checkProjectSettingsExclusions": false,
+  "tabnine.experimentalAutoImports": 0,
+  "editor.wrappingIndent": "indent",
+  "editor.renderWhitespace": "boundary",
+  "editor.formatOnPaste": true,
+  "workbench.editor.closeOnFileDelete": true,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "files.trimTrailingWhitespace": true,
+  "trailing-spaces.trimOnSave": true
+}
