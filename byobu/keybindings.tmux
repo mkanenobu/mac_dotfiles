@@ -12,6 +12,9 @@ bind l select-pane -R
 bind k select-pane -U
 bind j select-pane -D
 
+bind-key C-H select-pane -L
+bind-key C-l select-pane -R
+
 # split pane
 bind - split-window -h
 bind | split-window -v

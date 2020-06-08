@@ -32,6 +32,7 @@ augroup Set_filetype
   autocmd BufNewFile,BufReadPost,FileReadPost *.nims set filetype=nim
   autocmd BufNewFile,BufReadPost,FileReadPost *.k set filetype=k
   autocmd BufNewFile,BufReadPost,FileReadPost *.factor set filetype=factor
+  autocmd BufNewFile,BufReadPost,FileReadPost *.swift set filetype=swift
 augroup ENDndif
 
 " indent widh
@@ -65,6 +66,7 @@ augroup Shebang
   autocmd BufNewFile *.pas 0put =\"program \" .  expand(\"%:r\") . \";\" | 2
   autocmd BufNewFile *.\(cc\|hh\) 0put =\"//\<nl>// \".expand(\"<afile>:t\").\" -- \<nl>//\<nl>\"|2|start!
   autocmd BufNewFile *.uml 0put =\"@startuml\<nl>\<nl>\<nl>@enduml\"| 2
+  autocmd BufNewFile *.dc 0put =\"#!/usr/bin/env dc\" | 2
 augroup END
 
 set nobackup
@@ -197,22 +199,6 @@ let g:user_emmet_settings = {
   \ },
 \ }
 
-" OCaml
-let g:opam_share = substitute(system('opam config var share'),'\n$','','''')
-augroup OCaml_settings
-  autocmd!
-  autocmd FileType ocaml nnoremap <Space>t :MerlinTypeOf <CR> |
-      \ vnoremap <Space>t :MerlinTypeOfSel <CR> |
-      \ nnoremap <C-]> :MerlinLocate <CR> |
-      \ let g:deoplete#complete_method = 'complete' |
-      \ set completeopt-=preview |
-      \ let g:merlin_completion_dwim = 0 |
-      \ let g:merlin_completion_arg_type = 'never' |
-      \ let g:merlin_ignore_warnings = 'true' |
-      \ let g:merlin_completion_with_doc = 'false' |
-      \ let b:match_words = "<begin>:<end>,<object>:<end>" |
-augroup END
-
 " :W = save with root permission
 command -nargs=0 -complete=augroup -bang W w !sudo tee % > /dev/null
 
@@ -242,7 +228,6 @@ if dein#load_state(s:dein_dir)
   " TOML を読み込み、キャッシュしておく
   call dein#load_toml(s:toml,    {'lazy': 0})
   call dein#load_toml(s:lazy_toml, {'lazy': 1})
-  call dein#add(g:opam_share . '/merlin/vim', {'lazy': 1, 'on_ft': 'ocaml', 'on_event': 'InsertEnter'})
 
   " 設定終了
   call dein#end()
@@ -322,6 +307,9 @@ function! s:Jq(...)
   execute "%! jq \"" . l:arg . "\""
 endfunction
 
+" JSON format
+command! Jq %!jq '.'
+
 "" neosnippet
 
 " Plugin key-mappings.
@@ -371,10 +359,6 @@ let g:quickrun_config.forth = {
 
 let g:quickrun_config.javascript = {
   \ 'exec': 'node %s'
-\}
-
-let g:quickrun_config.typescript = {
-  \ 'exec': 'deno %s'
 \}
 
 let g:quickrun_config.haskell = {
@@ -467,7 +451,7 @@ let g:ale_linters = {
   \ 'css': ['csslint'],
   \ 'javascript': ['flow', 'eslint'],
   \ 'ruby': ['rubocop'],
-  \ 'typescript': ['tslint', 'tsserver'],
+  \ 'typescript': ['eslint', 'tsserver'],
   \ 'rust': ['rustc'],
 \}
   " \ 'python': ['flake8'],
@@ -476,7 +460,7 @@ let g:ale_linters = {
 let g:ale_fixers = {
   \ 'python': ['isort', 'autopep8'],
   \ 'javascript': [],
-  \ 'typescript': ['prettier'],
+  \ 'typescript': ['prettier', 'eslint'],
   \ 'rust': ['rustfmt'],
   \ 'ruby': ['rubocop'],
   \ 'ocaml': ['ocp-indent'],
@@ -503,7 +487,7 @@ nmap <S-k> <plug>(signify-prev-hunk)
 vmap <C-l> <Plug>(EasyAlign)
 
 " wakatime
-let g:wakatime_PythonBinary = '/usr/bin/python'
+" let g:wakatime_PythonBinary = '/usr/bin/python'
 
 " Dash
 " nnoremap <silent> <Space>s :Dash <CR>

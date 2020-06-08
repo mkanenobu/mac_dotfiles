@@ -2,7 +2,7 @@
 # vi: set tabstop=4 softtabstop=4 shiftwidth=4 :
 
 # run .bash_profile if exists
-[ -r "$HOME/.bash_profile" ] && . "$HOME/.bash_profile"
+# [ -r "$HOME/.bash_profile" ] && . "$HOME/.bash_profile"
 
 # If not running interactively, don't do anything
 case $- in
@@ -137,11 +137,12 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias fzf='fzf --reverse'
 alias cl='clear'
-alias mpv='mpv --volume=70'
 alias ggr='ggr.py'
 if _exists "fuck"; then
     alias f='fuck'
 fi
+alias gitignore_init='gibo dump'
+alias aws='aws --profile ih-dev'
 
 # languages
 alias py='python3'
@@ -165,6 +166,10 @@ alias dps='docker ps'
 alias dl='docker ps -l -q'
 alias dbuild='docker build'
 alias dimages='docker images'
+dstop() {
+  target_id="$(docker ps | cut -d' ' -f1-3 | fzf | cut -d' ' -f1)"
+  docker stop "${target_id}"
+}
 
 alias dockerc='docker-compose'
 alias dcbuild='docker-compose build'
@@ -192,15 +197,18 @@ alias gfp='git fetch && git pull'
 alias gst='git stash'
 alias gsp='git stash pop'
 
+alias ghpr='gh pr checkout'
+
+# react-native
+alias run-ios='yarn react-native run-ios'
+alias run-android='yarn react-native run-android'
+
 # typo
 alias al=':'
 alias a=':'
 alias .s='ls'
 alias claer="clear"
 alias im='vim'
-
-# RN
-alias run-ios='react-native run-ios'
 
 # swagger
 alias gen_openapi_yaml='multi-file-swagger index.yml -o yaml >| openapi.yml'
@@ -233,5 +241,3 @@ stty stop undef
 [ -f ~/.local/bin/git-prompt.sh ] && source ~/.local/bin/git-prompt.sh
 true
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"

@@ -71,3 +71,22 @@ gen_flowtype(){
   exec_path="$(nodenv which swagger-to-flowtype)"
   ${exec_path} -l --check-required openapi/frontend/openapi.yml -d server/frontend/app/flowtype/flowtype.js
 }
+
+listening(){
+  sudo lsof -iTCP -sTCP:LISTEN -n -P
+}
+
+# show parent branch
+gp(){
+  git show-branch | grep '*' | grep -v "$(git rev-parse --abbrev-ref HEAD)" | head -1 | awk -F'[]~^[]' '{print $2}'
+}
+
+prs(){
+  gh pr status
+}
+
+# git branch history
+branch-history() {
+  git --no-pager reflog | awk '$3 == "checkout:" && /moving from/ {print $8}' | uniq | tac
+}
+

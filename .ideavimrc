@@ -20,10 +20,10 @@ set display=lasttline
 set clipboard=unnamed
 
 
-nnoremap <S-h> ^
-nnoremap <S-l> $
-vnoremap <S-h> ^
-vnoremap <S-l> $
+nnoremap H ^
+nnoremap L $
+vnoremap H ^
+vnoremap L $
 
 nnoremap gj j
 nnoremap gk k
