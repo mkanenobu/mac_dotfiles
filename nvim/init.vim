@@ -39,7 +39,7 @@ augroup ENDndif
 augroup Indent
   autocmd filetype nim setlocal softtabstop=2 shiftwidth=2
   autocmd filetype yaml setlocal softtabstop=2 shiftwidth=2
-  autocmd filetype php setlocal tabstop=4 shiftwidth=4 noexpandtab
+  autocmd filetype php setlocal tabstop=2 shiftwidth=2
   autocmd filetype html setlocal tabstop=2 shiftwidth=2
   autocmd filetype pascal setlocal softtabstop=2 shiftwidth=2
   autocmd filetype markdown setlocal softtabstop=2 shiftwidth=2
@@ -239,12 +239,24 @@ if dein#check_install()
   call dein#install()
 endif
 
-autocmd ColorScheme molokai highlight Visual ctermbg=242
-autocmd ColorScheme molokai highlight Comment ctermfg=102
-autocmd ColorScheme molokai highlight Search ctermbg=242 ctermfg=15
-autocmd ColorScheme molokai highlight MatchParen ctermbg=242 ctermfg=15
+augroup molokai_custom
+  autocmd!
+  autocmd ColorScheme molokai highlight Visual ctermbg=242
+  autocmd ColorScheme molokai highlight Comment ctermfg=102
+  autocmd ColorScheme molokai highlight Search ctermbg=242 ctermfg=15
+  autocmd ColorScheme molokai highlight MatchParen ctermbg=242 ctermfg=15
+augroup END
 colorscheme molokai
-" colorscheme gruvbox
+if !has('gui_running')
+  augroup transparent
+    autocmd!
+    autocmd VimEnter,ColorScheme * highlight Normal ctermbg=none
+    autocmd VimEnter,ColorScheme * highlight LineNr ctermbg=none
+    autocmd VimEnter,ColorScheme * highlight SignColumn ctermbg=none
+    autocmd VimEnter,ColorScheme * highlight VertSplit ctermbg=none
+    autocmd VimEnter,ColorScheme * highlight NonText ctermbg=none
+  augroup END
+endif
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
@@ -268,17 +280,10 @@ inoremap <silent><expr> <S-TAB>
   return !col || getline('.')[col - 1]  =~ '\s'
   endfunction"}}}
 
-let g:deoplete#enable_camel_case = 0
-let g:deoplete#enable_ignore_case = 0
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#enable_refresh_always = 0
-let g:deoplete#file#enable_buffer_path = 1
-let g:deoplete#max_list = 20
-
-if !exists('g:deoplete#ignore_sources')
-  let g:deoplete#ignore_sources = {}
-endif
-let g:deoplete#ignore_sources.ocaml = ['around', 'member', 'tag']
+call deoplete#custom#option({
+ \ 'auto_complete_delay': 200,
+ \ 'smart_case': v:true,
+ \ })
 
 "set completeopt+=noinsert
 let g:tern_request_timeout = 1
@@ -289,9 +294,6 @@ let g:closetag_xhtml_filenames = '*.xhtml, *.jsx'
 let g:closetag_emptyTags_caseSensitive = 1
 let g:closetag_shortcut = '>'
 let g:closetag_close_shortcut = '<leader>>'
-
-" Go
-let g:deoplete#sources#go#gocode_binary = $HOME . '/go/bin/gocode'
 
 " elzr/vim-json
 let g:vim_json_syntax_conceal = 0
@@ -463,7 +465,7 @@ let g:ale_fixers = {
   \ 'typescript': ['prettier', 'eslint'],
   \ 'rust': ['rustfmt'],
   \ 'ruby': ['rubocop'],
-  \ 'ocaml': ['ocp-indent'],
+  \ 'ocaml': ['ocamlformat'],
   \ 'nim': ['trim_whitespace'],
 \}
   " \ 'python': ['autopep8', 'isort'],

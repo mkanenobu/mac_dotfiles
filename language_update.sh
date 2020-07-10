@@ -9,12 +9,6 @@ nimble update
 
 echo 
 echo "${separater}"
-echo "Rustup"
-echo "${separater}"
-rustup update
-
-echo 
-echo "${separater}"
 echo "Yarn"
 echo "${separater}"
 yarn global upgrade

@@ -47,30 +47,13 @@ fi
 
 PS2='>'
 
-# if GNU ls
-alias ls='exa'
+alias ls='exa -I=".DS_Store"'
 alias la='ls -a'
-alias ll='ls -lha'
-alias l='ls -lha'
-# if [ "$(which ls)" == "/usr/local/opt/coreutils/libexec/gnubin/ls" ]; then
-#     alias ls='ls --color=auto'
-#     #alias dir='dir --color=auto'
-#     #alias vdir='vdir --color=auto'
-#
-#     # alias grep='grep --color=auto'
-#     # alias fgrep='fgrep --color=auto'
-#     # alias egrep='egrep --color=auto'
-# else
-#     alias ls='ls -G'
-# fi
+alias ll='ls -lha --git'
+alias l='ls -lha --git'
 
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# some more ls aliases
-# alias ll='ls -alFh'
-# alias la='ls -A'
-# alias l='ls -CF'
 
 # tmux share history
 function share_history {
@@ -160,7 +143,6 @@ alias k='rlwrap k'
 alias factor='rlwrap factor'
 
 # Docker
-alias docker='docker'
 alias drun='docker run'
 alias dps='docker ps'
 alias dl='docker ps -l -q'
@@ -199,22 +181,12 @@ alias gsp='git stash pop'
 
 alias ghpr='gh pr checkout'
 
-# react-native
-alias run-ios='yarn react-native run-ios'
-alias run-android='yarn react-native run-android'
-
 # typo
 alias al=':'
 alias a=':'
 alias .s='ls'
 alias claer="clear"
 alias im='vim'
-
-# swagger
-alias gen_openapi_yaml='multi-file-swagger index.yml -o yaml >| openapi.yml'
-
-# aws
-alias aws-vault-prod='aws-vault exec ih-prod'
 
 # shopt -s autocd
 set -o emacs
@@ -238,6 +210,6 @@ stty stop undef
 # fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-[ -f ~/.local/bin/git-prompt.sh ] && source ~/.local/bin/git-prompt.sh
+
 true
 

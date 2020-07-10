@@ -91,7 +91,10 @@
   },
   "tabnine.disable_line_regex": ["import", "open"],
   "code-runner.executorMap": {
-    "ocaml": "obrun"
+    "ocaml": "obrun",
+    "scala": "scala -deprecation",
+    "scheme": "gosh",
+    "nim": "nimr"
   },
   "code-runner.clearPreviousOutput": true,
   "editor.formatOnSave": true,
@@ -109,14 +112,22 @@
   "editor.gotoLocation.multipleTypeDefinitions": "goto",
   "editor.gotoLocation.multipleDeclarations": "goto",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "java.semanticHighlighting.enabled": true,
-  "java.configuration.checkProjectSettingsExclusions": false,
-  "tabnine.experimentalAutoImports": 0,
+  "tabnine.experimentalAutoImports": true,
   "editor.wrappingIndent": "indent",
   "editor.renderWhitespace": "boundary",
   "editor.formatOnPaste": true,
   "workbench.editor.closeOnFileDelete": true,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "files.trimTrailingWhitespace": true,
-  "trailing-spaces.trimOnSave": true
+  "trailing-spaces.trimOnSave": true,
+  "metals.javaHome": "/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home",
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "sync.autoDownload": true,
+  "sync.autoUpload": true,
+  "sync.gist": "ddcb0c9b37a220aedb6c34e1cfe167a3",
+  "sync.forceUpload": true,
+  "sync.quietSync": true,
+  "editor.matchBrackets": false,
+  "todo-tree.tree.showScanModeButton": false
 }
