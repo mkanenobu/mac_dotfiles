@@ -86,7 +86,7 @@ export CPPFLAGS="-I/usr/local/opt/openssl/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 
 # if alacritty, execute byobu
-if [ "${ALACRITTY_LOG}" ]; then
+if [ "${ALACRITTY}" ]; then
   byobu
 fi
 
