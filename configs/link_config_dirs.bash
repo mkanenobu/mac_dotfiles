@@ -3,11 +3,11 @@
 set -Ceu
 
 __DIR__() {
-  dirname "$(resolve_link "${BASH_SOURCE[1]}")" # 間違い 9/30　修正
+  dirname "$(resolve_link "${BASH_SOURCE[1]}")"
 }
 
 resolve_link() {
-  local filepath="$1"
+  local filepath="${1}"
   local filename
   (
     while [ "${filepath}" != "" ]; do
@@ -22,12 +22,27 @@ resolve_link() {
 source_dir="$(__DIR__)"
 
 create_symlink() {
-  local filename="$1"
-  echo "${source_dir}/${filename} -> ${XDG_CONFIG_HOME}/${filename}"
-  ln -s "${source_dir}/${filename}" "${XDG_CONFIG_HOME}/${filename}"
+  local filename="${1}"
+  local source="${source_dir}/${filename}"
+  local target="${XDG_CONFIG_HOME}/${filename}"
+
+  if [ -L "${target}" ]; then
+    unlink "${target}"
+  elif [ -d "${target}" ]; then
+    rm -rf "${target}"
+  fi
+
+  echo "${source} -> ${target}"
+  ln -s "${source}" "${target}"
 }
 
 for dir_path in "${source_dir}/"*; do
   dirname="$(basename "${dir_path}")"
+
+  # skip this script
+  if [ "${dirname}" == "$(basename "${0}")" ]; then
+    continue
+  fi
+
   create_symlink "${dirname}"
 done
