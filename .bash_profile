@@ -13,6 +13,7 @@ export PATH="$PATH:$HOME/.nodenv/bin"
 export PATH="$PATH:$HOME/.rbenv/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/tools"
+export PATH="$PATH:$HOME/.local/for-work"
 export PATH="$PATH:$HOME/.local/docker-shorthands"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
@@ -22,7 +23,7 @@ export JAVA_HOME="$(/usr/libexec/java_home -v 11)"
 export PATH=${JAVA_HOME}/bin:${PATH}
 
 eval "$(nodenv init -)"
-eval "$(pyenv init -)"
+# eval "$(pyenv init -)"
 eval "$(rbenv init -)"
 eval "$(opam env)"
 
@@ -83,3 +84,9 @@ export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
 # For pkg-config to find openssl you may need to set:
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
+
+# if alacritty, execute byobu
+if [ "${ALACRITTY_LOG}" ]; then
+  byobu
+fi
+

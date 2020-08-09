@@ -188,7 +188,7 @@ alias .s='ls'
 alias claer="clear"
 alias im='vim'
 
-# shopt -s autocd
+shopt -s autocd
 set -o emacs
 # リダイレクトによる上書き禁止
 # >|を用いればリダイレクトできる

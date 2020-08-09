@@ -2,7 +2,7 @@
   "editor.fontFamily": "\"Cascadia Code\", Monaco, 'Courier New', monospace",
   "editor.tabSize": 2,
   "editor.wordWrap": "wordWrapColumn",
-  "editor.fontSize": 15,
+  "editor.fontSize": 14,
   "editor.fontLigatures": true,
   "editor.suggestSelection": "first",
   "editor.scrollBeyondLastLine": false,
@@ -93,11 +93,10 @@
   "code-runner.executorMap": {
     "ocaml": "obrun",
     "scala": "scala -deprecation",
-    "scheme": "gosh",
+    "scheme": "csi -s",
     "nim": "nimr"
   },
   "code-runner.clearPreviousOutput": true,
-  "editor.formatOnSave": true,
   "[ocaml]": {
     "editor.defaultFormatter": "badochov.ocaml-formatter"
   },
@@ -129,5 +128,11 @@
   "sync.forceUpload": true,
   "sync.quietSync": true,
   "editor.matchBrackets": false,
-  "todo-tree.tree.showScanModeButton": false
+  "todo-tree.tree.showScanModeButton": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "todohighlight.keywords": [
+    "NOTE"
+  ],
+  "editor.padding.bottom": 1,
+  "editor.formatOnSave": true
 }

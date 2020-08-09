@@ -85,8 +85,3 @@ prs(){
   gh pr status
 }
 
-# git branch history
-branch-history() {
-  git --no-pager reflog | awk '$3 == "checkout:" && /moving from/ {print $8}' | uniq | tac
-}
-
