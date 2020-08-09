@@ -73,10 +73,10 @@ window:
 scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
-  history: 10000
+  history: 0
 
   # Scrolling distance multiplier.
-  multiplier: 3
+  #multiplier: 3
 
 # Font configuration
 font:
@@ -309,3 +309,28 @@ mouse:
       program: open
       args: []
 
+# Bindings are always filled by default, but will be replaced when a new
+# binding with the same triggers is defined. To unset a default binding, it can
+# be mapped to the `ReceiveChar` action. Alternatively, you can use `None` for
+# a no-op if you do not wish to receive input characters for that binding.
+#
+# If the same trigger is assigned to multiple actions, all of them are executed
+# in the order they were defined in.
+key_bindings:
+  - { key: Paste,                 action: Paste            }
+  - { key: Copy,                  action: Copy             }
+
+  - { key: Key0,   mods: Command, action: ResetFontSize    }
+  - { key: Equals, mods: Command, action: IncreaseFontSize }
+  - { key: Add,    mods: Command, action: IncreaseFontSize }
+  - { key: Minus,  mods: Command, action: DecreaseFontSize }
+  - { key: L,      mods: Control, action: ClearLogNotice   }
+  - { key: V,      mods: Command, action: Paste            }
+  - { key: C,      mods: Command, action: Copy             }
+  - { key: H,      mods: Command, action: Hide             }
+  - { key: M,      mods: Command, action: Minimize         }
+  - { key: Q,      mods: Command, action: Quit             }
+  - { key: W,      mods: Command, action: Quit             }
+  - { key: T,      mods: Command, action: SpawnNewInstance }
+  - { key: F,      mods: Command, action: SearchForward    }
+  - { key: Comma,  mods: Command, command: { program: "bash", args: ["-lc", "--", "open ${XDG_CONFIG_HOME}/alacritty/alacritty.yml"] } }
