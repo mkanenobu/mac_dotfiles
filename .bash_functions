@@ -85,3 +85,6 @@ prs(){
   gh pr status
 }
 
+les(){
+  bat "${1}" --color=always | less -r
+}

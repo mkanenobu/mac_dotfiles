@@ -161,7 +161,7 @@
 	dWxs0g0ODxJaTlMub2JqZWN0c1YkY2xhc3OiEBGAAoAKgA3TFA0OFRkdV05TLmtleXOj
 	FhcYgAOABIAFoxobHIAGgAeACIAJWklkZW50aWZpZXJVV2lkdGhWSGlkZGVuUTAjQGjA
 	AAAAAAAI0iUmJyhaJGNsYXNzbmFtZVgkY2xhc3Nlc1xOU0RpY3Rpb25hcnmiJylYTlNP
-	YmplY3TTFA0OKy8doxYXGIADgASABaMwMRyAC4AMgAiACVExI0B0oZ2yLQ5W0iUmNzhe
+	YmplY3TTFA0OKy8doxYXGIADgASABaMwMRyAC4AMgAiACVExI0BzsZ2yLQ5W0iUmNzhe
 	TlNNdXRhYmxlQXJyYXmjNzkpV05TQXJyYXkACAARABoAJAApADIANwBJAEwAUgBUAGMA
 	aQBuAHkAgACDAIUAhwCJAJAAmACcAJ4AoACiAKYAqACqAKwArgC5AL8AxgDIANEA0gDX
 	AOIA6wD4APsBBAELAQ8BEQETARUBGQEbAR0BHwEhASMBLAExAUABRAAAAAAAAAIBAAAA
@@ -189,7 +189,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>530 487 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 89 906 938 0 0 1680 1027 </string>
+	<string>760 89 906 938 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -246,12 +246,16 @@
 			</dict>
 			<key>Ansi 13 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<string>0.6588235</string>
+				<real>0.83306650467911825</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<string>0.4980392</string>
+				<real>0.68558510951697826</real>
 				<key>Red Component</key>
-				<string>0.6784314</string>
+				<real>0.8553466796875</real>
 			</dict>
 			<key>Ansi 14 Color</key>
 			<dict>
@@ -300,12 +304,16 @@
 			</dict>
 			<key>Ansi 5 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<string>0.4823529</string>
+				<real>0.899078369140625</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<string>0.3137255</string>
+				<real>0.59104909328743815</real>
 				<key>Red Component</key>
-				<string>0.4588235</string>
+				<real>0.86116531014498343</real>
 			</dict>
 			<key>Ansi 6 Color</key>
 			<dict>
@@ -913,7 +921,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>C8359B77-F7FF-446B-A682-F78753B595EC</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>48</integer>
+	<integer>53</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1692,7 +1700,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-08-09T08:45:37Z</date>
+	<date>2020-08-10T11:54:10Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
