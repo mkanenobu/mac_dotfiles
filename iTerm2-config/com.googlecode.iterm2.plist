@@ -405,7 +405,7 @@
 			<key>Close Sessions On End</key>
 			<true/>
 			<key>Columns</key>
-			<integer>112</integer>
+			<integer>90</integer>
 			<key>Command</key>
 			<string></string>
 			<key>Cursor Boost</key>
@@ -479,7 +479,7 @@
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string>byobu</string>
+			<string></string>
 			<key>Initial Use Transparency</key>
 			<true/>
 			<key>Jobs to Ignore</key>
@@ -810,7 +810,7 @@
 			<key>Right Option Key Sends</key>
 			<integer>0</integer>
 			<key>Rows</key>
-			<integer>56</integer>
+			<integer>54</integer>
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
@@ -921,7 +921,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>C8359B77-F7FF-446B-A682-F78753B595EC</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>53</integer>
+	<integer>58</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1700,7 +1700,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-08-10T11:54:10Z</date>
+	<date>2020-08-14T02:44:59Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>

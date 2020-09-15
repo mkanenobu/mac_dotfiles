@@ -2,19 +2,23 @@
 cols="$(tput cols)"
 separater="$(echo "===================================================================================================================================" | cut -c "1-${cols}")"
 
-echo "${separater}"
-echo "Nimble"
-echo "${separater}"
+separate() {
+  echo
+  echo "${separater}"
+  echo "${1}"
+  echo "${separater}"
+}
+
+separate "Nim"
+choosenim update stable
 nimble update
 
-echo 
-echo "${separater}"
-echo "Yarn"
-echo "${separater}"
+separate "Haskell"
+stack update
+stack upgrade
+
+separate "Node.js"
 yarn global upgrade
 
-echo 
-echo "${separater}"
-echo "Opam"
-echo "${separater}"
+separate "OCaml"
 opam update && opam upgrade && eval $(opam env)

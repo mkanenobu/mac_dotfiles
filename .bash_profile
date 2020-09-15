@@ -11,6 +11,7 @@ export PATH="$PATH:$HOME/.nimble/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.nodenv/bin"
 export PATH="$PATH:$HOME/.rbenv/bin"
+export PATH="$PATH:$HOME/.nimenv/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/tools"
 export PATH="$PATH:$HOME/.local/for-work"
@@ -26,6 +27,9 @@ eval "$(nodenv init -)"
 # eval "$(pyenv init -)"
 eval "$(rbenv init -)"
 eval "$(opam env)"
+
+[ -f "/Users/kanenobu/.ghcup/env" ] && source "/Users/kanenobu/.ghcup/env" # ghcup-env
+export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then

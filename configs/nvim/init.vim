@@ -16,7 +16,7 @@ set autoindent
 set showbreak=>>>\ 
 autocmd filetype quickrun setlocal showbreak=""
 set list
-set nofixendofline
+set nofixeol
 " set listchars=tab:\¦\
 set listchars=tab:>-,trail:-,extends:>
 
@@ -450,10 +450,8 @@ let g:ale_lint_on_enter = 0
 let g:ale_completion_delay = 150
 let g:ale_linters = {
   \ 'python': ['mypy'],
-  \ 'css': ['csslint'],
-  \ 'javascript': ['flow', 'eslint'],
-  \ 'ruby': ['rubocop'],
-  \ 'typescript': ['eslint', 'tsserver'],
+  \ 'ruby': [''],
+  \ 'bash': ['shellcheck'],
   \ 'rust': ['rustc'],
 \}
   " \ 'python': ['flake8'],
@@ -461,14 +459,14 @@ let g:ale_linters = {
 
 let g:ale_fixers = {
   \ 'python': ['isort', 'autopep8'],
-  \ 'javascript': [],
-  \ 'typescript': ['prettier', 'eslint'],
   \ 'rust': ['rustfmt'],
-  \ 'ruby': ['rubocop'],
+  \ 'ruby': [''],
   \ 'ocaml': ['ocamlformat'],
+  \ 'bash': ['shellcheck'],
   \ 'nim': ['trim_whitespace'],
 \}
   " \ 'python': ['autopep8', 'isort'],
+  " \ 'ruby': ['rubocop'],
 
 " nmap <C-j> <Plug>(ale_next_wrap)
 " nmap <C-k> <Plug>(ale_previous_wrap)

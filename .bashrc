@@ -106,12 +106,11 @@ fi
 if _exists "bat"; then
     alias cat='bat'
 fi
-alias ssh-pubkeygen='ssh-keygen -yf'
 alias fd='fd -H'
 alias rg='rg --no-ignore'
-alias psfind='ps aux | fzf'
 alias lame='lame -b 192'
 alias vimdiff='nvim -d'
+alias tree='tree -N'
 
 # Shell utils
 alias duc='du -d 1 -ah | sort -h'
@@ -212,4 +211,3 @@ stty stop undef
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 true
-

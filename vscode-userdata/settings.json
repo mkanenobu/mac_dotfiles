@@ -87,14 +87,15 @@
     "**/_build": true,
     "**/.idea": true,
     "**/.metals": true,
-    "**/.vscode": true
+    "**/.vscode": true,
+    "**/node_modules": true
   },
-  "tabnine.disable_line_regex": ["import", "open"],
   "code-runner.executorMap": {
     "ocaml": "obrun",
     "scala": "scala -deprecation",
     "scheme": "csi -s",
-    "nim": "nimr"
+    "nim": "nimr --stdin",
+    "haskell": "stack runghc"
   },
   "code-runner.clearPreviousOutput": true,
   "[ocaml]": {
@@ -106,12 +107,10 @@
   "workbench.startupEditor": "newUntitledFile",
   "workbench.editor.enablePreview": false,
   "editor.rename.enablePreview": false,
-  "markdown.preview.linkify": false,
   "editor.gotoLocation.multipleDefinitions": "goto",
   "editor.gotoLocation.multipleTypeDefinitions": "goto",
   "editor.gotoLocation.multipleDeclarations": "goto",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "tabnine.experimentalAutoImports": true,
   "editor.wrappingIndent": "indent",
   "editor.renderWhitespace": "boundary",
   "editor.formatOnPaste": true,
@@ -122,17 +121,21 @@
   "metals.javaHome": "/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home",
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
-  "sync.autoDownload": true,
-  "sync.autoUpload": true,
-  "sync.gist": "ddcb0c9b37a220aedb6c34e1cfe167a3",
-  "sync.forceUpload": true,
-  "sync.quietSync": true,
   "editor.matchBrackets": false,
   "todo-tree.tree.showScanModeButton": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "todohighlight.keywords": [
-    "NOTE"
-  ],
+  "todohighlight.keywords": ["NOTE"],
   "editor.padding.bottom": 1,
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "[php]": {
+    "editor.defaultFormatter": "kokororin.vscode-phpfmt"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "C_Cpp.updateChannel": "Insiders",
+  "markdown.preview.linkify": false,
+  "haskell.formattingProvider": "brittany",
+  "path-intellisense.showHiddenFiles": true,
+  "path-intellisense.extensionOnImport": true
 }
