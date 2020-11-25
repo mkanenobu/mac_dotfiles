@@ -319,11 +319,10 @@ mouse:
 key_bindings:
   - { key: Paste,                 action: Paste            }
   - { key: Copy,                  action: Copy             }
-
-  - { key: Key0,   mods: Command, action: ResetFontSize    }
+#  - { key: Key0,   mods: Command, action: ResetFontSize    }
   - { key: Equals, mods: Command, action: IncreaseFontSize }
-  - { key: Add,    mods: Command, action: IncreaseFontSize }
-  - { key: Minus,  mods: Command, action: DecreaseFontSize }
+#  - { key: Add,    mods: Command, action: IncreaseFontSize }
+#  - { key: Minus,  mods: Command, action: DecreaseFontSize }
   - { key: L,      mods: Control, action: ClearLogNotice   }
   - { key: V,      mods: Command, action: Paste            }
   - { key: C,      mods: Command, action: Copy             }
