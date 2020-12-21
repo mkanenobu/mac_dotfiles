@@ -160,6 +160,8 @@ alias dclog='docker-compose logs'
 
 # Git
 alias ga='git add'
+alias gitpull='git pull'
+alias gitpush='git push'
 alias gcm='git commit -m'
 alias gcd='git commit -m "$(date)"'
 alias gca='git commit --amend'

@@ -1,6 +1,5 @@
 {
   "editor.fontFamily": "\"Cascadia Code\", Monaco, 'Courier New', monospace",
-  "editor.tabSize": 2,
   "editor.wordWrap": "wordWrapColumn",
   "editor.fontSize": 14,
   "editor.fontLigatures": true,
@@ -65,6 +64,7 @@
   "vim.useSystemClipboard": true,
   "vim.leader": "<space>",
   "workbench.colorCustomizations": {
+
     "[Some Theme Name]": {
       "statusBar.background": "#486357",
       "statusBar.foreground": "#c8e9c5"
@@ -78,10 +78,8 @@
     "statusBar.noFolderBackground": "#414141"
   },
   "editor.wordWrapColumn": 120,
-  "workbench.colorTheme": "Monokai ST3",
   "ocaml.lintOnSave": true,
   "ocaml.useOpamToResolve": true,
-  "ocaml-formatter.profile": "janestreet",
   "editor.lineHeight": 15,
   "files.exclude": {
     "**/_build": true,
@@ -91,11 +89,13 @@
     "**/node_modules": true
   },
   "code-runner.executorMap": {
+    "markdown": "open -a typora",
     "ocaml": "obrun",
     "scala": "scala -deprecation",
     "scheme": "csi -s",
     "nim": "nimr --stdin",
-    "haskell": "stack runghc"
+    "haskell": "stack runghc",
+    "rust": "run"
   },
   "code-runner.clearPreviousOutput": true,
   "[ocaml]": {
@@ -103,6 +103,15 @@
   },
   "[scala]": {
     "editor.defaultFormatter": "scalameta.metals"
+  },
+  "[php]": {
+    // "editor.defaultFormatter": "kokororin.vscode-phpfmt"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "workbench.startupEditor": "newUntitledFile",
   "workbench.editor.enablePreview": false,
@@ -121,21 +130,50 @@
   "metals.javaHome": "/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home",
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
-  "editor.matchBrackets": false,
   "todo-tree.tree.showScanModeButton": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "todohighlight.keywords": ["NOTE"],
   "editor.padding.bottom": 1,
-  "editor.formatOnSave": true,
-  "[php]": {
-    "editor.defaultFormatter": "kokororin.vscode-phpfmt"
-  },
-  "[dockerfile]": {
-    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-  },
   "C_Cpp.updateChannel": "Insiders",
   "markdown.preview.linkify": false,
   "haskell.formattingProvider": "brittany",
   "path-intellisense.showHiddenFiles": true,
-  "path-intellisense.extensionOnImport": true
+  "path-intellisense.extensionOnImport": true,
+  "files.watcherExclude": {
+    "**/.bloop": true,
+    "**/.metals": true,
+    "**/.ammonite": true
+  },
+  "ocaml-formatter.eval-opam-env": true,
+  "ocaml-formatter.profile": "janestreet",
+  "auto-close-tag.activationOnLanguage": [
+    "xml",
+    "php",
+    "blade",
+    "ejs",
+    "jinja",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "plaintext",
+    "markdown",
+    "vue",
+    "liquid",
+    "erb",
+    "lang-cfml",
+    "cfml",
+    "HTML (EEx)",
+    "HTML (Eex)",
+    "plist"
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "tabnine.experimentalAutoImports": true,
+  "workbench.preferredHighContrastColorTheme": "Monokai ST3",
+  "workbench.preferredLightColorTheme": "Monokai ST3",
+  "workbench.colorTheme": "Monokai ST3",
+  "workbench.preferredDarkColorTheme": "Monokai ST3",
+  "editor.matchBrackets": false,
+  "prettier.vueIndentScriptAndStyle": true,
+  "editor.tabSize": 2
 }

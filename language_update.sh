@@ -18,7 +18,10 @@ stack update
 stack upgrade
 
 separate "Node.js"
-yarn global upgrade
+npm update --global
+
+separate "Rust"
+rustup update
 
 separate "OCaml"
 opam update && opam upgrade && eval $(opam env)

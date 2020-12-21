@@ -24,7 +24,7 @@ export JAVA_HOME="$(/usr/libexec/java_home -v 11)"
 export PATH=${JAVA_HOME}/bin:${PATH}
 
 eval "$(nodenv init -)"
-# eval "$(pyenv init -)"
+eval "$(pyenv init -)"
 eval "$(rbenv init -)"
 eval "$(opam env)"
 
@@ -81,3 +81,4 @@ if [ "${ALACRITTY}" ] && [ -z "${BYOBU_BACKEND}" ]; then
   byobu
 fi
 
+export PATH="/usr/local/opt/mariadb@10.1/bin:$PATH"

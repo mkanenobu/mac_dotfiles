@@ -16,7 +16,7 @@ set autoindent
 set showbreak=>>>\ 
 autocmd filetype quickrun setlocal showbreak=""
 set list
-set nofixeol
+" set nofixeol
 " set listchars=tab:\¦\
 set listchars=tab:>-,trail:-,extends:>
 
@@ -186,18 +186,6 @@ endif
 nnoremap <C-g> :Rg 
 " grep current word
 nnoremap <C-]> :Rg <C-r><C-w><CR>
-
-" Emmet{{{
-let g:user_emmet_leader_key = '<C-y>'
-let g:user_emmet_install_global = 1
-autocmd Filetype php,html,css,scss EmmetInstall
-let g:user_emmet_mode = 'i'
-let g:user_emmet_expandabbr_key='<C-e>'
-let g:user_emmet_settings = {
-  \ 'variables': {
-  \   'lang': "ja"
-  \ },
-\ }
 
 " :W = save with root permission
 command -nargs=0 -complete=augroup -bang W w !sudo tee % > /dev/null

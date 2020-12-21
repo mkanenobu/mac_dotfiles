@@ -105,23 +105,23 @@ font:
     style: Bold
 
   # Italic font face
-  #italic:
+  italic:
     # Font family
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    #family: "Cascadia Code"
+    family: "Cascadia Code"
 
     # The `style` can be specified to pick a specific face.
     #style: Italic
 
   # Bold italic font face
-  #bold_italic:
+  bold_italic:
     # Font family
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    #family: monospace
+    family: "Cascadia Code"
 
     # The `style` can be specified to pick a specific face.
     #style: Bold Italic
@@ -319,7 +319,7 @@ mouse:
 key_bindings:
   - { key: Paste,                 action: Paste            }
   - { key: Copy,                  action: Copy             }
-#  - { key: Key0,   mods: Command, action: ResetFontSize    }
+  - { key: Key0,   mods: Command, action: ResetFontSize    }
   - { key: Equals, mods: Command, action: IncreaseFontSize }
 #  - { key: Add,    mods: Command, action: IncreaseFontSize }
 #  - { key: Minus,  mods: Command, action: DecreaseFontSize }
