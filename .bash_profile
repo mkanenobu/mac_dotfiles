@@ -15,28 +15,16 @@ export PATH="$PATH:$HOME/.nimenv/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/tools"
 export PATH="$PATH:$HOME/.local/for-work"
-export PATH="$PATH:$HOME/.local/docker-shorthands"
 export PATH="$PATH:$HOME/go/bin"
-export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
-# Coursier (package manager for Scala)
-export PATH="$PATH:/Users/kanenobu/Library/Application Support/Coursier/bin"
-export JAVA_HOME="$(/usr/libexec/java_home -v 11)"
-export PATH=${JAVA_HOME}/bin:${PATH}
 
 eval "$(nodenv init -)"
 eval "$(pyenv init -)"
-eval "$(rbenv init -)"
 eval "$(opam env)"
-
-[ -f "/Users/kanenobu/.ghcup/env" ] && source "/Users/kanenobu/.ghcup/env" # ghcup-env
-export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then
   PATH="$HOME/bin:$PATH"
 fi
-
-export AWS_VAULT_KEYCHAIN_NAME=login
 
 export EDITOR=nvim
 # nvim in tmux
@@ -81,5 +69,4 @@ if [ "${ALACRITTY}" ] && [ -z "${BYOBU_BACKEND}" ]; then
   byobu
 fi
 
-export PATH="/usr/local/opt/mariadb@10.1/bin:$PATH"
 source "$HOME/.cargo/env"
