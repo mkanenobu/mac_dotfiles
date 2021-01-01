@@ -3,6 +3,9 @@ filetype indent plugin off
 
 let configDir='~/.config/nvim'
 
+let g:python_host_prog  = '~/.pyenv/versions/python2neovim/bin/python'
+let g:python3_host_prog = '~/.pyenv/versions/python3neovim/bin/python'
+
 set encoding=utf-8
 set ambiwidth=double
 set history=1000

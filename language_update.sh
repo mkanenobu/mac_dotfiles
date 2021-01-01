@@ -13,10 +13,6 @@ separate "Nim"
 choosenim update stable
 nimble update
 
-separate "Haskell"
-stack update
-stack upgrade
-
 separate "Node.js"
 npm update --global
 

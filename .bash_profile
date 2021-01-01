@@ -82,3 +82,4 @@ if [ "${ALACRITTY}" ] && [ -z "${BYOBU_BACKEND}" ]; then
 fi
 
 export PATH="/usr/local/opt/mariadb@10.1/bin:$PATH"
+source "$HOME/.cargo/env"

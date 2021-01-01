@@ -32,7 +32,7 @@ HISTCONTROL=ignoredups
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 if [ -z $TMUX ]; then
-    PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]$ '
+    PS1='\[\033[01;32m\]kanenobu\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]$ '
 else
     RETURN_CODE='\[$(
     if [ $? -eq 0 ]; then
@@ -41,7 +41,7 @@ else
         echo -en \e[31m\]
     fi; echo -en $\e[m\]
     )'
-    PS1='\e[01;32m\]\u\e[00m\]:\e[01;34m\]\W'
+    PS1='\e[01;32m\]kanenobu\e[00m\]:\e[01;34m\]\W'
     PS1="${PS1}${RETURN_CODE} "
 fi
 
@@ -213,3 +213,4 @@ stty stop undef
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 true
+source "$HOME/.cargo/env"
