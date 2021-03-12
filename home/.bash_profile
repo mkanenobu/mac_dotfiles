@@ -1,3 +1,10 @@
+# vi: set tabstop=2 softtabstop=2 shiftwidth=2 :
+
+function _exists() {
+  type "$1" 1>/dev/null 2>/dev/null
+  return $?
+}
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
   # include .bashrc if it exists
@@ -14,10 +21,10 @@ export PATH="$PATH:$HOME/.rbenv/bin"
 export PATH="$PATH:$HOME/.nimenv/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/tools"
-export PATH="$PATH:$HOME/.local/for-work"
 export PATH="$PATH:$HOME/go/bin"
 
 eval "$(nodenv init -)"
+eval "$(rbenv init -)"
 eval "$(pyenv init -)"
 eval "$(opam env)"
 

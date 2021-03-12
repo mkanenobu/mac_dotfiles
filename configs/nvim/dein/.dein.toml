@@ -110,10 +110,6 @@ repo = 'boeckmann/vim-freepascal'
 on_ft = ['freepascal', 'pascal']
 
 [[plugins]]
-repo = 'zchee/deoplete-jedi'
-on_ft = 'python'
-
-[[plugins]]
 repo = 'elzr/vim-json'
 
 [[plugins]]
@@ -159,6 +155,6 @@ on_ft = 'ocaml'
 # build = 'make'
 # on_ft = 'go'
 
-[[plugins]]
-repo = 'tbodt/deoplete-tabnine'
-build = './install.sh'
+# [[plugins]]
+# repo = 'tbodt/deoplete-tabnine'
+# build = './install.sh'

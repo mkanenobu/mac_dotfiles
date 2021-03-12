@@ -179,5 +179,7 @@
   "sync.gist": "167421c7333b5ea3cbc348372154c9c0",
   "sync.autoUpload": true,
   "sync.autoDownload": true,
-  "workbench.iconTheme": "material-icon-theme"
+  "workbench.iconTheme": "vs-seti",
+  "sync.quietSync": true,
+  "editor.minimap.enabled": false
 }

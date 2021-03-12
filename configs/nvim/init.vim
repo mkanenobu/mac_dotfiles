@@ -3,8 +3,8 @@ filetype indent plugin off
 
 let configDir='~/.config/nvim'
 
-let g:python_host_prog  = '~/.pyenv/versions/python2neovim/bin/python'
-let g:python3_host_prog = '~/.pyenv/versions/python3neovim/bin/python'
+let g:python_host_prog  = '~/.pyenv/versions/py2neovim/bin/python'
+let g:python3_host_prog = '~/.pyenv/versions/py3neovim/bin/python'
 
 set encoding=utf-8
 set ambiwidth=double
@@ -373,14 +373,8 @@ let g:quickrun_config.ocaml = {
   \ 'tempfile': '%{tempname()}.ml',
 \}
 
-let g:quickrun_config.k = {
-  \ 'command': 'k',
-  \ 'exec': '%c %s'
-\}
-
-let g:quickrun_config.factor = {
-  \ 'command': 'factor',
-  \ 'exec': '%c %s'
+let g:quickrun_config.typescript = {
+  \ 'exec': 'npx ts-node %s',
 \}
 
 set splitbelow
@@ -411,13 +405,6 @@ autocmd FileType plantuml let b:AutoPairs = {}
 " nvim-nim
 " disable key config
 let g:nvim_nim_enable_default_binds = 0
-
-" fzf
-nnoremap <C-p> :FZFFileList<CR>
-command! FZFFileList call fzf#run({
-  \ 'source': 'find . -type d -name .git -prune -o ! -name .DS_Store',
-  \ 'sink': 'e'
-\})
 
 " easymotion
 map <Space>s <Plug>(easymotion-s)
