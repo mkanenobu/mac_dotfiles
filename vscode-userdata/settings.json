@@ -167,7 +167,7 @@
     "HTML (Eex)",
     "plist"
   ],
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "tabnine.experimentalAutoImports": true,
   "workbench.preferredHighContrastColorTheme": "Monokai ST3",
   "workbench.preferredLightColorTheme": "Monokai ST3",

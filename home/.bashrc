@@ -131,21 +131,7 @@ alias rc='rustc'
 alias ocaml='rlwrap ocaml'
 
 # Docker
-alias drun='docker run'
-alias dps='docker ps'
-alias dl='docker ps -l -q'
-alias dbuild='docker build'
-alias dimages='docker images'
-dstop() {
-  target_id="$(docker ps | cut -d' ' -f1-3 | fzf | cut -d' ' -f1)"
-  docker stop "${target_id}"
-}
-
-alias dockerc='docker-compose'
-alias dcbuild='docker-compose build'
-alias dcup='docker-compose up -d'
-alias dcps='docker-compose ps'
-alias dclog='docker-compose logs'
+alias docker-compose='docker compose'
 
 # Git
 alias ga='git add'
@@ -198,6 +184,6 @@ export WASMER_DIR="/Users/kanenobu/.wasmer"
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
 
 # awscli default profile
-export AWS_PROFILE=booklista-dev
+export AWS_PROFILE=personal
 
 true

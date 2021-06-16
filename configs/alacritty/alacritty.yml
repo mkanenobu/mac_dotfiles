@@ -68,7 +68,7 @@ window:
   #title: Alacritty
 
   # Allow terminal applications to change Alacritty's window title.
-  dynamic_title: false
+  dynamic_title: true
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -293,7 +293,7 @@ mouse:
   # If this is `true`, the cursor is temporarily hidden when typing.
   #hide_when_typing: false
 
-  url:
+  #url:
     # URL launcher
     #
     # This program is executed when clicking on a text which is recognized as a URL.
@@ -305,9 +305,9 @@ mouse:
     #   - (macOS) open
     #   - (Linux/BSD) xdg-open
     #   - (Windows) explorer
-    launcher:
-      program: open
-      args: []
+    #launcher:
+      #program: open
+      #args: []
 
 # Bindings are always filled by default, but will be replaced when a new
 # binding with the same triggers is defined. To unset a default binding, it can

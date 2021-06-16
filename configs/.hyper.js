@@ -21,7 +21,7 @@ module.exports = {
     fontWeightBold: 'bold',
 
     // line height as a relative unit
-    lineHeight: 1,
+    lineHeight: 1.1,
 
     // letter spacing as a relative unit
     letterSpacing: 0,
@@ -43,7 +43,7 @@ module.exports = {
 
     // terminal background color
     // opacity is only supported on macOS
-    backgroundColor: 'rgba(28,28,28,0.9)',
+    backgroundColor: 'rgba(28,28,28,0.8)',
 
     // terminal selection color
     selectionColor: 'rgba(248,28,229,0.3)',

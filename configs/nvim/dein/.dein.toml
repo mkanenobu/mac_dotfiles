@@ -1,17 +1,13 @@
 # dein.toml
 
-# [[plugins]]
-# repo = 'Shougo/vimproc.vim'
-# build = 'make'
-
 # colorscheme
 [[plugins]]
 repo = 'tomasr/molokai'
 
 ### Utils
 
-# [[plugins]]
-# repo = 'dense-analysis/ale'
+[[plugins]]
+repo = 'dense-analysis/ale'
 
 [[plugins]]
 repo = 'editorconfig/editorconfig-vim'
@@ -38,12 +34,6 @@ repo = 'tpope/vim-fugitive'
 repo = 'wincent/ferret'
 
 [[plugins]]
-repo = 'kristijanhusak/vim-carbon-now-sh'
-
-# [[plugins]]
-# repo = 'scrooloose/nerdtree'
-
-[[plugins]]
 repo = 'easymotion/vim-easymotion'
 
 [[plugins]]
@@ -56,9 +46,6 @@ repo = 'tomtom/tcomment_vim'
 repo = 'thinca/vim-quickrun'
 
 [[plugins]]
-repo = 'ctrlpvim/ctrlp.vim'
-
-[[plugins]]
 repo = 'vim-jp/vimdoc-ja'
 
 [[plugins]]
@@ -66,9 +53,6 @@ repo = 'Yggdroot/indentLine'
 
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
-
-[[plugins]]
-repo = 'jiangmiao/auto-pairs'
 
 [[plugins]]
 repo = 'junegunn/vim-easy-align'
@@ -93,23 +77,6 @@ depends = 'fzf'
 
 ### Language support
 [[plugins]]
-repo = 'mkanenobu/forth.vim'
-on_ft = 'forth'
-
-[[plugins]]
-# repo = 'mkanenobu/nvim-nim'
-repo = 'alaviss/nim.nvim'
-on_ft = 'nim'
-
-# [[plugins]]
-# repo = 'keith/swift.vim'
-# on_ft = 'swift'
-
-[[plugins]]
-repo = 'boeckmann/vim-freepascal'
-on_ft = ['freepascal', 'pascal']
-
-[[plugins]]
 repo = 'elzr/vim-json'
 
 [[plugins]]
@@ -123,14 +90,6 @@ on_ft = 'typescript'
 [[plugins]]
 repo = 'peitalin/vim-jsx-typescript'
 
-[[plugins]]
-repo = 'rust-lang/rust.vim'
-on_ft = 'rust'
-
-# [[plugins]]
-# repo = 'fatih/vim-go'
-# on_ft = 'go'
-
 # Deoplete sources
 [[plugins]]
 repo = 'Shougo/neco-vim'
@@ -143,18 +102,5 @@ repo = 'Shougo/neco-syntax'
 repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
-repo = 'sebastianmarkow/deoplete-rust'
-on_ft = 'rust'
-
-[[plugins]]
-repo = 'copy/deoplete-ocaml'
-on_ft = 'ocaml'
-
-# [[plugins]]
-# repo = 'deoplete-plugins/deoplete-go'
-# build = 'make'
-# on_ft = 'go'
-
-# [[plugins]]
-# repo = 'tbodt/deoplete-tabnine'
-# build = './install.sh'
+repo = 'tbodt/deoplete-tabnine'
+build = './install.sh'

@@ -51,7 +51,7 @@ augroup Indent
   autocmd filetype json setlocal softtabstop=2 shiftwidth=2 conceallevel=0
   autocmd filetype typescript setlocal softtabstop=2 shiftwidth=2
   autocmd filetype sh setlocal softtabstop=2 shiftwidth=2
-  autocmd filetype bash setlocal softtabstop=2 shiftwidth=2
+  autocmd filetype bash setlocal softtabstop=1 shiftwidth=2
   autocmd filetype c setlocal softtabstop=3 shiftwidth=3 noexpandtab
   autocmd filetype rust setlocal softtabstop=4 shiftwidth=4
   autocmd filetype groovy setlocal softtabstop=4 shiftwidth=4
@@ -262,15 +262,6 @@ inoremap <silent><expr> <TAB>
   return !col || getline('.')[col - 1]  =~ '\s'
   endfunction"}}}
 
-inoremap <silent><expr> <S-TAB>
-  \ pumvisible() ? "\<C-p>" :
-  \ <SID>check_back_space() ? "\<S-TAB>" :
-  \ deoplete#mappings#manual_complete()
-  function! s:check_back_space() abort "{{{
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-  endfunction"}}}
-
 call deoplete#custom#option({
  \ 'auto_complete_delay': 200,
  \ 'smart_case': v:true,
@@ -391,16 +382,16 @@ map <Space>n :NERDTreeToggle<CR>
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " vim-Autopair
-let g:AutoPairsMapBS = 1
-let g:AutoPairs = {'(':')', '[':']', '{':'}', '"""':'"""', '`': '`'}
-autocmd FileType forth let g:AutoPairs = {'(':')',  '{':'}', '`':'`', 'T{':'}T'}
-autocmd FileType ruby let b:AutoPairs = AutoPairsDefine({"|": "|"})
-autocmd FileType rust let b:AutoPairs = AutoPairsDefine({"|": "|"})
-autocmd FileType nim let b:AutoPairs = AutoPairsDefine({'{.': '.}'})
-autocmd FileType ocaml let b:AutoPairs = AutoPairsDefine({
-  \ '(*': '*)', '(**':'**)', '[|': '|]',
-\})
-autocmd FileType plantuml let b:AutoPairs = {}
+" let g:AutoPairsMapBS = 1
+" let g:AutoPairs = {'(':')', '[':']', '{':'}', '"""':'"""', '`': '`'}
+" autocmd FileType forth let g:AutoPairs = {'(':')',  '{':'}', '`':'`', 'T{':'}T'}
+" autocmd FileType ruby let b:AutoPairs = AutoPairsDefine({"|": "|"})
+" autocmd FileType rust let b:AutoPairs = AutoPairsDefine({"|": "|"})
+" autocmd FileType nim let b:AutoPairs = AutoPairsDefine({'{.': '.}'})
+" autocmd FileType ocaml let b:AutoPairs = AutoPairsDefine({
+"   \ '(*': '*)', '(**':'**)', '[|': '|]',
+" \})
+" autocmd FileType plantuml let b:AutoPairs = {}
 
 " nvim-nim
 " disable key config
@@ -422,7 +413,7 @@ let g:deoplete#sources#rust#rust_source_path='~/.cargo/rust-source/rust/src'
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_insert_leave = 1
 let g:ale_cache_executable_check_failures = 0
-let g:ale_fix_on_save = 1
+" let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 let g:ale_lint_on_enter = 0
 let g:ale_completion_delay = 150
