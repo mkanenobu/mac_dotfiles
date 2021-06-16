@@ -33,7 +33,7 @@ create_symlink() {
   fi
 
   echo "${source} -> ${target}"
-  ln -s "${source}" "${target}"
+  ln -s ${source} ${target}
 }
 
 for dir_path in "${source_dir}/"*; do

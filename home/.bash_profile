@@ -26,7 +26,6 @@ export PATH="$PATH:$HOME/go/bin"
 
 eval "$(nodenv init -)"
 eval "$(rbenv init -)"
-eval "$(pyenv init --path)"
 eval "$(opam env)"
 
 # set PATH so it includes user's private bin if it exists
@@ -78,12 +77,3 @@ if [ "${ALACRITTY}" ] && [ -z "${BYOBU_BACKEND}" ]; then
 fi
 
 source "$HOME/.cargo/env"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/kanenobu/google-cloud-sdk/path.bash.inc' ]; then . '/Users/kanenobu/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/kanenobu/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/kanenobu/google-cloud-sdk/completion.bash.inc'; fi
-if [ -e /Users/kanenobu/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/kanenobu/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-
-source /Users/kanenobu/.nix-profile/etc/profile.d/nix.sh
