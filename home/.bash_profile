@@ -20,12 +20,16 @@ export PATH="$PATH:$HOME/.nodenv/bin"
 export PATH="$PATH:$HOME/.rbenv/bin"
 export PATH="$PATH:$HOME/.nimenv/bin"
 export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$HOME/.local/tools"
+export PATH="$PATH:$HOME/.local/toolbox"
 export PATH="$PATH:$HOME/.local/for-work"
 export PATH="$PATH:$HOME/go/bin"
+# >>> coursier install directory >>>
+export PATH="$PATH:$HOME/Library/Application Support/Coursier/bin"
+# <<< coursier install directory <<<
 
+# *env
 eval "$(nodenv init -)"
-eval "$(rbenv init -)"
+eval "$(rbenv init - bash)"
 eval "$(opam env)"
 
 # set PATH so it includes user's private bin if it exists
@@ -77,3 +81,4 @@ if [ "${ALACRITTY}" ] && [ -z "${BYOBU_BACKEND}" ]; then
 fi
 
 source "$HOME/.cargo/env"
+

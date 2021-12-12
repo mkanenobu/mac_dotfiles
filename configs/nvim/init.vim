@@ -190,9 +190,6 @@ nnoremap <C-g> :Rg
 " grep current word
 nnoremap <C-]> :Rg <C-r><C-w><CR>
 
-" :W = save with root permission
-command -nargs=0 -complete=augroup -bang W w !sudo tee % > /dev/null
-
 " dein
 let s:dein_dir = expand('~/.cache/dein')
 " dein.vim 本体
@@ -250,22 +247,22 @@ if !has('gui_running')
 endif
 
 " deoplete
-let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_at_startup = 1
 
-inoremap <expr><tab> () "\<C-n>""
-inoremap <silent><expr> <TAB>
-  \ pumvisible() ? "\<C-n>" :
-  \ <SID>check_back_space() ? "\<TAB>" :
-  \ deoplete#mappings#manual_complete()
-  function! s:check_back_space() abort "{{{
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-  endfunction"}}}
-
-call deoplete#custom#option({
- \ 'auto_complete_delay': 200,
- \ 'smart_case': v:true,
- \ })
+" inoremap <expr><tab> () "\<C-n>""
+" inoremap <silent><expr> <TAB>
+"   \ pumvisible() ? "\<C-n>" :
+"   \ <SID>check_back_space() ? "\<TAB>" :
+"   \ deoplete#mappings#manual_complete()
+"   function! s:check_back_space() abort "{{{
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~ '\s'
+"   endfunction"}}}
+" 
+" call deoplete#custom#option({
+"  \ 'auto_complete_delay': 200,
+"  \ 'smart_case': v:true,
+"  \ })
 
 "set completeopt+=noinsert
 let g:tern_request_timeout = 1
@@ -405,8 +402,8 @@ map <Space>s <Plug>(easymotion-s)
 autocmd FileType python setlocal completeopt-=preview
 
 " deoplete_rust
-let g:deoplete#sources#rust#racer_binary='~/.cargo/bin/racer'
-let g:deoplete#sources#rust#rust_source_path='~/.cargo/rust-source/rust/src'
+" let g:deoplete#sources#rust#racer_binary='~/.cargo/bin/racer'
+" let g:deoplete#sources#rust#rust_source_path='~/.cargo/rust-source/rust/src'
 
 " ale
 " rcmdnk.com/blog/2017/09/25/computer-vim/

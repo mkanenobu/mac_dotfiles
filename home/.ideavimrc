@@ -19,7 +19,6 @@ set display=lasttline
 " use global clipboard
 set clipboard=unnamed
 
-
 nnoremap H ^
 nnoremap L $
 vnoremap H ^
@@ -47,7 +46,7 @@ nnoremap <C-r> :redo<CR>
 "
 " nnoremap x "_x
 " vnoremap x "_x
-" 
+"
 " "
 " nnoremap yy "+yy
 " vnoremap y "+y
@@ -55,3 +54,4 @@ nnoremap <C-r> :redo<CR>
 " vnoremap p "+p
 " nnoremap P "+P
 " vnoremap P "+P
+" set clipboard+=ideaput

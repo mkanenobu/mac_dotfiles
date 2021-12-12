@@ -157,6 +157,12 @@ alias gsp='git stash pop'
 
 alias ghpr='gh pr checkout'
 
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
+
 # typo
 alias al=':'
 alias a=':'

@@ -12,12 +12,12 @@ repo = 'dense-analysis/ale'
 [[plugins]]
 repo = 'editorconfig/editorconfig-vim'
 
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-merged = 0
+# [[plugins]]
+# repo = 'Shougo/deoplete.nvim'
+# merged = 0
 
-[[plugins]]
-repo = 'Shougo/deoplete-nextword'
+# [[plugins]]
+# repo = 'Shougo/deoplete-nextword'
 
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete.vim'
