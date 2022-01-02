@@ -32,6 +32,8 @@ eval "$(nodenv init -)"
 eval "$(rbenv init - bash)"
 eval "$(opam env)"
 
+export GOPATH="$HOME/go"
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then
   PATH="$HOME/bin:$PATH"
