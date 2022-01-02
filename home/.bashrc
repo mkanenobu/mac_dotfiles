@@ -183,12 +183,6 @@ stty stop undef
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-source "$HOME/.cargo/env"
-
-# Wasmer
-export WASMER_DIR="/Users/kanenobu/.wasmer"
-[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
-
 # awscli default profile
 export AWS_PROFILE=personal
 

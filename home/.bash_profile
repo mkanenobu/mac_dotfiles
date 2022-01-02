@@ -13,6 +13,7 @@ if [ -n "$BASH_VERSION" ]; then
   fi
 fi
 
+# Paths
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="$PATH:$HOME/.nimble/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
@@ -37,6 +38,10 @@ export GOPATH="$HOME/go"
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then
   PATH="$HOME/bin:$PATH"
+fi
+
+if [ -e "$HOME/.cargo/env" ] ; then
+  source "$HOME/.cargo/env"
 fi
 
 export EDITOR=nvim
@@ -81,6 +86,4 @@ export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 if [ "${ALACRITTY}" ] && [ -z "${BYOBU_BACKEND}" ]; then
   byobu
 fi
-
-source "$HOME/.cargo/env"
 
