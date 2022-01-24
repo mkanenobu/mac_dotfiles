@@ -374,36 +374,10 @@ autocmd FileType plantuml map <Space>r :!open -a "Google Chrome" "%:p" <CR><CR>
 
 " NerdTree
 map <Space>n :NERDTreeToggle<CR>
-" ファイルが指定されていない場合，NERDTreeを開く
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-" vim-Autopair
-" let g:AutoPairsMapBS = 1
-" let g:AutoPairs = {'(':')', '[':']', '{':'}', '"""':'"""', '`': '`'}
-" autocmd FileType forth let g:AutoPairs = {'(':')',  '{':'}', '`':'`', 'T{':'}T'}
-" autocmd FileType ruby let b:AutoPairs = AutoPairsDefine({"|": "|"})
-" autocmd FileType rust let b:AutoPairs = AutoPairsDefine({"|": "|"})
-" autocmd FileType nim let b:AutoPairs = AutoPairsDefine({'{.': '.}'})
-" autocmd FileType ocaml let b:AutoPairs = AutoPairsDefine({
-"   \ '(*': '*)', '(**':'**)', '[|': '|]',
-" \})
-" autocmd FileType plantuml let b:AutoPairs = {}
 
 " nvim-nim
 " disable key config
 let g:nvim_nim_enable_default_binds = 0
-
-" easymotion
-map <Space>s <Plug>(easymotion-s)
-
-" jedi-vim
-" no preview
-autocmd FileType python setlocal completeopt-=preview
-
-" deoplete_rust
-" let g:deoplete#sources#rust#racer_binary='~/.cargo/bin/racer'
-" let g:deoplete#sources#rust#rust_source_path='~/.cargo/rust-source/rust/src'
 
 " ale
 " rcmdnk.com/blog/2017/09/25/computer-vim/
@@ -436,7 +410,6 @@ let g:ale_fixers = {
 
 " nmap <C-j> <Plug>(ale_next_wrap)
 " nmap <C-k> <Plug>(ale_previous_wrap)
-nnoremap <C-e><C-r> :lopen<CR>
 
 " Autopair
 let g:AutoPairsFlyMode = 0
@@ -455,15 +428,13 @@ vmap <C-l> <Plug>(EasyAlign)
 " wakatime
 " let g:wakatime_PythonBinary = '/usr/bin/python'
 
-" Dash
-" nnoremap <silent> <Space>s :Dash <CR>
-
 au User asyncomplete_setup call asyncomplete#register_source({
     \ 'name': 'nim',
     \ 'whitelist': ['nim'],
     \ 'completor': {opt, ctx -> nim#suggest#sug#GetAllCandidates({start, candidates -> asyncomplete#complete(opt['name'], ctx, start, candidates)})}
     \ })
 
+" Toglle gutter display for terminal copy
 let g:copy_format = 0
 function! CopyFormatToggle()
   if g:copy_format == 0
