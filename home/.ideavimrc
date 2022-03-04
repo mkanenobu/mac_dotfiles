@@ -35,6 +35,8 @@ vnoremap k gk
 
 nnoremap m %
 nnoremap % m
+vnoremap m %
+vnoremap % m
 
 nnoremap <C-S-h> :action PreviousTab<CR>
 nnoremap <C-S-l> :action NextTab<CR>

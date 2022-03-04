@@ -36,7 +36,7 @@ create_symlink() {
   ln -s ${source} ${target}
 }
 
-for dir_path in "${source_dir}/"*; do
+for dir_path in $(find ${source_dir} -depth 1); do
   dirname="$(basename "${dir_path}")"
 
   # skip this script
