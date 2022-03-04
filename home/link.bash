@@ -36,22 +36,11 @@ create_symlink() {
   ln -s "${source}" "${target}"
 }
 
-for dir_path in "${source_dir}/"*; do
+for dir_path in $(find "${source_dir}" -depth 1); do
   dirname="$(basename "${dir_path}")"
 
   # skip this script
   if [ "${dirname}" == "$(basename "${0}")" ]; then
-    continue
-  fi
-
-  create_symlink "${dirname}"
-done
-
-for dir_path in "${source_dir}/".*; do
-  dirname="$(basename "${dir_path}")"
-
-  # skip "." and ".."
-  if [ "${dirname}" == "." ] || [ "${dirname}" == ".." ]; then
     continue
   fi
 

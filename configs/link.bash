@@ -15,7 +15,7 @@ resolve_link() {
       filename="$(basename "${filepath}")"
       filepath="$(readlink "${filename}" || :)"
     done
-    echo "$(pwd -P)/$filename"
+    echo "$(pwd -P)/${filename}"
   )
 }
 
@@ -33,7 +33,7 @@ create_symlink() {
   fi
 
   echo "${source} -> ${target}"
-  ln -s ${source} ${target}
+  ln -s "${source}" "${target}"
 }
 
 for dir_path in $(find ${source_dir} -depth 1); do
