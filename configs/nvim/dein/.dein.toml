@@ -90,6 +90,10 @@ on_ft = 'typescript'
 [[plugins]]
 repo = 'peitalin/vim-jsx-typescript'
 
+[[plugins]]
+repo = 'hashivim/vim-terraform'
+on_ft = 'terraform'
+
 # Deoplete sources
 [[plugins]]
 repo = 'Shougo/neco-vim'
