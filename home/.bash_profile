@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/bash_profile.pre.bash" ]] && . "$HOME/.fig/shell/bash_profile.pre.bash"
 # vi: set tabstop=2 softtabstop=2 shiftwidth=2 :
 
 function _exists() {
@@ -87,3 +89,5 @@ if [ "${ALACRITTY}" ] && [ -z "${BYOBU_BACKEND}" ]; then
   byobu
 fi
 
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/bash_profile.post.bash" ]] && . "$HOME/.fig/shell/bash_profile.post.bash"

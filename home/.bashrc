@@ -1,6 +1,9 @@
 # .bashrc: executed by bash(1) for non-login shells.
 # vi: set tabstop=2 softtabstop=2 shiftwidth=2 :
 
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/bashrc.pre.bash" ]] && . "$HOME/.fig/shell/bashrc.pre.bash"
+
 # If not running interactively, don't do anything
 case $- in
   *i*) ;;
@@ -157,12 +160,6 @@ alias gsp='git stash pop'
 
 alias ghpr='gh pr checkout'
 
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias ......="cd ../../../../.."
-
 # typo
 alias al=':'
 alias a=':'
@@ -255,5 +252,8 @@ elif type compctl &>/dev/null; then
   compctl -K _npm_completion npm
 fi
 ###-end-npm-completion-###
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/bashrc.post.bash" ]] && . "$HOME/.fig/shell/bashrc.post.bash"
 
 true
