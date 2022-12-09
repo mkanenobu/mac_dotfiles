@@ -1,8 +1,7 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/bashrc.pre.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.pre.bash"
 # .bashrc: executed by bash(1) for non-login shells.
 # vi: set tabstop=2 softtabstop=2 shiftwidth=2 :
-
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/bashrc.pre.bash" ]] && . "$HOME/.fig/shell/bashrc.pre.bash"
 
 # If not running interactively, don't do anything
 case $- in
@@ -41,7 +40,7 @@ else
     echo -en \e[31m\]
   fi; echo -en $\e[m\]
   )'
-  PS1='\e[01;32m\]\u\e[00m\]:\e[01;34m\]\W'
+  PS1='\e[01;32m\][\D{%F %T}]\e[00m\]:\e[01;34m\]\W'
   PS1="${PS1}${RETURN_CODE} "
 fi
 
@@ -186,7 +185,10 @@ stty stop undef
 # awscli default profile
 export AWS_PROFILE=personal
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/bashrc.post.bash" ]] && . "$HOME/.fig/shell/bashrc.post.bash"
+# pnpm
+export PNPM_HOME="/Users/mitsurukanenobu/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
 
-true
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/bashrc.post.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.post.bash"
