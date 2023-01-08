@@ -3,8 +3,8 @@ filetype indent plugin off
 
 let configDir='~/.config/nvim'
 
-let g:python_host_prog  = '~/.pyenv/versions/py2neovim/bin/python'
-let g:python3_host_prog = '~/.pyenv/versions/py3neovim/bin/python'
+let g:python_host_prog = system('echo -n $(which python2)')
+let g:python3_host_prog = system('echo -n $(which python3)')
 
 set encoding=utf-8
 set ambiwidth=double
@@ -190,42 +190,14 @@ nnoremap <C-g> :Rg
 " grep current word
 nnoremap <C-]> :Rg <C-r><C-w><CR>
 
-" dein
-let s:dein_dir = expand('~/.cache/dein')
-" dein.vim 本体
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-
-" dein.vim がなければ github から落としてくる
-if &runtimepath !~# '/dein.vim'
-  if !isdirectory(s:dein_repo_dir)
-    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
-  endif
-  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
-endif
-
-" 設定開始
-if dein#load_state(s:dein_dir)
-  call dein#begin(s:dein_dir)
-
-  " プラグインリストを収めた TOML ファイル
-  " 予め TOML ファイル（後述）を用意しておく
-  let g:rc_dir  = expand('~/.config/nvim/dein')
-  let s:toml  = g:rc_dir . '/.dein.toml'
-  let s:lazy_toml = g:rc_dir . '/.dein_lazy.toml'
-
-  " TOML を読み込み、キャッシュしておく
-  call dein#load_toml(s:toml,    {'lazy': 0})
-  call dein#load_toml(s:lazy_toml, {'lazy': 1})
-
-  " 設定終了
-  call dein#end()
-  call dein#save_state()
-endif
-
-" もし、未インストールものものがあったらインストール
-if dein#check_install()
-  call dein#install()
-endif
+" vim-plug
+" https://github.com/junegunn/vim-plug
+" type `:PlugInstall` first
+call plug#begin()
+Plug 'tomasr/molokai'
+Plug 'mhinz/vim-signify'
+Plug 'thinca/vim-quickrun'
+call plug#end()
 
 augroup molokai_custom
   autocmd!
@@ -245,74 +217,6 @@ if !has('gui_running')
     autocmd VimEnter,ColorScheme * highlight NonText ctermbg=none
   augroup END
 endif
-
-" deoplete
-" let g:deoplete#enable_at_startup = 1
-
-" inoremap <expr><tab> () "\<C-n>""
-" inoremap <silent><expr> <TAB>
-"   \ pumvisible() ? "\<C-n>" :
-"   \ <SID>check_back_space() ? "\<TAB>" :
-"   \ deoplete#mappings#manual_complete()
-"   function! s:check_back_space() abort "{{{
-"   let col = col('.') - 1
-"   return !col || getline('.')[col - 1]  =~ '\s'
-"   endfunction"}}}
-" 
-" call deoplete#custom#option({
-"  \ 'auto_complete_delay': 200,
-"  \ 'smart_case': v:true,
-"  \ })
-
-"set completeopt+=noinsert
-let g:tern_request_timeout = 1
-
-" vim-closetag
-let g:closetag_filenames = '*.html, *.xhtml, *.phtml, *.php'
-let g:closetag_xhtml_filenames = '*.xhtml, *.jsx'
-let g:closetag_emptyTags_caseSensitive = 1
-let g:closetag_shortcut = '>'
-let g:closetag_close_shortcut = '<leader>>'
-
-" elzr/vim-json
-let g:vim_json_syntax_conceal = 0
-
-" json parse
-command! -nargs=? Jq call s:Jq(<f-args>)
-function! s:Jq(...)
-  if 0 == a:0
-    let l:arg = "."
-  else
-    let l:arg = a:1
-  endif
-  execute "%! jq \"" . l:arg . "\""
-endfunction
-
-" JSON format
-command! Jq %!jq '.'
-
-"" neosnippet
-
-" Plugin key-mappings.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
-" SuperTab like snippets behavior.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <expr><C-n>
-  \ pumvisible() ? "\<C-n>" :
-  \ neosnippet#expandable_or_jumpable() ?
-  \  "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-smap <expr><C-n> neosnippet#expandable_or_jumpable() ?
-  \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-let g:neosnippet#snippets_directory = '~/.config/nvim/snippets/'
 
 " quickrun
 map <Space>r :QuickRun -input =@+<CR>
@@ -372,67 +276,12 @@ autocmd FileType html map <Space>r :!open -a "Google Chrome" "%:p" <CR><CR>
 autocmd FileType plantuml map <Space>r :!open -a "Google Chrome" "%:p" <CR><CR>
 " autocmd FileType scheme map <Space>r :normal ggcpG<cr>`s
 
-" NerdTree
-map <Space>n :NERDTreeToggle<CR>
-
-" nvim-nim
-" disable key config
-let g:nvim_nim_enable_default_binds = 0
-
-" ale
-" rcmdnk.com/blog/2017/09/25/computer-vim/
-let g:ale_lint_on_text_changed = 0
-let g:ale_lint_on_insert_leave = 1
-let g:ale_cache_executable_check_failures = 0
-" let g:ale_fix_on_save = 1
-let g:ale_completion_enabled = 1
-let g:ale_lint_on_enter = 0
-let g:ale_completion_delay = 150
-let g:ale_linters = {
-  \ 'python': ['mypy'],
-  \ 'ruby': [''],
-  \ 'bash': ['shellcheck'],
-  \ 'rust': ['rustc'],
-\}
-  " \ 'python': ['flake8'],
-  " \ 'ruby': ['rubocop'],
-
-let g:ale_fixers = {
-  \ 'python': ['isort', 'autopep8'],
-  \ 'rust': ['rustfmt'],
-  \ 'ruby': [''],
-  \ 'ocaml': ['ocamlformat'],
-  \ 'bash': ['shellcheck'],
-  \ 'nim': ['trim_whitespace'],
-\}
-  " \ 'python': ['autopep8', 'isort'],
-  " \ 'ruby': ['rubocop'],
-
-" nmap <C-j> <Plug>(ale_next_wrap)
-" nmap <C-k> <Plug>(ale_previous_wrap)
-
-" Autopair
-let g:AutoPairsFlyMode = 0
-let g:AutoPairsMultilineClose = 0
-
 " vim-signify
 let g:signify_disable_by_default = 0
 let g:signify_vcs_list = ['git']
 let g:signify_update_on_bufenter = 0
 nmap <S-j> <plug>(signify-next-hunk)
 nmap <S-k> <plug>(signify-prev-hunk)
-
-" easy-align
-vmap <C-l> <Plug>(EasyAlign)
-
-" wakatime
-" let g:wakatime_PythonBinary = '/usr/bin/python'
-
-au User asyncomplete_setup call asyncomplete#register_source({
-    \ 'name': 'nim',
-    \ 'whitelist': ['nim'],
-    \ 'completor': {opt, ctx -> nim#suggest#sug#GetAllCandidates({start, candidates -> asyncomplete#complete(opt['name'], ctx, start, candidates)})}
-    \ })
 
 " Toglle gutter display for terminal copy
 let g:copy_format = 0

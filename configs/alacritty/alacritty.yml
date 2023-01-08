@@ -94,7 +94,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: "Cascadia Code"
+    family: "Cascadia Code PL"
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -105,7 +105,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: "Cascadia Code"
+    family: "Cascadia Code PL"
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -116,7 +116,7 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: "Cascadia Code"
+    family: "Cascadia Code PL"
 
     # The `style` can be specified to pick a specific face.
     #style: Italic
@@ -127,7 +127,7 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: "Cascadia Code"
+    family: "Cascadia Code PL"
 
     # The `style` can be specified to pick a specific face.
     #style: Bold Italic
@@ -197,6 +197,11 @@ colors:
     cyan:    '#37e5e7'
     white:   '#f1f1ef'
 
+  footer_bar:
+    background: '#c5c8c6'
+    foreground: '#1d1f21'
+
+
   # Selection colors
   #
   # Colors which should be used to draw the selection area.
@@ -216,10 +221,6 @@ colors:
     matches:
       foreground: '#ffffff'
       background: '#705278'
-
-    footer_bar:
-      background: '#c5c8c6'
-      foreground: '#1d1f21'
 
   # Indexed Colors
   #
@@ -268,7 +269,7 @@ live_config_reload: true
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 shell:
-  program: /usr/local/bin/bash
+  program: /opt/homebrew/bin/bash
   args:
     - --login
 

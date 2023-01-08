@@ -10,8 +10,8 @@ case $- in
 esac
 
 # use GNU commands
-PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+MANPATH="/opt/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=20000
@@ -70,9 +70,8 @@ function share_history {
   history -a
   tac ~/.bash_history | awk '!a[$0]++' | tac >| ~/.bash_history.tmp
   [ -f ~/.bash_history.tmp ] &&
-  mv -f ~/.bash_history{.tmp,} &&
-  history -c &&
-  history -r
+    mv -f ~/.bash_history{.tmp,} &&
+      history -c && history -r
 }
 PROMPT_COMMAND='share_history'
 shopt -u histappend
@@ -123,15 +122,6 @@ alias fzf='fzf --reverse'
 alias cl='clear'
 alias gitignore_init='gibo dump'
 
-# languages
-alias py='python3'
-alias nimc='nim c'
-alias nimcd='nim c -d:release'
-alias nimcr='nim c -r --verbosity:0'
-alias nimi='rlwrap nim secret'
-alias rc='rustc'
-alias ocaml='rlwrap ocaml'
-
 # for sdkmanager
 alias sdkmanager='JAVA_HOME="$(/usr/libexec/java_home -v 1.8)" sdkmanager'
 
@@ -179,8 +169,6 @@ set -C noclobber
 
 # stop ctrl-s panic
 stty stop undef
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # awscli default profile
 export AWS_PROFILE=personal
