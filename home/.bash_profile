@@ -9,29 +9,15 @@ function _exists() {
 # Set PATH, MANPATH, etc., for Homebrew.
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# if running bash
-if [ -n "$BASH_VERSION" ]; then
-  # include .bashrc if it exists
-  if [ -f "$HOME/.bashrc" ]; then
-  . "$HOME/.bashrc"
-  fi
-fi
-
 # Paths
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.nodenv/bin"
-export PATH="$PATH:$HOME/.rbenv/bin"
-export PATH="$PATH:$HOME/.pyenv/bin"
-export PATH="$PATH:$HOME/.nimenv/bin"
-export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/toolbox"
 export PATH="$PATH:$HOME/.local/for-work"
 export PATH="$PATH:$HOME/go/bin"
 # Rancher Desktop
 export PATH="$PATH:$HOME/.rd/bin"
-# Haskell
-export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
 
 # *env
 eval "$(nodenv init -)"
@@ -46,7 +32,7 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 if [ -e "$HOME/.cargo/env" ] ; then
-  source "$HOME/.cargo/env"
+  . "$HOME/.cargo/env"
 fi
 
 export EDITOR=nvim
@@ -77,6 +63,16 @@ export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
 # For pkg-config to find openssl you may need to set:
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
+
+# if running bash
+if [ -n "$BASH_VERSION" ]; then
+  # include .bashrc if it exists
+  if [ -f "$HOME/.bashrc" ]; then
+  . "$HOME/.bashrc"
+  fi
+fi
+
+[[ -f "/opt/homebrew/opt/fzf/shell/key-bindings.bash" ]] && builtin source "/opt/homebrew/opt/fzf/shell/key-bindings.bash"
 
 # completion
 complete -C "$(which aws_completer)" aws

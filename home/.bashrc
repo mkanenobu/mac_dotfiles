@@ -122,12 +122,6 @@ alias fzf='fzf --reverse'
 alias cl='clear'
 alias gitignore_init='gibo dump'
 
-# for sdkmanager
-alias sdkmanager='JAVA_HOME="$(/usr/libexec/java_home -v 1.8)" sdkmanager'
-
-# Docker
-alias docker-compose='docker compose'
-
 # Git
 alias ga='git add'
 alias gitpull='git pull'
@@ -149,6 +143,7 @@ alias gpr='git pull --rebase'
 alias gfp='git fetch && git pull'
 alias gst='git stash'
 alias gsp='git stash pop'
+alias uuidgen='uuidgen | tr "[:upper:]" "[:lower:]"'
 
 alias ghpr='gh pr checkout'
 
@@ -174,7 +169,7 @@ stty stop undef
 export AWS_PROFILE=personal
 
 # pnpm
-export PNPM_HOME="/Users/mitsurukanenobu/Library/pnpm"
+export PNPM_HOME="${HOME}/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
