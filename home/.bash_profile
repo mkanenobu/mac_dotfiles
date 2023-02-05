@@ -21,7 +21,6 @@ export PATH="$PATH:$HOME/.rd/bin"
 
 # *env
 eval "$(nodenv init -)"
-eval "$(rbenv init - bash)"
 eval "$(opam env)"
 
 export GOPATH="$HOME/go"
