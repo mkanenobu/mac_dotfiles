@@ -19,6 +19,8 @@ export PATH="$PATH:$HOME/go/bin"
 # Rancher Desktop
 export PATH="$PATH:$HOME/.rd/bin"
 
+export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
+
 # *env
 eval "$(nodenv init -)"
 eval "$(opam env)"
