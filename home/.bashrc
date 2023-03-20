@@ -161,6 +161,7 @@ set -o emacs
 set -C noclobber
 
 [ -f ~/.env ] && source ~/.env
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # stop ctrl-s panic
 stty stop undef
