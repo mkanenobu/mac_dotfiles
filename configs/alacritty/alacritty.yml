@@ -20,7 +20,7 @@ window:
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
   dimensions:
-    columns: 112
+    columns: 116
     lines: 56
 
   # Window position (changes require restart)
@@ -269,7 +269,7 @@ live_config_reload: true
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 shell:
-  program: /opt/homebrew/bin/bash
+  program: "/opt/homebrew/bin/bash"
   args:
     - --login
 
@@ -327,4 +327,4 @@ key_bindings:
   - { key: W,      mods: Command, action: Quit             }
   - { key: T,      mods: Command, action: SpawnNewInstance }
   - { key: F,      mods: Command, action: SearchForward    }
-  - { key: Comma,  mods: Command, command: { program: "bash", args: ["-lc", "--", "open ${XDG_CONFIG_HOME}/alacritty/alacritty.yml"] } }
+  #- { key: Comma,  mods: Command, command: { program: "bash", args: ["-lc", "--", "open ${XDG_CONFIG_HOME}/alacritty/alacritty.yml"] } }

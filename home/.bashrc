@@ -10,8 +10,8 @@ case $- in
 esac
 
 # use GNU commands
-PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
-MANPATH="/opt/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=20000
@@ -162,17 +162,19 @@ set -C noclobber
 
 [ -f ~/.env ] && source ~/.env
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
 # stop ctrl-s panic
 stty stop undef
 
 # awscli default profile
-export AWS_PROFILE=personal
+export AWS_PROFILE=loynstg
 
 # pnpm
 export PNPM_HOME="${HOME}/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/bashrc.post.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.post.bash"

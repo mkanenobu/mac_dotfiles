@@ -11,10 +11,14 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Paths
 export XDG_CONFIG_HOME="$HOME/.config"
+export PATH="$PATH:/opt/homebrew/bin"
+export PATH="$PATH:$HOME/.rd/bin"
+export PATH="$PATH:$HOME/.nimble/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.nodenv/bin"
 export PATH="$PATH:$HOME/.local/toolbox"
 export PATH="$PATH:$HOME/.local/for-work"
+export PATH="$PATH:$HOME/.fig/bin"
 export PATH="$PATH:$HOME/go/bin"
 # Rancher Desktop
 export PATH="$PATH:$HOME/.rd/bin"
@@ -30,10 +34,6 @@ export GOPATH="$HOME/go"
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then
   export PATH="$PATH:$HOME/.local/bin"
-fi
-
-if [ -e "$HOME/.cargo/env" ] ; then
-  . "$HOME/.cargo/env"
 fi
 
 export EDITOR=nvim
