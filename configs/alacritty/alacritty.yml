@@ -12,7 +12,7 @@ env:
   # available, otherwise `xterm-256color` is used.
   TERM: xterm-256color
   # for stating byobu
-  ALACRITTY: 'true'
+  ALACRITTY: "true"
 
 window:
   # Window dimensions (changes require restart)
@@ -155,8 +155,8 @@ font:
 colors:
   # Default colors
   primary:
-    background: '#1c1c1c'
-    foreground: '#feffff'
+    background: "#1c1c1c"
+    foreground: "#feffff"
     # Bright and dim foreground colors
     #
     # The dimmed foreground color is calculated automatically if it is not present.
@@ -173,34 +173,33 @@ colors:
   # affected cell, or hexadecimal colors like #ff00ff.
   cursor:
     text: CellBackground
-    cursor: '#ffffff'
+    cursor: "#ffffff"
 
   # Normal colors
   normal:
-    black:   '#676965'
-    red:     '#f55b51'
-    green:   '#a6e35f'
-    yellow:  '#fcea60'
-    blue:    '#83afd8'
-    magenta: '#b867ac'
-    cyan:    '#37e5e7'
-    white:   '#f1f1ef'
+    black: "#676965"
+    red: "#f55b51"
+    green: "#a6e35f"
+    yellow: "#fcea60"
+    blue: "#83afd8"
+    magenta: "#b867ac"
+    cyan: "#37e5e7"
+    white: "#f1f1ef"
 
   # Bright colors
   bright:
-    black:   '#676965'
-    red:     '#f55b51'
-    green:   '#a6e35f'
-    yellow:  '#fcea60'
-    blue:    '#83afd8'
-    magenta: '#b867ac'
-    cyan:    '#37e5e7'
-    white:   '#f1f1ef'
+    black: "#676965"
+    red: "#f55b51"
+    green: "#a6e35f"
+    yellow: "#fcea60"
+    blue: "#83afd8"
+    magenta: "#b867ac"
+    cyan: "#37e5e7"
+    white: "#f1f1ef"
 
   footer_bar:
-    background: '#c5c8c6'
-    foreground: '#1d1f21'
-
+    background: "#c5c8c6"
+    foreground: "#1d1f21"
 
   # Selection colors
   #
@@ -210,7 +209,7 @@ colors:
   # affected cell, or hexadecimal colors like #ff00ff.
   selection:
     text: CellForeground
-    background: '#6c6c6c'
+    background: "#6c6c6c"
 
   # Search colors
   #
@@ -219,8 +218,8 @@ colors:
     # Allowed values are CellForeground and CellBackground, which reference the
     # affected cell, or hexadecimal colors like #ff00ff.
     matches:
-      foreground: '#ffffff'
-      background: '#705278'
+      foreground: "#ffffff"
+      background: "#705278"
 
   # Indexed Colors
   #
@@ -289,20 +288,20 @@ mouse:
   #hide_when_typing: false
 
   #url:
-    # URL launcher
-    #
-    # This program is executed when clicking on a text which is recognized as a URL.
-    # The URL is always added to the command as the last parameter.
-    #
-    # When set to `launcher: None`, URL launching will be disabled completely.
-    #
-    # Default:
-    #   - (macOS) open
-    #   - (Linux/BSD) xdg-open
-    #   - (Windows) explorer
-    #launcher:
-      #program: open
-      #args: []
+  # URL launcher
+  #
+  # This program is executed when clicking on a text which is recognized as a URL.
+  # The URL is always added to the command as the last parameter.
+  #
+  # When set to `launcher: None`, URL launching will be disabled completely.
+  #
+  # Default:
+  #   - (macOS) open
+  #   - (Linux/BSD) xdg-open
+  #   - (Windows) explorer
+  #launcher:
+  #program: open
+  #args: []
 
 # Bindings are always filled by default, but will be replaced when a new
 # binding with the same triggers is defined. To unset a default binding, it can
@@ -312,19 +311,19 @@ mouse:
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
 key_bindings:
-  - { key: Paste,                 action: Paste            }
-  - { key: Copy,                  action: Copy             }
-  - { key: Key0,   mods: Command, action: ResetFontSize    }
+  - { key: Paste, action: Paste }
+  - { key: Copy, action: Copy }
+  - { key: Key0, mods: Command, action: ResetFontSize }
   - { key: Equals, mods: Command, action: IncreaseFontSize }
-#  - { key: Add,    mods: Command, action: IncreaseFontSize }
-#  - { key: Minus,  mods: Command, action: DecreaseFontSize }
-  - { key: L,      mods: Control, action: ClearLogNotice   }
-  - { key: V,      mods: Command, action: Paste            }
-  - { key: C,      mods: Command, action: Copy             }
-  - { key: H,      mods: Command, action: Hide             }
-  - { key: M,      mods: Command, action: Minimize         }
-  - { key: Q,      mods: Command, action: Quit             }
-  - { key: W,      mods: Command, action: Quit             }
-  - { key: T,      mods: Command, action: SpawnNewInstance }
-  - { key: F,      mods: Command, action: SearchForward    }
+  #  - { key: Add,    mods: Command, action: IncreaseFontSize }
+  #  - { key: Minus,  mods: Command, action: DecreaseFontSize }
+  - { key: L, mods: Control, action: ClearLogNotice }
+  - { key: V, mods: Command, action: Paste }
+  - { key: C, mods: Command, action: Copy }
+  - { key: H, mods: Command, action: Hide }
+  - { key: M, mods: Command, action: Minimize }
+  - { key: Q, mods: Command, action: Quit }
+  - { key: W, mods: Command, action: Quit }
+  - { key: T, mods: Command, action: SpawnNewInstance }
+  - { key: F, mods: Command, action: SearchForward }
   #- { key: Comma,  mods: Command, command: { program: "bash", args: ["-lc", "--", "open ${XDG_CONFIG_HOME}/alacritty/alacritty.yml"] } }
