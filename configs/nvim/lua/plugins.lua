@@ -6,6 +6,7 @@ local plug = vim.fn["plug#"]
 vim.call("plug#begin")
 plug "tomasr/molokai"
 plug "mhinz/vim-signify"
+plug "github/copilot.vim"
 vim.call("plug#end")
 
 vim.cmd("colorscheme molokai")
