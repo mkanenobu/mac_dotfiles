@@ -27,6 +27,7 @@ export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 
 # *env
 eval "$(nodenv init -)"
+eval "$(pyenv init -)"
 eval "$(opam env)"
 
 export GOPATH="$HOME/go"
