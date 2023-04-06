@@ -1,7 +1,7 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/bash_profile.pre.bash" ]] && builtin source "$HOME/.fig/shell/bash_profile.pre.bash"
 
-function _exists() {
+function command_exists() {
   type "$1" 1>/dev/null 2>/dev/null
   return $?
 }
@@ -12,7 +12,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Paths
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="$PATH:/opt/homebrew/bin"
-export PATH="$PATH:$HOME/.rd/bin"
 export PATH="$PATH:$HOME/.nimble/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.nodenv/bin"
@@ -20,15 +19,22 @@ export PATH="$PATH:$HOME/.local/toolbox"
 export PATH="$PATH:$HOME/.local/for-work"
 export PATH="$PATH:$HOME/.fig/bin"
 export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:$HOME/flutter/bin"
 # Rancher Desktop
 export PATH="$PATH:$HOME/.rd/bin"
-
+# Android
 export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 
 # *env
 eval "$(nodenv init -)"
-eval "$(pyenv init -)"
 eval "$(opam env)"
+command_exists pyenv && eval "$(pyenv init -)"
+command_exists rbenv && eval "$(rbenv init - bash)"
+
+# OpenSSL
+export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include"
 
 export GOPATH="$HOME/go"
 

@@ -97,9 +97,7 @@ alias bp='vim ~/.bash_profile'
 alias sbp='source ~/.bash_profile'
 alias sbr='source ~/.bashrc'
 alias mkdir='mkdir -p'
-alias dein='vim ~/.config/nvim/dein/.dein.toml'
-alias deinlazy='vim ~/.config/nvim/dein/.dein_lazy.toml'
-alias rename='rename -v'
+alias nvr='vim ~/.config/nvim/'
 if _exists "icdiff"; then
   alias diff='icdiff -U 1 --line-number'
 fi

@@ -6,6 +6,7 @@ local plug = vim.fn["plug#"]
 vim.call("plug#begin")
 plug "tomasr/molokai"
 plug "mhinz/vim-signify"
+-- run `:Copilot setup` after install
 plug "github/copilot.vim"
 vim.call("plug#end")
 
