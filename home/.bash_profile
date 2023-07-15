@@ -24,12 +24,14 @@ export PATH="$PATH:$HOME/flutter/bin"
 export PATH="$PATH:$HOME/.rd/bin"
 # Android
 export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
+# GCP
+export PATH="$PATH:$HOME/google-cloud-sdk/bin"
 
 # *env
 eval "$(nodenv init -)"
 eval "$(opam env)"
 command_exists pyenv && eval "$(pyenv init -)"
-command_exists rbenv && eval "$(rbenv init - bash)"
+command_exists rbenv && eval "$(rbenv init -)"
 
 # OpenSSL
 export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"

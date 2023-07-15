@@ -111,7 +111,7 @@ alias vimdiff='nvim -d'
 alias tree='tree -N'
 
 # Shell utils
-alias duc='du -d 1 -ah | sort -h'
+alias duc='du -d 1 -h | sort -h'
 alias wcj='wc -m'
 alias mv='mv -i'
 alias cp='cp -i'
@@ -163,9 +163,6 @@ set -C noclobber
 
 # stop ctrl-s panic
 stty stop undef
-
-# awscli default profile
-export AWS_PROFILE=loynstg
 
 # pnpm
 export PNPM_HOME="${HOME}/Library/pnpm"
