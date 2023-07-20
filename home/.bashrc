@@ -156,6 +156,9 @@ export PNPM_HOME="${HOME}/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/bashrc.post.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.post.bash"
