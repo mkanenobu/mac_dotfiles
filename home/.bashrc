@@ -30,20 +30,7 @@ HISTCONTROL=ignoredups
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-if [ -z $TMUX ]; then
-  PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]$ '
-else
-  RETURN_CODE='\[$(
-  if [ $? -eq 0 ]; then
-    echo -en \e[m\]
-  else
-    echo -en \e[31m\]
-  fi; echo -en $\e[m\]
-  )'
-  PS1='\e[01;32m\][\D{%F %T}]\e[00m\]:\e[01;34m\]\W'
-  PS1="${PS1}${RETURN_CODE} "
-fi
-
+PS1="$(prompt.bash)"
 PS2='>'
 
 function _exists() {
