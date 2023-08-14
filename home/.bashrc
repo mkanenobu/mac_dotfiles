@@ -30,7 +30,7 @@ HISTCONTROL=ignoredups
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-PS1="$(prompt.bash)"
+PS1="$(prompt.rs)"
 PS2='>'
 
 function _exists() {
