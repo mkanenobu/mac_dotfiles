@@ -1,0 +1,4 @@
+inherits = "monokai"
+
+"ui.background" = { fg = "text" }
+

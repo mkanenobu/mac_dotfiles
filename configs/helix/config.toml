@@ -1,0 +1,12 @@
+theme = "monokai-custom"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[keys.normal]
+L = "goto_line_end"
+H = "goto_line_start"
+D = ["goto_line_start"]
+"C-," = ":open ~/.config/helix/config.toml"
