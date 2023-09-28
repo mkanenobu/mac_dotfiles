@@ -326,4 +326,4 @@ key_bindings:
   - { key: W, mods: Command, action: Quit }
   - { key: T, mods: Command, action: SpawnNewInstance }
   - { key: F, mods: Command, action: SearchForward }
-  #- { key: Comma,  mods: Command, command: { program: "bash", args: ["-lc", "--", "open ${XDG_CONFIG_HOME}/alacritty/alacritty.yml"] } }
+  - { key: Comma,  mods: Command, command: { program: "bash", args: ["-lc", "--", "open ${XDG_CONFIG_HOME}/alacritty/alacritty.yml"] } }
