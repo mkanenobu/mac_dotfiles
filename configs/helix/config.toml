@@ -1,5 +1,15 @@
 theme = "monokai-custom"
 
+[editor]
+color-modes = true
+auto-pairs = false
+
+[editor.statusline]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-type"]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
@@ -8,5 +18,4 @@ select = "underline"
 [keys.normal]
 L = "goto_line_end"
 H = "goto_line_start"
-D = ["goto_line_start"]
-"C-," = ":open ~/.config/helix/config.toml"
+"C-7" = "toggle_comments"
