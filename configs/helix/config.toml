@@ -3,9 +3,11 @@ theme = "monokai-custom"
 [editor]
 color-modes = true
 auto-pairs = false
+mouse = false
 
 [editor.statusline]
-right = ["diagnostics", "selections", "position", "file-encoding", "file-type"]
+left = ["mode", "spinner", "file-name"]
+right = ["diagnostics", "selections", "position", "file-line-ending", "file-encoding", "file-type"]
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
@@ -18,4 +20,8 @@ select = "underline"
 [keys.normal]
 L = "goto_line_end"
 H = "goto_line_start"
+D = "kill_to_line_end"
 "C-7" = "toggle_comments"
+# Default behavior: Select all regex matches inside selections
+# Replaced behavior: Like vim
+s = ["delete_selection", "insert_mode"]
