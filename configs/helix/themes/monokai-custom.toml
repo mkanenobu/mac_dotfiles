@@ -1,4 +1,16 @@
+# https://github.com/helix-editor/helix/blob/master/runtime/themes/monokai.toml
 inherits = "monokai"
 
 "ui.background" = { fg = "text" }
+"ui.cursor.match" = { fg = "text", bg = "light-blue" }
 
+"constructor" = { fg = "func_declaration" }
+"function" = { fg = "func" }
+"function.builtin" = { fg = "func" }
+
+"tag" = { fg = "keyword" }
+
+[palette]
+type = "#f8f8f2"
+func = "#a6e22e"
+func_declaration = "#ffc66d"

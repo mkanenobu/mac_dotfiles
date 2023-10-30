@@ -1,0 +1,20 @@
+[[language]]
+name = "go"
+scope = "source.go"
+injection-regex = "go"
+file-types = ["go"]
+comment-token = "//"
+language-servers = ["gopls"]
+auto-format = true
+
+[[language]]
+name = "ocaml"
+scope = "source.ocaml"
+injection-regex = "ocaml"
+file-types = ["ml"]
+shebangs = ["ocaml", "ocamlrun", "ocamlscript"]
+comment-token = "(**)"
+language-servers = ["ocamllsp"]
+auto-format = true
+formatter = { command = "ocamlformat", args = ["-", "--impl", "--enable-outside-detected-project"] }
+indent = { tab-width = 2, unit = "  " }

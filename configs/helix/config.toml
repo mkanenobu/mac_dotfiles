@@ -2,8 +2,13 @@ theme = "monokai-custom"
 
 [editor]
 color-modes = true
-auto-pairs = false
-mouse = false
+mouse = true
+auto-completion = true
+idle-timeout = 200
+completion-trigger-len = 1
+
+[editor.soft-wrap]
+enable = true
 
 [editor.statusline]
 left = ["mode", "spinner", "file-name"]
@@ -17,11 +22,19 @@ insert = "bar"
 normal = "block"
 select = "underline"
 
+[editor.auto-pairs]
+"{" = "}"
+
+[editor.lsp]
+enable = true
+display-messages = true
+# display-inlay-hints = true
+
 [keys.normal]
 L = "goto_line_end"
 H = "goto_line_start"
 D = "kill_to_line_end"
-"C-7" = "toggle_comments"
 # Default behavior: Select all regex matches inside selections
 # Replaced behavior: Like vim
 s = ["delete_selection", "insert_mode"]
+V = "extend_line_below"
