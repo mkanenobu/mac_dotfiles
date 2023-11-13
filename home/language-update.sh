@@ -9,10 +9,6 @@ separate() {
   echo "${separater}"
 }
 
-separate "Nim"
-choosenim update stable
-nimble update
-
 separate "Node.js"
 npm update --global
 

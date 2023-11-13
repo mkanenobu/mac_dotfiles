@@ -1,6 +1,7 @@
 theme = "monokai-custom"
 
 [editor]
+true-color = true
 color-modes = true
 mouse = true
 auto-completion = true

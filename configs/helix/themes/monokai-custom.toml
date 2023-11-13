@@ -11,6 +11,6 @@ inherits = "monokai"
 "tag" = { fg = "keyword" }
 
 [palette]
-type = "#f8f8f2"
-func = "#a6e22e"
-func_declaration = "#ffc66d"
+type = "#F8F8F2"
+func = "#A6E22E"
+func_declaration = "#FFC66D"
