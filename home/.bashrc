@@ -144,6 +144,9 @@ set -o emacs
 # >|を用いればリダイレクトできる
 set -C noclobber
 
+# Pull latest dotfiles
+[ -d ~/.local/mac_dotfiles ] && cd ~/.local/mac_dotfiles && git pull &> /dev/null && cd -
+
 [ -f ~/.env ] && source ~/.env
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
