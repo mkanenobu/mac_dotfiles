@@ -33,11 +33,6 @@ eval "$(opam env)"
 command_exists pyenv && eval "$(pyenv init -)"
 command_exists rbenv && eval "$(rbenv init -)"
 
-# OpenSSL
-export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
-export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include"
-
 export GOPATH="$HOME/go"
 
 # set PATH so it includes user's private bin if it exists
@@ -67,12 +62,11 @@ export LC_TIME=C
 export FIGNORE="$FIGNORE:DS_Store"
 
 # OpenSSL
-export PATH="$PATH:/usr/local/opt/openssl/bin"
-# For compilers to find openssl you may need to set:
-export LDFLAGS="-L/usr/local/opt/openssl/lib"
-export CPPFLAGS="-I/usr/local/opt/openssl/include"
-# For pkg-config to find openssl you may need to set:
-export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
+export PATH="$PATH:/opt/homebrew/opt/openssl@3/bin"
+export LDFLAGS="$(pkg-config --cflags openssl)"
+export CPPFLAGS="$(pkg-config --libs openssl)"
+export CGO_CFLAGS="$(pkg-config --cflags openssl)"
+export CGO_LDFLAGS="$(pkg-config --libs openssl)"
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
