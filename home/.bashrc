@@ -159,6 +159,7 @@ set -C noclobber
 
 [ -f ~/.env ] && source ~/.env
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# rust
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
 # stop ctrl-s panic
@@ -172,9 +173,6 @@ export PATH="$PNPM_HOME:$PATH"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
-
-# rust
-. "$HOME/.cargo/env"
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/bashrc.post.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.post.bash"
