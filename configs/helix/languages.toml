@@ -18,3 +18,13 @@ language-servers = ["ocamllsp"]
 auto-format = true
 formatter = { command = "ocamlformat", args = ["-", "--impl", "--enable-outside-detected-project"] }
 indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "forth"
+scope = "source.fs"
+injection-regex = "forth"
+file-types = ["fs", "fth", "4th", "forth"]
+shebangs = ["gforth"]
+comment-token = "\\"
+language-servers = ["forth-lsp"]
+indent = { tab-width = 3, unit = "   " }
