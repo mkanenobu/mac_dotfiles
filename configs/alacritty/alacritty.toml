@@ -1,0 +1,168 @@
+live_config_reload = true
+
+[colors.bright]
+black = "#676965"
+blue = "#83afd8"
+cyan = "#37e5e7"
+green = "#a6e35f"
+magenta = "#b867ac"
+red = "#f55b51"
+white = "#f1f1ef"
+yellow = "#fcea60"
+
+[colors.cursor]
+cursor = "#ffffff"
+text = "CellBackground"
+
+[colors.footer_bar]
+background = "#c5c8c6"
+foreground = "#1d1f21"
+
+[colors.normal]
+black = "#676965"
+blue = "#83afd8"
+cyan = "#37e5e7"
+green = "#a6e35f"
+magenta = "#b867ac"
+red = "#f55b51"
+white = "#f1f1ef"
+yellow = "#fcea60"
+
+[colors.primary]
+background = "#1c1c1c"
+foreground = "#feffff"
+
+[colors.search.matches]
+background = "#705278"
+foreground = "#ffffff"
+
+[colors.selection]
+background = "#6c6c6c"
+text = "CellForeground"
+
+[cursor]
+style = "Block"
+thickness = 0.15
+unfocused_hollow = true
+
+[env]
+ALACRITTY = "true"
+TERM = "xterm-256color"
+
+[font]
+size = 14.0
+
+[font.bold]
+family = "Cascadia Code PL"
+style = "Bold"
+
+[font.bold_italic]
+family = "Cascadia Code PL"
+style = "Bold"
+
+[font.italic]
+family = "Cascadia Code PL"
+
+[font.normal]
+family = "Cascadia Code PL"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "Paste"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "Copy"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "ClearLogNotice"
+key = "L"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Hide"
+key = "H"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Minimize"
+key = "M"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Quit"
+key = "Q"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Quit"
+key = "W"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "T"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "SearchForward"
+key = "F"
+mods = "Command"
+
+[[keyboard.bindings]]
+key = "Comma"
+mods = "Command"
+
+[keyboard.bindings.command]
+args = ["-lc", "--", "open ${XDG_CONFIG_HOME}/alacritty/alacritty.yml"]
+program = "bash"
+
+[scrolling]
+history = 0
+
+[selection]
+save_to_clipboard = false
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+
+[shell]
+args = ["--login"]
+program = "/opt/homebrew/bin/bash"
+
+[window]
+decorations = "buttonless"
+dynamic_title = true
+opacity = 0.9
+startup_mode = "Windowed"
+
+[window.dimensions]
+columns = 116
+lines = 56
+
+[window.padding]
+x = 8
+y = 8
+
+[window.position]
+x = 0
+y = 0

@@ -28,8 +28,8 @@ export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 export PATH="$PATH:$HOME/google-cloud-sdk/bin"
 
 # *env
-eval "$(nodenv init -)"
-eval "$(opam env)"
+command_exists nodenv && eval "$(nodenv init -)"
+command_exists opam && eval "$(opam env)"
 command_exists pyenv && eval "$(pyenv init -)"
 command_exists rbenv && eval "$(rbenv init -)"
 
@@ -85,6 +85,8 @@ complete -C "$(which aws_completer)" aws
 if [ "${ALACRITTY}" ] && [ -z "${BYOBU_BACKEND}" ]; then
   byobu
 fi
+
+. "$HOME/.cargo/env"
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/bash_profile.post.bash" ]] && builtin source "$HOME/.fig/shell/bash_profile.post.bash"

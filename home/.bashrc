@@ -1,7 +1,8 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/bashrc.pre.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.pre.bash"
 # .bashrc: executed by bash(1) for non-login shells.
 # vi: set tabstop=2 softtabstop=2 shiftwidth=2 :
+
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/bashrc.pre.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.pre.bash"
 
 # If not running interactively, don't do anything
 case $- in
@@ -30,7 +31,19 @@ HISTCONTROL=ignoredups
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-PS1="$(prompt.rs)"
+if [ -z $TMUX ]; then
+  PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]$ '
+else
+  RETURN_CODE='\[$(
+  if [ $? -eq 0 ]; then
+    echo -en \e[m\]
+  else
+    echo -en \e[31m\]
+  fi; echo -en $\e[m\]
+  )'
+  PS1='\e[01;32m\][\D{%F %T}]\e[00m\]:\e[01;34m\]\W'
+  PS1="${PS1}${RETURN_CODE} "
+fi
 PS2='>'
 
 function _exists() {
@@ -38,8 +51,8 @@ function _exists() {
   return $?
 }
 
-if _exists "exa"; then
-  alias ls='exa -I=".DS_Store"'
+if _exists "eza"; then
+  alias ls='eza -I=".DS_Store"'
   alias la='ls -a'
   alias ll='ls -lha --git'
   alias l='ls -lha --git'
@@ -159,6 +172,9 @@ export PATH="$PNPM_HOME:$PATH"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
+
+# rust
+. "$HOME/.cargo/env"
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/bashrc.post.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.post.bash"
