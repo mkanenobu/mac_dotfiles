@@ -133,9 +133,8 @@ mods = "Command"
 [[keyboard.bindings]]
 key = "Comma"
 mods = "Command"
-
 [keyboard.bindings.command]
-args = ["-lc", "--", "open ${XDG_CONFIG_HOME}/alacritty/alacritty.yml"]
+args = ["-lc", "--", "open ${XDG_CONFIG_HOME}/alacritty/alacritty.toml"]
 program = "bash"
 
 [scrolling]
