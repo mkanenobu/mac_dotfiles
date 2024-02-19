@@ -20,7 +20,7 @@ bind - split-window -h
 bind | split-window -v
 
 # enable mouse control
-set-option -g mouse on
+set-option -g mouse off
 
 # resize pane bind -r H resize-pane -L 5
 bind -r H resize-pane -L 5
