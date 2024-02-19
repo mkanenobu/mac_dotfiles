@@ -93,3 +93,5 @@ fi
 source ~/.orbstack/shell/init.bash 2>/dev/null || :
 
 [[ -f ~/.bashrc ]] && source ~/.bashrc # ghcup-env
+=======
+>>>>>>> 69badee (Mon Feb 19 21:33:04 JST 2024)
