@@ -1,5 +1,5 @@
 # .bashrc: executed by bash(1) for non-login shells.
-# vi: set tabstop=2 softtabstop=2 shiftwidth=2 :
+# vi: set tabstop=2 softtabstop=2 shiftwidth=2 filetype=bash :
 
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/bashrc.pre.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.pre.bash"
@@ -158,9 +158,12 @@ set -o emacs
 set -C noclobber
 
 [ -f ~/.env ] && source ~/.env
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 # rust
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+
+# fzf
+[[ -f "/opt/homebrew/opt/fzf/shell/key-bindings.bash" ]] && builtin source "/opt/homebrew/opt/fzf/shell/key-bindings.bash"
 
 # stop ctrl-s panic
 stty stop undef
@@ -173,6 +176,9 @@ export PATH="$PNPM_HOME:$PATH"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
+
+# local config
+[ -f "~/.bashrc_local" ] && source "~/.bashrc_local"
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/bashrc.post.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.post.bash"

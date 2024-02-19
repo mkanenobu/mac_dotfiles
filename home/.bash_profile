@@ -76,8 +76,6 @@ if [ -n "$BASH_VERSION" ]; then
   fi
 fi
 
-[[ -f "/opt/homebrew/opt/fzf/shell/key-bindings.bash" ]] && builtin source "/opt/homebrew/opt/fzf/shell/key-bindings.bash"
-
 # completion
 complete -C "$(which aws_completer)" aws
 
@@ -90,3 +88,8 @@ fi
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/bash_profile.post.bash" ]] && builtin source "$HOME/.fig/shell/bash_profile.post.bash"
+
+# Added by OrbStack: command-line tools and integration
+source ~/.orbstack/shell/init.bash 2>/dev/null || :
+
+[[ -f ~/.bashrc ]] && source ~/.bashrc # ghcup-env
