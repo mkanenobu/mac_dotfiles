@@ -32,6 +32,7 @@ command_exists nodenv && eval "$(nodenv init -)"
 command_exists opam && eval "$(opam env)"
 command_exists pyenv && eval "$(pyenv init -)"
 command_exists rbenv && eval "$(rbenv init -)"
+command_exists pk && eval "$(pk init)"
 
 export GOPATH="$HOME/go"
 
@@ -86,12 +87,11 @@ fi
 
 . "$HOME/.cargo/env"
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/bash_profile.post.bash" ]] && builtin source "$HOME/.fig/shell/bash_profile.post.bash"
-
 # Added by OrbStack: command-line tools and integration
 source ~/.orbstack/shell/init.bash 2>/dev/null || :
 
 [[ -f ~/.bashrc ]] && source ~/.bashrc # ghcup-env
-=======
->>>>>>> 69badee (Mon Feb 19 21:33:04 JST 2024)
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/bash_profile.post.bash" ]] && builtin source "$HOME/.fig/shell/bash_profile.post.bash"
+
