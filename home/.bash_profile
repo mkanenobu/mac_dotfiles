@@ -26,6 +26,8 @@ export PATH="$PATH:$HOME/.rd/bin"
 export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 # GCP
 export PATH="$PATH:$HOME/google-cloud-sdk/bin"
+# rebar3
+export PATH="$PATH:$HOME/.cache/rebar3/bin"
 
 # *env
 command_exists nodenv && eval "$(nodenv init -)"
