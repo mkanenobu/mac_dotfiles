@@ -1,8 +1,8 @@
 # .bashrc: executed by bash(1) for non-login shells.
 # vi: set tabstop=2 softtabstop=2 shiftwidth=2 filetype=bash :
-
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/bashrc.pre.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.pre.bash"
+#
+# CodeWhisperer pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/bashrc.pre.bash" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/bashrc.pre.bash"
 
 # If not running interactively, don't do anything
 case $- in
@@ -180,5 +180,6 @@ export PATH=$BUN_INSTALL/bin:$PATH
 # local config
 [ -f "~/.bashrc_local" ] && source "~/.bashrc_local"
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/bashrc.post.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.post.bash"
+# CodeWhisperer post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/bashrc.post.bash" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/bashrc.post.bash"
+
