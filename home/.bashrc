@@ -10,10 +10,6 @@ case $- in
     *) return;;
 esac
 
-# use GNU commands
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=20000
 HISTFILESIZE=20000
