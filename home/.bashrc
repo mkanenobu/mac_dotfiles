@@ -1,6 +1,6 @@
 # .bashrc: executed by bash(1) for non-login shells.
 # vi: set tabstop=2 softtabstop=2 shiftwidth=2 filetype=bash :
-#
+
 # CodeWhisperer pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/codewhisperer/shell/bashrc.pre.bash" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/bashrc.pre.bash"
 
