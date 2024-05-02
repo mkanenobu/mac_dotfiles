@@ -1,10 +1,9 @@
 # .bashrc: executed by bash(1) for non-login shells.
-# vi: set tabstop=2 softtabstop=2 shiftwidth=2 filetype=bash :
+# vi: set tabstop=2 softtabstop=2 shiftwidth=2 filetype=bash :# If not running interactively, don't do anything
 
-# CodeWhisperer pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/bashrc.pre.bash" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/bashrc.pre.bash"
+# Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/bashrc.pre.bash" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/bashrc.pre.bash"
 
-# If not running interactively, don't do anything
 case $- in
   *i*) ;;
     *) return;;
@@ -176,6 +175,6 @@ export PATH=$BUN_INSTALL/bin:$PATH
 # local config
 [ -f "~/.bashrc_local" ] && source "~/.bashrc_local"
 
-# CodeWhisperer post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/bashrc.post.bash" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/bashrc.post.bash"
+# Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/bashrc.post.bash" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/bashrc.post.bash"
 
