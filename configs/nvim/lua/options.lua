@@ -39,6 +39,8 @@ local options = {
   laststatus = 2,
   clipboard = {"unnamed", "unnamedplus"},
   splitbelow = true,
+
+  termguicolors = false,
 }
 
 for k, v in pairs(options) do
