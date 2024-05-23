@@ -1,7 +1,4 @@
-# .bashrc: executed by bash(1) for non-login shells.
-# vi: set tabstop=2 softtabstop=2 shiftwidth=2 filetype=bash :# If not running interactively, don't do anything
-
-# Q pre block. Keep at the top of this file.
+# Amazon Q pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/bashrc.pre.bash" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/bashrc.pre.bash"
 
 case $- in
@@ -49,8 +46,8 @@ function _exists() {
 if _exists "eza"; then
   alias ls='eza -I=".DS_Store"'
   alias la='ls -a'
-  alias ll='ls -lha --git'
-  alias l='ls -lha --git'
+  alias ll="ls -lha --git --sort=date --reverse --time-style='+%Y-%m-%d %H:%M'"
+  alias l="ls -lha --git --sort=date --reverse --time-style='+%Y-%m-%d %H:%M'"
 else
   alias la='ls -a'
   alias ll='ls -lha'
@@ -175,6 +172,5 @@ export PATH=$BUN_INSTALL/bin:$PATH
 # local config
 [ -f "~/.bashrc_local" ] && source "~/.bashrc_local"
 
-# Q post block. Keep at the bottom of this file.
+# Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/bashrc.post.bash" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/bashrc.post.bash"
-

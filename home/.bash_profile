@@ -1,4 +1,4 @@
-# Q pre block. Keep at the top of this file.
+# Amazon Q pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/bash_profile.pre.bash" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/bash_profile.pre.bash"
 
 function command_exists() {
@@ -66,10 +66,10 @@ export FIGNORE="$FIGNORE:DS_Store"
 
 # OpenSSL
 export PATH="$PATH:/opt/homebrew/opt/openssl@3/bin"
-export LDFLAGS="$(pkg-config --cflags openssl)"
-export CPPFLAGS="$(pkg-config --libs openssl)"
-export CGO_CFLAGS="$(pkg-config --cflags openssl)"
-export CGO_LDFLAGS="$(pkg-config --libs openssl)"
+#export LDFLAGS="$(pkg-config --cflags openssl)"
+#export CPPFLAGS="$(pkg-config --libs openssl)"
+#export CGO_CFLAGS="$(pkg-config --cflags openssl)"
+#export CGO_LDFLAGS="$(pkg-config --libs openssl)"
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
@@ -94,5 +94,5 @@ source ~/.orbstack/shell/init.bash 2>/dev/null || :
 
 [[ -f ~/.bashrc ]] && source ~/.bashrc
 
-# Q post block. Keep at the bottom of this file.
+# Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/bash_profile.post.bash" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/bash_profile.post.bash"
