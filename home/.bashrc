@@ -132,8 +132,6 @@ alias gpr='git pull --rebase'
 alias gfp='git fetch && git pull'
 alias gst='git stash'
 alias gsp='git stash pop'
-alias uuidgen='uuidgen | tr "[:upper:]" "[:lower:]"'
-
 alias ghpr='gh pr checkout'
 
 # typo
@@ -149,7 +147,7 @@ set -o emacs
 # >|を用いればリダイレクトできる
 set -C noclobber
 
-[ -f ~/.env ] && source ~/.env
+[ -f "$HOME/.env" ] && source "$HOME/.env"
 
 # rust
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
@@ -170,7 +168,7 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 
 # local config
-[ -f "~/.bashrc_local" ] && source "~/.bashrc_local"
+[ -f "$HOME/.bashrc_local" ] && source "$HOME/.bashrc_local"
 
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/bashrc.post.bash" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/bashrc.post.bash"

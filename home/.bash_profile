@@ -6,28 +6,26 @@ function command_exists() {
   return $?
 }
 
+function echoerr() {
+  echo "$@" 1>&2
+}
+
 # Set PATH, MANPATH, etc., for Homebrew.
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if [ -x "/opt/homebrew/bin/brew" ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 # Paths
 export XDG_CONFIG_HOME="$HOME/.config"
-export PATH="$PATH:/opt/homebrew/bin"
-export PATH="$PATH:$HOME/.nimble/bin"
-export PATH="$PATH:$HOME/.cargo/bin"
-export PATH="$PATH:$HOME/.nodenv/bin"
-export PATH="$PATH:$HOME/.local/toolbox"
-export PATH="$PATH:$HOME/.local/for-work"
-export PATH="$PATH:$HOME/.fig/bin"
-export PATH="$PATH:$HOME/go/bin"
-export PATH="$PATH:$HOME/flutter/bin"
-# Rancher Desktop
-export PATH="$PATH:$HOME/.rd/bin"
-# Android
-export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
-# GCP
-export PATH="$PATH:$HOME/google-cloud-sdk/bin"
-# rebar3
-export PATH="$PATH:$HOME/.cache/rebar3/bin"
+
+# Path setup
+# Expects generate-paths script to be in the same directory as this file.
+path_generate_script_path="$(dirname "${BASH_SOURCE[0]}")/generate-paths.swift"
+if [ -x "$path_generate_script_path" ]; then
+  export PATH="$PATH:$(eval "$path_generate_script_path")"
+else
+  echoerr "Path generate script not found: $path_generate_script_path"
+fi
 
 # *env
 command_exists nodenv && eval "$(nodenv init -)"
@@ -37,11 +35,6 @@ command_exists rbenv && eval "$(rbenv init -)"
 command_exists pk && eval "$(pk init)"
 
 export GOPATH="$HOME/go"
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
-  export PATH="$PATH:$HOME/.local/bin"
-fi
 
 export EDITOR=nvim
 
@@ -65,7 +58,7 @@ export LC_TIME=C
 export FIGNORE="$FIGNORE:DS_Store"
 
 # OpenSSL
-export PATH="$PATH:/opt/homebrew/opt/openssl@3/bin"
+#export PATH="$PATH:/opt/homebrew/opt/openssl@3/bin"
 #export LDFLAGS="$(pkg-config --cflags openssl)"
 #export CPPFLAGS="$(pkg-config --libs openssl)"
 #export CGO_CFLAGS="$(pkg-config --cflags openssl)"
@@ -74,9 +67,7 @@ export PATH="$PATH:/opt/homebrew/opt/openssl@3/bin"
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
   # include .bashrc if it exists
-  if [ -f "$HOME/.bashrc" ]; then
-  . "$HOME/.bashrc"
-  fi
+  [[ -f "$HOME/.bashrc" ]] && source "$HOME/.bashrc"
 fi
 
 # completion
@@ -87,12 +78,10 @@ if [ "${ALACRITTY}" ] && [ -z "${BYOBU_BACKEND}" ]; then
   byobu
 fi
 
-. "$HOME/.cargo/env"
+[[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
 
 # Added by OrbStack: command-line tools and integration
 source ~/.orbstack/shell/init.bash 2>/dev/null || :
-
-[[ -f ~/.bashrc ]] && source ~/.bashrc
 
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/bash_profile.post.bash" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/bash_profile.post.bash"
