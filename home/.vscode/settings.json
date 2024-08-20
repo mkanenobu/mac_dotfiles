@@ -1,5 +1,5 @@
 {
-  "editor.fontFamily": "\"Cascadia Code\", Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "'Cascadia Code', Monaco, 'Courier New', monospace",
   "editor.wordWrap": "wordWrapColumn",
   "editor.fontSize": 14,
   "editor.fontLigatures": true,
@@ -126,6 +126,7 @@
   "workbench.editor.closeOnFileDelete": true,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
   "trailing-spaces.trimOnSave": true,
   "metals.javaHome": "/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home",
   "explorer.confirmDragAndDrop": false,
@@ -167,19 +168,7 @@
     "HTML (Eex)",
     "plist"
   ],
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-  "tabnine.experimentalAutoImports": true,
-  "workbench.preferredHighContrastColorTheme": "Monokai ST3",
-  "workbench.preferredLightColorTheme": "Monokai ST3",
-  "workbench.colorTheme": "Monokai ST3",
-  "workbench.preferredDarkColorTheme": "Monokai ST3",
   "editor.matchBrackets": false,
   "prettier.vueIndentScriptAndStyle": true,
-  "editor.tabSize": 2,
-  "sync.gist": "167421c7333b5ea3cbc348372154c9c0",
-  "sync.autoUpload": true,
-  "sync.autoDownload": true,
-  "workbench.iconTheme": "vs-seti",
-  "sync.quietSync": true,
   "editor.minimap.enabled": false
 }
