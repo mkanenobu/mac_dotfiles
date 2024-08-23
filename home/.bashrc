@@ -133,6 +133,7 @@ alias gfp='git fetch && git pull'
 alias gst='git stash'
 alias gsp='git stash pop'
 alias ghpr='gh pr checkout'
+alias ts="node --experimental-strip-types --no-warnings=ExperimentalWarning"
 
 # typo
 alias al=':'
