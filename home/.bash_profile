@@ -20,7 +20,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 # Path setup
 # Expects generate-paths script to be in the same directory as this file.
-path_generate_script_path="$(dirname "${BASH_SOURCE[0]}")/generate-paths.py"
+path_generate_script_path="$(dirname "${BASH_SOURCE[0]}")/generate-paths.rb"
 if [ -x "$path_generate_script_path" ]; then
   export PATH="$PATH:$(eval "$path_generate_script_path")"
 else
