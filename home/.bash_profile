@@ -20,7 +20,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 # Path setup
 # Expects generate-paths script to be in the same directory as this file.
-path_generate_script_path="$(dirname "${BASH_SOURCE[0]}")/generate-paths.swift"
+path_generate_script_path="$(dirname "${BASH_SOURCE[0]}")/generate-paths.py"
 if [ -x "$path_generate_script_path" ]; then
   export PATH="$PATH:$(eval "$path_generate_script_path")"
 else
@@ -28,11 +28,17 @@ else
 fi
 
 # *env
-command_exists nodenv && eval "$(nodenv init -)"
 command_exists opam && eval "$(opam env)"
-command_exists pyenv && eval "$(pyenv init -)"
-command_exists rbenv && eval "$(rbenv init -)"
-command_exists pk && eval "$(pk init)"
+
+## asdf
+if [ -f "/opt/homebrew/opt/asdf/libexec/asdf.sh" ]; then
+  source "/opt/homebrew/opt/asdf/libexec/asdf.sh"
+else
+  echoerr "asdf setup file is not found"
+fi
+if [ -f "/opt/homebrew/opt/asdf/etc/bash_completion.d/asdf.bash" ]; then
+  source "/opt/homebrew/opt/asdf/etc/bash_completion.d/asdf.bash"
+fi
 
 export GOPATH="$HOME/go"
 

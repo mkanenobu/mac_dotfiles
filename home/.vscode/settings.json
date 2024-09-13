@@ -168,7 +168,7 @@
     "HTML (Eex)",
     "plist"
   ],
-  "editor.matchBrackets": false,
+  "editor.matchBrackets": "never",
   "prettier.vueIndentScriptAndStyle": true,
   "editor.minimap.enabled": false
 }
