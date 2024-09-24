@@ -104,36 +104,39 @@ alias tree='tree -N'
 
 # Shell utils
 alias duc='du -d 1 -h | sort -h'
-alias wcj='wc -m'
+alias wc='wc -m'
+alias wc_line='wc -l'
 alias mv='mv -i'
 alias cp='cp -i'
 alias fzf='fzf --reverse'
-alias cl='clear'
-alias gitignore_init='gibo dump'
+
+alias ts="node --experimental-strip-types --no-warnings=ExperimentalWarning"
 
 # Git
 alias ga='git add'
-alias gitpull='git pull'
-alias gitpush='git push'
+
+alias gpull='git pull'
+alias gpr='git pull --rebase'
+alias gpush='git push'
+
 alias gcm='git commit -m'
 alias gcd='git commit -m "$(date)"'
 alias gca='git commit --amend'
+
+alias gmain='git checkout main'
+alias gc='git checkout'
+
+alias gst='git stash'
+alias gsp='git stash pop'
+
+alias gcl='git clone'
 alias gl='git log'
 alias gs='git status'
 alias gd='git diff'
 alias gdt='git difftool --extcmd="icdiff --line-numbers --unified=3" --no-prompt | less'
-alias gcl='git clone'
 alias gg='git log --graph --pretty=oneline'
-alias gc='git checkout'
-alias gb='git branch'
-alias gbrm='git brand --delete'
-alias gf='git fetch'
-alias gpr='git pull --rebase'
-alias gfp='git fetch && git pull'
-alias gst='git stash'
-alias gsp='git stash pop'
+
 alias ghpr='gh pr checkout'
-alias ts="node --experimental-strip-types --no-warnings=ExperimentalWarning"
 
 # typo
 alias al=':'
