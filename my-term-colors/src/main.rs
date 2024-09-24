@@ -51,7 +51,7 @@ static TERM_COLORS: TermsColors = TermsColors {
     normal: Colors {
         black: "#676965",
         blue: "#83afd8",
-        cyan: "##37e5e7",
+        cyan: "#37e5e7",
         green: "#a6e35f",
         magenta: "#b867ac",
         red: "#f55b51",
@@ -61,7 +61,7 @@ static TERM_COLORS: TermsColors = TermsColors {
     bright: Colors {
         black: "#676965",
         blue: "#83afd8",
-        cyan: "##37e5e7",
+        cyan: "#37e5e7",
         green: "#a6e35f",
         magenta: "#b867ac",
         red: "#f55b51",
