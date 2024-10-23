@@ -23,6 +23,8 @@ paths = [
   "$HOME/.cache/rebar3/bin",
   # coursier (for scala)
   "$HOME/Library/Application Support/Coursier/bin",
+  # moonbit
+  "$HOME/.moon/bin",
 ]
 
 # Replace "$HOME" with the actual home directory path

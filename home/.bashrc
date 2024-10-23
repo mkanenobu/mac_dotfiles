@@ -129,6 +129,7 @@ alias gc='git checkout'
 alias gst='git stash'
 alias gsp='git stash pop'
 
+alias gb='git branch'
 alias gcl='git clone'
 alias gl='git log'
 alias gs='git status'
