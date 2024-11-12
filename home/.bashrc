@@ -101,6 +101,7 @@ alias rg='rg --no-ignore'
 alias lame='lame -b 192'
 alias vimdiff='nvim -d'
 alias tree='tree -N'
+alias sbcl='rlwrap sbcl'
 
 # Shell utils
 alias duc='du -d 1 -h | sort -h'
