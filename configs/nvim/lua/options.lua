@@ -1,5 +1,5 @@
 local options = {
-	encoding = "utf-8",
+  encoding = "utf-8",
   ambiwidth = "double",
   history = 1000,
   title = true,
@@ -41,6 +41,9 @@ local options = {
   splitbelow = true,
 
   termguicolors = false,
+
+  scrolloff = 1,
+  sidescrolloff = 1,
 }
 
 for k, v in pairs(options) do
