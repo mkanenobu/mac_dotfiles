@@ -42,3 +42,5 @@ window-height = 56
 window-width = 110
 
 macos-titlebar-style = "hidden"
+
+keybind = shift+enter=text:\x0d
