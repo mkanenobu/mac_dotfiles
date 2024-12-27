@@ -35,12 +35,15 @@ font-thicken = true
 
 cursor-style-blink = false
 
+confirm-close-surface = false
+
+shell-integration = "bash"
+
 window-padding-x = 8
 window-padding-y = 12
-
 window-height = 56
 window-width = 110
 
 macos-titlebar-style = "hidden"
-
 keybind = shift+enter=text:\x0d
+command = "/opt/homebrew/bin/bash --login"
