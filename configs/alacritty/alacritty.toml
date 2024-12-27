@@ -1,6 +1,16 @@
 [general]
 live_config_reload = true
 
+[colors.normal]
+black = "#676965"
+blue = "#83afd8"
+cyan = "#37e5e7"
+green = "#a6e35f"
+magenta = "#b867ac"
+red = "#f55b51"
+white = "#f1f1ef"
+yellow = "#fcea60"
+
 [colors.bright]
 black = "#676965"
 blue = "#83afd8"
@@ -18,16 +28,6 @@ text = "CellBackground"
 [colors.footer_bar]
 background = "#c5c8c6"
 foreground = "#1d1f21"
-
-[colors.normal]
-black = "#676965"
-blue = "#83afd8"
-cyan = "#37e5e7"
-green = "#a6e35f"
-magenta = "#b867ac"
-red = "#f55b51"
-white = "#f1f1ef"
-yellow = "#fcea60"
 
 [colors.primary]
 background = "#1c1c1c"

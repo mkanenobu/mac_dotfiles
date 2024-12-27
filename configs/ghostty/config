@@ -1,0 +1,41 @@
+background = "1c1c1c"
+foreground = "feffff"
+
+background-opacity = 0.9
+
+# Black
+palette = 0=#676965
+# Maroon
+palette = 1=#b867ac
+# Green
+palette = 2=#a6e35f
+# Olive
+palette = 3=#fcea60
+# Navy
+palette = 4=#83afd8
+# Teal
+palette = 6=#73e2e5
+# Red
+palette = 9=#f55b51
+# Lime
+palette = 10=#a6e35f
+# Yellow
+palette = 11=#fcea60
+# Blue
+palette = 12=#83afd8
+# White
+palette = 15=#f1f1ef
+
+font-family = "Cascadia Code NF"
+font-size = 14
+font-thicken = true
+
+cursor-style-blink = false
+
+window-padding-x = 8
+window-padding-y = 12
+
+window-height = 56
+window-width = 110
+
+macos-titlebar-style = "hidden"
