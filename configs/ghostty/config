@@ -13,6 +13,8 @@ palette = 2=#a6e35f
 palette = 3=#fcea60
 # Navy
 palette = 4=#83afd8
+# Purple
+palette = 5=#b660cd
 # Teal
 palette = 6=#73e2e5
 # Red
@@ -27,6 +29,7 @@ palette = 12=#83afd8
 palette = 15=#f1f1ef
 
 font-family = "Cascadia Code NF"
+font-family = "BIZ UDGothic"
 font-size = 14
 font-thicken = true
 
