@@ -7,6 +7,7 @@ local shebang_by_extension = {
   rb = "#!/usr/bin/env ruby",
   sh = "#!/bin/sh",
   bash = "#!/usr/bin/env bash",
+  cl = "#!/usr/bin/env sbcl --script",
 }
 
 local function insert_shebang()
