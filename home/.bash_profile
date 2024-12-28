@@ -79,7 +79,7 @@ fi
 # completion
 complete -C "$(which aws_completer)" aws
 
-# if alacritty, execute byobu
+# if alacritty or ghostty, execute byobu
 if [ "${ALACRITTY}" ] || [ "${GHOSTTY_RESOURCES_DIR}" ]; then
   command_exists byobu && byobu
 fi
