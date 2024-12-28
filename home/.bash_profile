@@ -80,8 +80,8 @@ fi
 complete -C "$(which aws_completer)" aws
 
 # if alacritty, execute byobu
-if [ "${ALACRITTY}" ] && [ -z "${BYOBU_BACKEND}" ]; then
-  byobu
+if [ "${ALACRITTY}" ] || [ "${GHOSTTY_RESOURCES_DIR}" ]; then
+  command_exists byobu && byobu
 fi
 
 [[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"

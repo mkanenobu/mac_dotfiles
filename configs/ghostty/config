@@ -2,31 +2,54 @@ background = "1c1c1c"
 foreground = "feffff"
 
 background-opacity = 0.9
+selection-invert-fg-bg = true
 
+cursor-style-blink = false
+cursor-opacity = 0.8
+
+# Black
 palette = 0=#676965
+# Red
 palette = 1=#f55b51
+# Green
 palette = 2=#a6e35f
+# Yellow
 palette = 3=#fcea60
+# Blue
 palette = 4=#83afd8
+# Magenta
 palette = 5=#b867ac
+# Cyan
 palette = 6=#37e5e7
+# White
 palette = 7=#f1f1ef
-# bright
+
+# Bright
+# Black
 palette = 8=#676965
+# Red
 palette = 9=#f55b51
+# Green
 palette = 10=#a6e35f
+# Yellow
 palette = 11=#fcea60
+# Blue
 palette = 12=#83afd8
+# Magenta
 palette = 13=#b867ac
+# Cyan
 palette = 14=#37e5e7
+# White
 palette = 15=#f1f1ef
 
 font-family = "Cascadia Code NF"
 font-family = "BIZ UDGothic"
-font-size = 14
+font-size = 14.0
 font-thicken = true
+font-feature = -dlig
+font-feature = -calt
 
-cursor-style-blink = false
+adjust-cell-width = -5%
 
 confirm-close-surface = false
 
@@ -38,5 +61,10 @@ window-height = 56
 window-width = 110
 
 macos-titlebar-style = "hidden"
-keybind = shift+enter=text:\x0d
+
 command = "/opt/homebrew/bin/bash --login"
+
+# shift+enter as enter
+keybind = shift+enter=text:\x0d
+# keybind = page_up=scroll_page_up
+# keybind = page_down=scroll_page_down
