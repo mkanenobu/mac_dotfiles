@@ -3,23 +3,23 @@ live_config_reload = true
 
 [colors.normal]
 black = "#676965"
-blue = "#83afd8"
-cyan = "#37e5e7"
-green = "#a6e35f"
-magenta = "#b867ac"
 red = "#f55b51"
-white = "#f1f1ef"
+green = "#a6e35f"
 yellow = "#fcea60"
+blue = "#83afd8"
+magenta = "#b867ac"
+cyan = "#37e5e7"
+white = "#f1f1ef"
 
 [colors.bright]
 black = "#676965"
-blue = "#83afd8"
-cyan = "#37e5e7"
-green = "#a6e35f"
-magenta = "#b867ac"
 red = "#f55b51"
-white = "#f1f1ef"
+green = "#a6e35f"
 yellow = "#fcea60"
+blue = "#83afd8"
+magenta = "#b867ac"
+cyan = "#37e5e7"
+white = "#f1f1ef"
 
 [colors.cursor]
 cursor = "#ffffff"

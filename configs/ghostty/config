@@ -3,29 +3,22 @@ foreground = "feffff"
 
 background-opacity = 0.9
 
-# Black
 palette = 0=#676965
-# Maroon
-palette = 1=#b867ac
-# Green
+palette = 1=#f55b51
 palette = 2=#a6e35f
-# Olive
 palette = 3=#fcea60
-# Navy
 palette = 4=#83afd8
-# Purple
-palette = 5=#b660cd
-# Teal
-palette = 6=#73e2e5
-# Red
+palette = 5=#b867ac
+palette = 6=#37e5e7
+palette = 7=#f1f1ef
+# bright
+palette = 8=#676965
 palette = 9=#f55b51
-# Lime
 palette = 10=#a6e35f
-# Yellow
 palette = 11=#fcea60
-# Blue
 palette = 12=#83afd8
-# White
+palette = 13=#b867ac
+palette = 14=#37e5e7
 palette = 15=#f1f1ef
 
 font-family = "Cascadia Code NF"
@@ -39,8 +32,8 @@ confirm-close-surface = false
 
 shell-integration = "bash"
 
-window-padding-x = 8
-window-padding-y = 12
+window-padding-x = 4
+window-padding-y = 8
 window-height = 56
 window-width = 110
 
