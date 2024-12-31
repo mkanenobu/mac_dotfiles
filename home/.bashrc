@@ -60,10 +60,7 @@ fi
 # tmux share history
 function share_history {
   history -a
-  tac ~/.bash_history | awk '!a[$0]++' | tac >| ~/.bash_history.tmp
-  [ -f ~/.bash_history.tmp ] &&
-    mv -f ~/.bash_history{.tmp,} &&
-      history -c && history -r
+  history -n
 }
 PROMPT_COMMAND='share_history'
 shopt -u histappend
