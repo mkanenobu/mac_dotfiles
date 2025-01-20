@@ -46,7 +46,8 @@ function _exists() {
 if _exists "eza"; then
   alias ls='eza -I=".DS_Store"'
   alias la='ls -a'
-  alias ll="ls -lha --git --sort=date --reverse --time-style='+%Y-%m-%d %H:%M'"
+  alias ll="ls -lha --git --sort=oldest --time-style='+%Y-%m-%d %H:%M'"
+  alias lls="ls -lha --git --sort=size --reverse --no-user --no-time"
   alias l="ls -lha --git --sort=date --reverse --time-style='+%Y-%m-%d %H:%M'"
 else
   alias la='ls -a'
