@@ -100,9 +100,6 @@ alias lame='lame -b 192'
 alias vimdiff='nvim -d'
 alias tree='tree -N'
 alias sbcl='rlwrap sbcl'
-if _exists "codium"; then
-  alias code='codium'
-fi
 
 # Shell utils
 alias duc='du -d 1 -h | sort -h'
