@@ -31,14 +31,8 @@ fi
 command_exists opam && eval "$(opam env)"
 
 ## asdf
-if [ -f "/opt/homebrew/opt/asdf/libexec/asdf.sh" ]; then
-  source "/opt/homebrew/opt/asdf/libexec/asdf.sh"
-else
-  echoerr "asdf setup file is not found"
-fi
-if [ -f "/opt/homebrew/opt/asdf/etc/bash_completion.d/asdf.bash" ]; then
-  source "/opt/homebrew/opt/asdf/etc/bash_completion.d/asdf.bash"
-fi
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+. <(asdf completion bash)
 
 export GOPATH="$HOME/go"
 
