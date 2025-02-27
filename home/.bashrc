@@ -7,8 +7,8 @@ case $- in
 esac
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=20000
-HISTFILESIZE=20000
+HISTSIZE=100000
+HISTFILESIZE=200000
 
 HISTCONTROL=ignoredups
 
