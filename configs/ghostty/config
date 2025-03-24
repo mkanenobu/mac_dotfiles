@@ -60,7 +60,7 @@ window-padding-y = 8
 window-height = 56
 window-width = 110
 
-macos-titlebar-style = "hidden"
+macos-titlebar-style = "tabs"
 
 command = "/opt/homebrew/bin/bash --login"
 

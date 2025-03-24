@@ -7,7 +7,7 @@ case $- in
 esac
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=100000
+HISTSIZE=200000
 HISTFILESIZE=200000
 
 HISTCONTROL=ignoredups
@@ -19,9 +19,6 @@ HISTCONTROL=ignoredups
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
 #shopt -s globstar
-
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 if [ -z $TMUX ]; then
   PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]$ '
@@ -145,7 +142,6 @@ alias .s='ls'
 alias claer="clear"
 alias im='vim'
 
-shopt -s autocd
 set -o emacs
 # リダイレクトによる上書き禁止
 # >|を用いればリダイレクトできる

@@ -25,6 +25,8 @@ paths = [
   "$HOME/Library/Application Support/Coursier/bin",
   # moonbit
   "$HOME/.moon/bin",
+  # elan, lean 4 version manager
+  "$HOME/.elan/bin",
 ]
 
 # Replace "$HOME" with the actual home directory path

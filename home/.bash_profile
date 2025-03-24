@@ -70,9 +70,6 @@ if [ -n "$BASH_VERSION" ]; then
   [[ -f "$HOME/.bashrc" ]] && source "$HOME/.bashrc"
 fi
 
-# completion
-complete -C "$(which aws_completer)" aws
-
 # if [ "${ALACRITTY}" ] || [ "${GHOSTTY_RESOURCES_DIR}" ]; then
 if [ "${ALACRITTY}" ]; then
   command_exists byobu && byobu
