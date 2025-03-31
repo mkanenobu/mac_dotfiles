@@ -75,7 +75,10 @@ if [ "${ALACRITTY}" ]; then
   command_exists byobu && byobu
 fi
 
+# cargo
 [[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
+# Wasm Edge
+[[ -f "$HOME/.wasmedge/env" ]] && . "$HOME/.wasmedge/env"
 
 # Added by OrbStack: command-line tools and integration
 source ~/.orbstack/shell/init.bash 2>/dev/null || :
