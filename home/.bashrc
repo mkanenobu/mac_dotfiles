@@ -152,6 +152,12 @@ set -C noclobber
 # rust
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
+# ghcup for Haskell
+[ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env"
+
+# opam for OCaml
+type opam >/dev/null 2>&1 && eval "$(opam env)"
+
 # fzf
 [[ -f "/opt/homebrew/opt/fzf/shell/key-bindings.bash" ]] && builtin source "/opt/homebrew/opt/fzf/shell/key-bindings.bash"
 

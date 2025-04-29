@@ -27,7 +27,7 @@ else
   echoerr "Path generate script not found: $path_generate_script_path"
 fi
 
-# *env
+# opam for OCaml
 command_exists opam && eval "$(opam env)"
 
 ## asdf
