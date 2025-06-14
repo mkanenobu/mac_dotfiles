@@ -2,3 +2,5 @@
 .DS_Store
 _ignore
 *.dylib
+
+**/.claude/settings.local.json
