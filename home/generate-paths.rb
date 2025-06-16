@@ -18,6 +18,9 @@ paths = [
   "$HOME/google-cloud-sdk/bin",
   # Flutter
   "$HOME/.flutter/bin",
+
+  # Julia
+  "$HOME/.juliaup/bin",
 ]
 
 # Replace "$HOME" with the actual home directory path

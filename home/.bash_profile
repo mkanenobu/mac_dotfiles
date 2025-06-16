@@ -70,7 +70,6 @@ if [ -n "$BASH_VERSION" ]; then
   [[ -f "$HOME/.bashrc" ]] && source "$HOME/.bashrc"
 fi
 
-# if [ "${ALACRITTY}" ] || [ "${GHOSTTY_RESOURCES_DIR}" ]; then
 if [ "${ALACRITTY}" ]; then
   command_exists byobu && byobu
 fi
@@ -84,10 +83,9 @@ fi
 source ~/.orbstack/shell/init.bash 2>/dev/null || :
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/mkanenobu/google-cloud-sdk/path.bash.inc' ]; then . '/Users/mkanenobu/google-cloud-sdk/path.bash.inc'; fi
-
+if [ -f "$HOME/google-cloud-sdk/path.bash.inc" ]; then . "$HOME/google-cloud-sdk/path.bash.inc"; fi
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/mkanenobu/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/mkanenobu/google-cloud-sdk/completion.bash.inc'; fi
+if [ -f "$HOME/google-cloud-sdk/completion.bash.inc" ]; then . "$HOME/google-cloud-sdk/completion.bash.inc"; fi
 
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/bash_profile.post.bash" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/bash_profile.post.bash"
