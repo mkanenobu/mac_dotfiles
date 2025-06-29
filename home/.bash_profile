@@ -54,9 +54,6 @@ export LANGUAGE=en_US
 export LANG=ja_JP.UTF-8
 export LC_TIME=C
 
-# ignore .DS_STORE from completion
-export FIGNORE="$FIGNORE:DS_Store"
-
 # OpenSSL
 #export PATH="$PATH:/opt/homebrew/opt/openssl@3/bin"
 #export LDFLAGS="$(pkg-config --cflags openssl)"
@@ -70,7 +67,7 @@ if [ -n "$BASH_VERSION" ]; then
   [[ -f "$HOME/.bashrc" ]] && source "$HOME/.bashrc"
 fi
 
-if [ "${ALACRITTY}" ]; then
+if [ "${ALACRITTY}" = "true" ] && [ -z "${BYOUBU_CONFIG_DIR}" ]; then
   command_exists byobu && byobu
 fi
 

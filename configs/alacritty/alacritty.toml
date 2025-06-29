@@ -46,10 +46,6 @@ style = "Block"
 thickness = 0.15
 unfocused_hollow = true
 
-[env]
-ALACRITTY = "true"
-TERM = "xterm-256color"
-
 [font]
 size = 14.0
 
@@ -148,6 +144,19 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 [terminal.shell]
 args = ["--login"]
 program = "/opt/homebrew/bin/bash"
+
+[env]
+ALACRITTY = "true"
+
+[bell]
+animation = "Ease"
+duration = 100
+[bell.command]
+program = "/opt/homebrew/bin/bash"
+args = [
+  "-lc",
+  "osascript -e 'display notification \"Claude Code completed\" with title \"Alacritty\"'"
+]
 
 [window]
 decorations = "Buttonless"
