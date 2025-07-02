@@ -148,20 +148,8 @@ program = "/opt/homebrew/bin/bash"
 [env]
 ALACRITTY = "true"
 
-[bell]
-animation = "Ease"
-duration = 100
-[bell.command]
-program = "/opt/homebrew/bin/bash"
-args = [
-  "-lc",
-  "osascript -e 'display notification \"Claude Code completed\" with title \"Alacritty\"'"
-]
-
 [window]
 decorations = "Buttonless"
 opacity = 0.9
 startup_mode = "Windowed"
 dimensions = { columns = 110, lines = 64 }
-padding = { x = 8, y = 8 }
-position = { x = 0, y = 0 }
