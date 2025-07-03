@@ -135,7 +135,6 @@ alias gg='git log --graph --pretty=oneline'
 
 alias ghpr='gh pr checkout'
 
-alias claude="~/.claude/local/claude"
 alias tl='plamo-translate'
 
 # typo

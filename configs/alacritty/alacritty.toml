@@ -153,3 +153,5 @@ decorations = "Buttonless"
 opacity = 0.9
 startup_mode = "Windowed"
 dimensions = { columns = 110, lines = 64 }
+padding = { x = 8, y = 8 }
+position = { x = 0, y = 0 }

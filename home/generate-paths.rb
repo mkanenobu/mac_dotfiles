@@ -11,6 +11,7 @@ paths = [
   "$HOME/go/bin",
   "$HOME/.local/toolbox",
   "$HOME/.local/bin",
+  "$HOME/.claude/local",
 
   # Android
   "$HOME/Library/Android/sdk/platform-tools",
